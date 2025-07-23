@@ -187,6 +187,7 @@ header {
 
   .header-content {
     justify-content: center;
+    padding: 20px;
   }
 
   .logo {
@@ -302,7 +303,7 @@ nav a.active {
   position: relative;
   background-color: var(--primary-color);
   color: white;
-  padding: 6rem 0;
+  padding: 6rem 20px;
   text-align: center;
   overflow: hidden;
 }
@@ -318,6 +319,12 @@ nav a.active {
   background-position: center;
   opacity: 0.4;
   background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: inherit;
+  }
 }
 
 .hero-content {
@@ -425,6 +432,7 @@ nav a.active {
 .campaign-content {
   display: flex;
   flex-direction: column;
+  padding: 0 20px;
 }
 
 .campaign-image {
@@ -600,6 +608,7 @@ nav a.active {
 .year-bar-container {
   margin-bottom: 3rem;
   position: relative;
+  padding: 0 20px;
 }
 
 .year-bar {
@@ -1220,8 +1229,17 @@ nav a.active {
   flex-basis: 45%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
+@media (max-width: 768px) {
+  .dedications-container {
+    justify-content: center;
+  }
+  .dedication-item {
+    flex-basis: 100%;
+  }
+}
 .dedication-item .title {
   font-weight: 300;
   font-size: 20px;
@@ -1254,7 +1272,7 @@ a.dedicate-link {
   margin-bottom: 5rem;
 }
 
-#donation-options .amount-button {
+#donation-options .amount-btn {
   border: 1px solid var(--primary-color);
   background: white;
   padding: 10px;
@@ -1264,16 +1282,17 @@ a.dedicate-link {
   color: var(--primary-color);
 }
 
-#donation-options .amount-button:hover {
+#donation-options .amount-btn:hover,
+#donate-now:hover {
   cursor: pointer;
 }
 
-#donation-options .amount-button.selected {
+#donation-options .amount-btn.selected {
   background-color: var(--primary-color);
   color: white;
 }
 
-.other-input input {
+#other-input input {
   padding: 5px 10px;
   border: 1px solid var(--primary-color);
   font-weight: 300;
