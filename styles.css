@@ -1196,6 +1196,10 @@ nav a.active {
   font-size: 0.875rem;
 }
 
+.dedication-category {
+  padding-bottom: 1rem;
+}
+
 .dedication-category h4 {
   font-family: "Montserrat";
   letter-spacing: 3px;
@@ -1208,12 +1212,14 @@ nav a.active {
 .dedications-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1.5rem;
 }
 
 .dedication-item {
-  flex-basis: 50%;
+  flex-basis: 45%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .dedication-item .title {
@@ -1229,6 +1235,7 @@ nav a.active {
 .dedicate-disabled {
   font-style: italic;
   color: var(--primary-color);
+  margin-left: 15px;
 }
 
 a.dedicate-link {
@@ -1241,4 +1248,47 @@ a.dedicate-link {
 }
 .price-btn-container .price {
   color: #ab785a !important;
+}
+
+#donation-options {
+  margin-bottom: 5rem;
+}
+
+#donation-options .amount-button {
+  border: 1px solid var(--primary-color);
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 300;
+  min-height: 45px;
+  color: var(--primary-color);
+}
+
+#donation-options .amount-button:hover {
+  cursor: pointer;
+}
+
+#donation-options .amount-button.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.other-input input {
+  padding: 5px 10px;
+  border: 1px solid var(--primary-color);
+  font-weight: 300;
+  border-radius: 5px;
+  width: 350px;
+  margin: 1rem;
+  height: 45px;
+  font-size: 1.7rem;
+}
+
+#donate-now {
+  margin-top: 10px;
+  color: white;
+  background: var(--primary-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 15px;
 }

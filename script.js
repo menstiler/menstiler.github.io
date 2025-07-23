@@ -88,7 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const itemDiv = document.createElement("div");
           itemDiv.className = "dedication-item";
 
-          const nameText = document.createElement("strong");
+          const nameText = document.createElement("div");
+          nameText.className = "title";
           nameText.textContent = `${item.name}`;
           itemDiv.appendChild(nameText);
 
