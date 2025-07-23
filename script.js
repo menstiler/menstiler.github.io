@@ -89,11 +89,17 @@ document.addEventListener("DOMContentLoaded", function () {
           itemDiv.className = "dedication-item";
 
           const nameText = document.createElement("strong");
-          nameText.textContent = `${item.name} - $${item.price} `;
+          nameText.textContent = `${item.name}`;
           itemDiv.appendChild(nameText);
 
           const priceAndBtn = document.createElement("div");
           priceAndBtn.className = "price-btn-container";
+
+          const priceEl = document.createElement("div");
+          priceEl.className = "price";
+          priceEl.textContent = `$${item.price}`;
+
+          priceAndBtn.appendChild(priceEl);
 
           let actionEl;
           if (item.reserved) {
