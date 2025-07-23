@@ -76,9 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const section = document.createElement("div");
         section.className = "dedication-category";
 
-        const heading = document.createElement("h2");
+        const heading = document.createElement("h4");
         heading.textContent = category;
         section.appendChild(heading);
+
+        const categoryContainer = document.createElement("div");
+        categoryContainer.className = "dedications-container";
+        section.appendChild(categoryContainer);
 
         items.forEach((item) => {
           const itemDiv = document.createElement("div");
@@ -103,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           itemDiv.appendChild(actionEl);
-          section.appendChild(itemDiv);
+          categoryContainer.appendChild(itemDiv);
         });
 
         container.appendChild(section);
