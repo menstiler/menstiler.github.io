@@ -92,6 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
           nameText.textContent = `${item.name} - $${item.price} `;
           itemDiv.appendChild(nameText);
 
+          const priceAndBtn = document.createElement("div");
+          priceAndBtn.className = "price-btn-container";
+          itemDiv.appendChild(priceAndBtn);
+
           let actionEl;
           if (item.reserved) {
             actionEl = document.createElement("span");
@@ -106,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
             actionEl.className = "dedicate-link";
           }
 
-          itemDiv.appendChild(actionEl);
+          priceAndBtn.appendChild(actionEl);
           categoryContainer.appendChild(itemDiv);
         });
 
