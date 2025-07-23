@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chabad Community Center</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+   <co:template id="HeaderSection" name="header_section" title="Header Section" type="static" detached="true">
+  <div>
+    <div class="container">
+      <h1>Chabad Community Center</h1>
+      <nav>
+        <ul>
+          <li><a href="#campaign">Campaign</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#donations">Donations</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#updates">Updates</a></li>
+        </ul>
+      </nav>
+    </div>
+</div>
+
+  <!-- Hero div -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p>Building Community Together</p>
+        <h2>A Living Landmark <em class="italic">in</em> <span>Islip</span></h2>
+        <p>We are pleased and proud to invite you to join us in building a vibrant community presence in Islip, a living landmark that will promote love for tradition – and for our fellow neighbors – in one of the country's premier locations.</p>
+      </div>
+    </div>
+  </div>
+  </co:template>
+  <co:template title="Content Area" actions="edit,delete" name="content_area" id="ContentArea" type="static" detached="true">
+  <!-- Campaign div -->
+  <div class="campaign" id="campaign">
+    <div class="container">
+      <div class="campaign-header">
+        <h3 class="uppercase">Campaign</h3>
+        <h2>A Treasure Trove <em class="italic">of</em> <span>Possibilities</span></h2>
+      </div>
+
+      <div class="campaign-grid">
+        <div class="campaign-content">
+          <p>From Rosh Hashana through the last days of summer, from tots to senior citizens, from year-round residents to vacationers, Chabad has Jewish life in Islip covered! There is something for everyone, and everyone is welcome.</p>
+          <button id="learn-more-btn" class="btn">+ Our Programs</button>
+        </div>
+        <div class="campaign-image">
+          <img src="https://placeholder.svg?height=400&width=600&query=community+center+interior" alt="Interior rendering of the community center">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Expandable Information div -->
+  <div id="expandable-info" class="expandable-div">
+    <div class="container">
+      <div class="info-boxes">
+        <div class="info-grid">
+          <div class="info-box">
+            <div class="info-box-icon">🏛️</div>
+            <h3>Building Features</h3>
+            <p>Our new community center will feature a spacious main hall that can accommodate up to 250 people for events, celebrations, and gatherings. The building will also include:</p>
+            <ul style="list-style: none; padding-left: 0;">
+              <li>• Modern classrooms for educational programs</li>
+              <li>• Library and study spaces</li>
+              <li>• Commercial kitchen for events</li>
+              <li>• Outdoor garden and playground</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <div class="info-box-icon">🗓️</div>
+            <h3>Programs & Services</h3>
+            <p>The community center will host a variety of programs and services designed to enrich the lives of community members of all ages:</p>
+            <ul style="list-style: none; padding-left: 0;">
+              <li>• Cultural and educational classes</li>
+              <li>• Holiday celebrations and festivals</li>
+              <li>• Youth and teen programs</li>
+              <li>• Senior activities and support services</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <div class="info-box-icon">🤝</div>
+            <h3>Community Impact</h3>
+            <p>The new center will have a profound impact on our community by:</p>
+            <ul style="list-style: none; padding-left: 0;">
+              <li>• Creating a central gathering place</li>
+              <li>• Preserving and sharing cultural heritage</li>
+              <li>• Providing educational opportunities</li>
+              <li>• Supporting families and individuals</li>
+              <li>• Building bridges across diverse groups</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline div -->
+  <div class="timeline" id="timeline">
+    <div class="container">
+      <div class="timeline-header">
+        <h2>Our Journey Through Time</h2>
+        <p>Explore the milestones and memories that have shaped our community over the years. Click on any year to see the corresponding image and story.</p>
+      </div>
+
+      <!-- Year Bar -->
+      <div class="year-bar-container">
+        <div class="year-bar" id="year-bar">
+          <div class="year-item active" data-year="2018">
+            <div class="year-number">2018</div>
+            <div class="year-description">Foundation</div>
+            <div class="image-overlay">
+              <div class="image-description">The beginning of our journey. Community leaders came together to establish the vision for a new community center in Oakville.</div>
+            </div>
+          </div>
+          <div class="year-item" data-year="2019">
+            <div class="year-number">2019</div>
+            <div class="year-description">First Events</div>
+          </div>
+          <div class="year-item" data-year="2020">
+            <div class="year-number">2020</div>
+            <div class="year-description">Virtual Connect</div>
+          </div>
+          <div class="year-item" data-year="2021">
+            <div class="year-number">2021</div>
+            <div class="year-description">Growth</div>
+          </div>
+          <div class="year-item" data-year="2022">
+            <div class="year-number">2022</div>
+            <div class="year-description">Expansion</div>
+          </div>
+          <div class="year-item" data-year="2023">
+            <div class="year-number">2023</div>
+            <div class="year-description">Campaign Launch</div>
+          </div>
+          <div class="year-item" data-year="2024">
+            <div class="year-number">2024</div>
+            <div class="year-description">Building Phase</div>
+          </div>
+          <div class="year-item" data-year="2025">
+            <div class="year-number">2025</div>
+            <div class="year-description">Grand Opening</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Images -->
+      <div class="timeline-images" id="timeline-images">
+        <div class="timeline-image active" data-year="2018" style="background-image: url('https://placeholder.svg?height=400&width=800&query=community+foundation+ceremony+2018')">
+          <div class="image-overlay">
+            <div class="image-title">Foundation Year - 2018</div>
+            <div class="image-description">The beginning of our journey. Community leaders came together to establish the vision for a new community center in Oakville.</div>
+          </div>
+        </div>
+        <div class="timeline-image" data-year="2019" style="background-image: url('https://placeholder.svg?height=400&width=800&query=community+events+gathering+2019')">
+          <div class="image-overlay">
+            <div class="image-title">First Community Events - 2019</div>
+            <div class="image-description">We hosted our first series of community events, bringing together families and individuals from across the region.</div>
+          </div>
+        </div>
+        <div class="timeline-image" data-year="2020" style="background-image: url('https://placeholder.svg?height=400&width=800&query=virtual+online+community+meeting+2020')">
+          <div class="image-overlay">
+            <div class="image-title">Virtual Connections - 2020</div>
+            <div class="image-description">During challenging times, we adapted by creating virtual programs and maintaining our community bonds online.</div>
+          </div>
+        </div>
+        <div class="timeline-image" data-year="2021" style="background-image: url('https://placeholder.svg?height=400&width=800&query=community+growth+programs+2021')">
+          <div class="image-overlay">
+            <div class="image-title">Community Growth - 2021</div>
+            <div class="image-description">Our community expanded significantly, with new families joining and participating in our growing list of programs.</div>
+          </div>
+        </div>
+        <div class="timeline-image" data-year="2022" style="background-image: url('https://placeholder.svg?height=400&width=800&query=community+expansion+activities+2022')">
+          <div class="image-overlay">
+            <div class="image-title">Program Expansion - 2022</div>
+            <div class="image-description">We launched new educational programs, youth activities, and cultural events to serve our diverse community.</div>
+          </div>
+        </div>
+        <div class="timeline-image" data-year="2023" style="background-image: url('https://placeholder.svg?height=400&width=800&query=fundraising+campaign+launch+2023')">
+          <div class="image-overlay">
+            <div class="image-title">Campaign Launch - 2023</div>
+            <div class="image-description">We officially launched our capital campaign to build a permanent home for our community center.</div>
+          </div>
+        </div>
+        <div class="timeline-image" data-year="2024" style="background-image: url('https://placeholder.svg?height=400&width=800&query=construction+building+phase+2024')">
+          <div class="image-overlay">
+            <div class="image-title">Building Phase - 2024</div>
+            <div class="image-description">Construction begins on our new community center, marking a major milestone in our journey.</div>
+          </div>
+        </div>
+        <div class="timeline-image" data-year="2025" style="background-image: url('https://placeholder.svg?height=400&width=800&query=grand+opening+celebration+2025')">
+          <div class="image-overlay">
+            <div class="image-title">Grand Opening - 2025</div>
+            <div class="image-description">The anticipated grand opening of our new community center, fulfilling our vision of a permanent home.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Testimonials Section -->
+  <div class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-container">
+        <!-- Navigation Arrows -->
+        <button class="nav-arrow" id="prev-testimonial">‹</button>
+        <button class="nav-arrow" id="next-testimonial">›</button>
+        
+        <div class="testimonial-slider" id="testimonial-slider">
+          <div class="testimonial-item active">
+            <div class="testimonial-quote">
+              The Chabad Community Center has become the heart of our neighborhood. The programs for our children are exceptional, and the sense of belonging we feel here is truly special. This campaign will ensure future generations have this wonderful home.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image" style="background-image: url('https://placeholder.svg?height=60&width=60&query=sarah+johnson+portrait')"></div>
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <div class="author-role">Community Member</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-quote">
+              As a longtime resident of Oakville, I've watched this community grow and flourish. The dedication of the leadership and the warmth of the members make this place truly unique. I'm proud to support this important campaign.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image" style="background-image: url('https://placeholder.svg?height=60&width=60&query=michael+cohen+portrait')"></div>
+              <div class="author-info">
+                <h4>Michael Cohen</h4>
+                <div class="author-role">Board Member</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-quote">
+              The educational programs and cultural events have enriched our family's life immeasurably. Our children have formed lasting friendships here, and we've found a true sense of community. This new building will be a gift to our entire region.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image" style="background-image: url('https://placeholder.svg?height=60&width=60&query=rachel+goldberg+portrait')"></div>
+              <div class="author-info">
+                <h4>Rachel Goldberg</h4>
+                <div class="author-role">Parent & Volunteer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-quote">
+              From the moment we moved to Oakville, the Chabad Community Center welcomed us with open arms. The support we received during difficult times and the joy we've shared during celebrations have made this our true home.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image" style="background-image: url('https://placeholder.svg?height=60&width=60&query=david+miller+portrait')"></div>
+              <div class="author-info">
+                <h4>David Miller</h4>
+                <div class="author-role">New Member</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-quote">
+              The vision for this new community center represents everything we value: tradition, learning, and bringing people together. I've seen firsthand how this organization transforms lives and builds bridges in our community.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image" style="background-image: url('https://placeholder.svg?height=60&width=60&query=lisa+thompson+portrait')"></div>
+              <div class="author-info">
+                <h4>Lisa Thompson</h4>
+                <div class="author-role">Local Business Owner</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-nav">
+          <div class="testimonial-dots" id="testimonial-dots">
+            <div class="dot active" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
+            <div class="dot" data-index="4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Campaign Details div -->
+  <div class="campaign-content-div" id="campaign-details">
+    <div class="container">
+      <div class="campaign-content-container">
+        <h2>A Vision for the Future</h2>
+        <div class="section section-hero">
+  <div class="container align-center" style="padding:0px 0px 40px 0px;">
+
+    <div class="row" style="margin: 20px 0;">
+      <div class="swiper-container highlight-swiper gallery-top col-12 col-md-8 swiper-container-fade swiper-container-initialized swiper-container-horizontal">
+        <div class="swiper-wrapper align-center" style="/* min-height:500px; */">
+                           <!--<div class="swiper-slide" style="background-image: url('https://www.chabadberkshires.org/wp-content/uploads/2021/08/Chabad-Berkshire-County-20547-Capital-Campaign-Website-Highlights.gif');color:#bdb78f;background-size: cover;"></div> -->
+			    <img class="swiper-slide swiper-slide-active" src="https://www.chabadberkshires.org/wp-content/uploads/2021/08/Chabad-Berkshire-County-20547-Capital-Campaign-Website-Highlights.gif" style="object-fit: cover; width: 760px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                    </div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+      <div class="col-12 col-md-4" style="background-color: #025550;display:flex; justify-content:center; align-items:center;">
+                        <div style="color: #bdb78f;margin:40px;" class="align-center">
+                  <p class="header-font font-48" style="color:#bdb78f;">New Campus Highlights</p>
+                  <div style="background-color:#bdb78f; height:5px; min-width: 40px;margin: 10px auto; max-width: 60%;"></div>
+                  <p style="color: #ffffff;">Social Hall<br>
+Sanctuary<br>
+Library<br>
+Guest Accommodations<br>
+Preschool/Childcare Center<br>
+Entrance Lobby</p><br>
+                </div>
+                </div>
+
+    </div>
+  </div> 
+</div>
+        <div class="campaign-progress">
+          <h4>Campaign Progress</h4>
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="progress-labels">
+            <span>$0 raised</span>
+            <span>$0 goal</span>
+          </div>
+        </div>
+        
+        <h3>How You Can Help</h3>
+        <p>Your contribution to our campaign will help create a vibrant community center that will serve as a home for cultural, educational, and spiritual activities for decades to come. Every donation, regardless of size, brings us closer to our goal.</p>
+        
+        <div class="donate-button-container">
+          <a href="#donate" class="btn donate-button">Make a Donation</a>
+        </div>
+        
+        <h3>Recognition Opportunities</h3>
+        <p>Donors who make significant contributions to our campaign will be recognized in various ways, including named spaces within the new building, recognition on our donor wall, and inclusion in our annual reports.</p>
+        
+        <p>For more information about recognition opportunities or to discuss a major gift, please contact our development office at development@chabadcommunity.org or call (123) 456-7890.</p>
+      </div>
+    </div>
+  </div>
+    <div class="dedication-list" id="dedication-list"></div>
+    <div id="donation-options">
+  <p>Select your donation amount:</p>
+  <div id="amount-buttons">
+    <button class="amount-btn" data-amount="1800">$1,800</button>
+    <button class="amount-btn" data-amount="720">$720</button>
+    <button class="amount-btn" data-amount="540">$540</button>
+    <button class="amount-btn" data-amount="360">$360</button>
+    <button class="amount-btn" data-amount="180">$180</button>
+    <button class="amount-btn" data-amount="other">Other</button>
+  </div>
+
+  <div id="other-input" style="display: none; margin-top: 10px;">
+    <input type="number" id="other-amount" placeholder="Enter your amount" />
+  </div>
+
+  <button id="donate-now" style="margin-top: 20px;">Donate</button>
+</div>
+    <div class="contact-form">
+
+   
+  <form autocomplete="off" action="/templates/articlecco.asp?aid=6968130" method="post" id="form1" onsubmit="return Co.Forms.Validation.Validate(this);" novalidate="true">
+              <input type="hidden" name="site" value="">
+              <input type="hidden" name="sc" value="">
+          
+              <div>
+                  <co:body xmlns:co="www1.chabadonline.com/alpha1" xmlns:ext="urn:xslt-extensions">
+    <div class="co_body article-body cf">
+  <div id="formBody">
+        <p><input type="text" name="Name" tabindex="1" required="false" class=" active">
+  <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></p><div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">&nbsp;</div>
+  <p></p>
+  <p><input type="text" name="Email" tabindex="1" required="false" class=" active">&nbsp;</p>
+  <p>&nbsp;<input type="text" name="Message" tabindex="1" required="false" class=" active"></p>
+  <p>&nbsp;</p>
+      </div>
+  </div>
+  </co:body>
+              </div>
+              <div class="break_floats"></div>
+              
+                      <div class="clearfix">
+                          
+  
+  
+  <script>
+      var recaptchaIsEnterprise = false;
+           var recaptchaV2Key = "6LcG_TcUAAAAAKAVgwgW39ujc9OCjXSoQYFIA-Su";
+  
+  </script>
+  
+      <input type="hidden" class="js-recaptcha-input" name="cdo-captcha-response" value="" data-div-id="aa8b9f8c-fc59-4a59-9cd6-68d3089944e0" data-processed="false" />
+      <div class="js-recaptcha-wrapper" id="aa8b9f8c-fc59-4a59-9cd6-68d3089944e0"></div>	
+  
+                      </div>
+                  
+                      <div class="ccoFormFooter">
+                          
+                              <div class="small bold center bottom_padding">
+                                  <div class="grey f-small"></div></div>
+                          
+                          <div align="center"><input type="submit" value="Submit" name="SubmitCCO" tabindex="1000">
+                              <input type="reset" value="Reset" tabindex="1001" id="reset1" name="reset1"></div>
+                          
+                              <p align="center" style="font-size: 8pt; color: #666666; font-family: Verdana, Helvetica; margin-bottom: 3px; margin-top: 6px;">
+                                  <img valign="absbottom" src="https://w2.chabad.org/images/global/icons/lock.gif" width="16" height="16" alt="Secure">
+                                  This page uses 128 bit SSL encryption to keep your data secure.
+                              </p>
+                          
+                      </div>
+                  
+                  <input type="hidden" name="FormCCOSubmited" value="true">
+              </form>
+               </div>
+  </co:template>
+
+<script src="script.js"></script> 
+
+</body>
+</html>
