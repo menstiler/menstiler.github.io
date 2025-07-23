@@ -134,16 +134,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Update DOM
           const bar = document.querySelector(".progress-bar");
-          const labels = document.querySelectorAll(".progress-labels span");
+          const label = document.querySelector(".campaign-progress h4");
 
           if (bar) {
             bar.style.width = `${percent}%`;
             bar.setAttribute("aria-valuenow", percent.toFixed(0));
           }
 
-          if (labels.length >= 2) {
-            labels[0].textContent = `$${raised.toLocaleString()} raised`;
-            labels[1].textContent = `$${goal.toLocaleString()} goal`;
+          if (label) {
+            label.textContent = `$${raised.toLocaleString()} OF $${goal.toLocaleString()} RAISED`;
           }
         }
       }

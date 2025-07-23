@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 .co_body,
 .co_content_container {
   padding: 0;
@@ -44,7 +49,21 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.container h2 {
+  padding-top: 0.3125rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Typography */
@@ -112,10 +131,10 @@ nav ul {
 }
 
 nav a {
-  color: #065f46;
+  color: #8b1739;
   text-decoration: none;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: color 0.2s;
@@ -132,7 +151,7 @@ nav a.active {
 /* Hero div */
 .hero {
   position: relative;
-  background-color: #065f46;
+  background-color: #8b1739;
   color: white;
   padding: 6rem 0;
   text-align: center;
@@ -145,10 +164,10 @@ nav a.active {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.chabadberkshires.org/wp-content/uploads/2021/07/Chabad-Berkshire-County-20547-Capital-Campaign-Website-1-Large.jpg");
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/489334153_3975351269347263_7072103475834563032_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=EBDKlndIDNwQ7kNvwFZmfZc&_nc_oc=AdlVeIbzWugBQfezm9012PFPqM-he-tozhHAYgL3Hxg9cFNJ0URfcYrw2EIKJR2-_Gg&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=buNgXuX4i6cRKqq36eLEzQ&oh=00_AfRYHiwK0udWMUnujEfaAdRa4OjmC_ikKvgu5pEhwglorA&oe=68860EDF");
   background-size: cover;
   background-position: center;
-  opacity: 1.2;
+  opacity: 0.4;
 }
 
 .hero-content {
@@ -184,13 +203,13 @@ nav a.active {
 }
 
 .campaign-header h3 {
-  color: #065f46;
+  color: #8b1739;
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
 }
 
 .campaign-header h2 {
-  color: #065f46;
+  color: #8b1739;
 }
 
 .campaign-grid {
@@ -209,7 +228,6 @@ nav a.active {
 .campaign-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .campaign-content h3 {
@@ -233,19 +251,21 @@ nav a.active {
 /* Button */
 .btn {
   display: inline-block;
-  background-color: #065f46;
-  color: white;
-  padding: 0.75rem 1.5rem;
+  color: #8b1739;
   border-radius: 0.25rem;
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.2s;
   border: none;
   cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .btn:hover {
-  background-color: #047857;
+  cursor: pointer;
 }
 
 .btn-white {
@@ -293,26 +313,64 @@ nav a.active {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
+  text-align: center;
+  transform: translateY(-5px);
+  overflow: hidden;
+  min-height: 300px;
 }
 
-.info-box:hover {
-  transform: translateY(-5px);
+.synagogue {
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/489458987_981496024124568_2934342979314554914_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=QiBB4CMjPSsQ7kNvwEwy81l&_nc_oc=AdmZ7QkXWODJTuPCE3NRKWXytRF3bNlo9FFoCO5ZAkSk_W0VwBmTMPMIcYwSZr84ZaA&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=glYi9BTVT4CzzEwzRs91FA&oh=00_AfSVZk7M04xxgOHMtmy8NoBUnzf5_ZB-XiY_LbjaPgjS_g&oe=6886D17D");
+}
+
+.programs {
+  background-image: url("https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/481476997_955990846675086_8710439350868386158_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_ohc=EgtoFwHRO1UQ7kNvwG8T7lE&_nc_oc=Adk1FIFaf8FjMwqKpJ7D0aIpMEz19xycMVRq71tIqO8OGxBKi4vd6XHsEU9iNOQyvfw&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=D90XEzT3J-V6ChELQSYZeQ&oh=00_AfRVWib3ZWHa_KQy1vgH8mQ614bM-Dygt9-taI3zigUAgw&oe=6886DA6F");
+}
+
+.outreach {
+  background-image: url("https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/481971740_958119746462196_7579648031868245889_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_ohc=LJB6vj8gry0Q7kNvwELySJE&_nc_oc=Adkj_QiPBQmi8q52SrcVqCFm6BdmQGcWgmCv_MLJGUP4GaLjtC7UCT4D5QBNHBmuVnM&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=LGF5NkAearfy9PNx5JZLoQ&oh=00_AfS6Ww9MDsrdM-BWGAjjMBhS5ckp1geA0NMNhU6sU51TDQ&oe=6886B051");
+}
+
+.families {
+  background-image: url("https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/481507975_955990893341748_1489808094547593710_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=njJ8Qn6_wMgQ7kNvwEucikT&_nc_oc=AdlvZ77DiSfxGvdAF5yzkFgZMGXoS2U_mf-T7rYxPeGlhFvbRaK4L3zIGTxzHfs4HNY&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&_nc_gid=D8YW_mSu0tE1CBxaFNgFkg&oh=00_AfSP7D8wYFuSjWBdkP3wX4uVPCLHlOW5uKOj0cZvVgedpg&oe=6886D3C1");
+}
+
+.social-services {
+  background-image: url("https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/513914692_1040539851553518_4282975238615325990_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_ohc=qAz0AGfuXE0Q7kNvwGCV-Jg&_nc_oc=Adkd4jv5cmRBJmb0AWqY2eh8ezta9l78mpYsa-AGgVDAJWJjLmF-X90r6GhjAdCc9rc&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=xI0bwQPmNzUTSg7IhuDzSQ&oh=00_AfT2KN6EiADiwXsWIgNJszYMM_NcpnCrl4hajFx5cwdDOA&oe=6886CA27");
+}
+
+.women {
+  background-image: url("https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/481902792_9000010656792080_3063866409104773428_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=f727a1&_nc_ohc=jmxO7z3srZ8Q7kNvwEw4nfj&_nc_oc=Adk3MrgeeQAjCjwEy_ZPHhplMDlzVZN1G-7k5sA85SXYKvlpGN9CDn1ZfVjbrodm2M4&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=43MHRYDQCv3ERKaOv8C-RA&oh=00_AfSojUCVX9voDsRwKrXGicShaGMsWyTZ0FMOcW2-nXhWKw&oe=6886ABC9");
 }
 
 .info-box h3 {
-  color: #065f46;
-  margin-bottom: 1rem;
+  color: #8b1739;
+  margin: 0.75rem;
+  z-index: 10;
+  position: relative;
+  top: 50%;
+  font-size: 1.3rem;
+}
+
+.info-box ul {
+  position: relative;
+  top: 48%;
+  font-size: 0.9rem;
 }
 
 .info-box-icon {
-  width: 3rem;
-  height: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 50%;
+  opacity: 0.7;
+  background-size: cover;
+  background-position: center;
   background-color: #d1fae5;
-  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
   color: #065f46;
   font-size: 1.5rem;
 }
@@ -321,7 +379,6 @@ nav a.active {
 .timeline {
   background-color: white;
   padding: 4rem 0;
-  border-top: 1px solid #e5e7eb;
 }
 
 .timeline-header {
@@ -330,7 +387,7 @@ nav a.active {
 }
 
 .timeline-header h2 {
-  color: #065f46;
+  color: #8b1739;
   margin-bottom: 1rem;
 }
 
@@ -349,7 +406,7 @@ nav a.active {
 .year-bar {
   display: flex;
   overflow-x: auto;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem 0;
   scrollbar-width: thin;
   scrollbar-color: #d1d5db #f3f4f6;
@@ -376,70 +433,96 @@ nav a.active {
 .year-item {
   flex-shrink: 0;
   background-color: #f9fafb;
-  border: 2px solid #e5e7eb;
+  /* border: 1px solid #8b1739; */
   border-radius: 0.5rem;
   padding: 1rem 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
-  min-width: 120px;
+  width: 120px;
   height: 250px;
-  background-image: url("https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/498930410_1010827004524803_7100011750910322479_n.jpg?stp=dst-jpg_p320x320_tt6&_nc_cat=108&ccb=1-7&_nc_sid=46905d&_nc_ohc=-Pgcn8rocTAQ7kNvwEjZcip&_nc_oc=Adm89Q2YFDU5EgQHtSDRqtQJoguyHWA-S-4YfjloVQ_oF7T_wijrLRqzlAMHjtJtAFo&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&edm=AC7C4-wEAAAA&_nc_gid=L9PUwaZ_Fj7RySx3BDbAVg&oh=00_AfS0JAwh8kTjr6P8YUAd1aBcaNOkVCiZwNQ-LvXUIR3r6A&oe=6885E294");
+  opacity: 1.2;
+  position: relative;
+  overflow: hidden;
+}
+
+.year-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-size: cover;
   background-position: center;
-  opacity: 1.2;
+  opacity: 0.8;
+}
+
+.grand-opening {
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/481144396_951165597157611_5634446021918761797_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=f727a1&_nc_ohc=AWwEA0cQmSUQ7kNvwE18C4H&_nc_oc=AdmZjTLYIGyM_pIUeb_D0rylw-K0Yw2pFAOSGwH67c8xc9Oo9fgw3oDv05chu_TcRzA&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=Ndu1pxnvquebMy_zSELEgg&oh=00_AfREWKUaKN3thTFwg4ucQwZUhqNnkKL6tRRlxvcHSwj4qw&oe=688602FE");
+}
+
+.community-torah {
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/472627121_8680112385448577_8451733629827234702_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=f727a1&_nc_ohc=bnnSeQgk7OcQ7kNvwE-mcUP&_nc_oc=AdnWgAHnLECexI75Kfdyit3szz-BOCmC0udnp4ihXdGgMBv9SxSFzyqAFaf_eeBRn7s&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=s1X5ZoSYJuXyYKrr5A-pHQ&oh=00_AfSBbnbl8GsNZ9fEIfqkj9d8h_8FQ4JVc8FmRIaYLFjTcQ&oe=688619F2");
+}
+
+.signing-on-property {
+  background-image: url("https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/481816098_3944538339095223_4638284835904851579_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Ye-LFz1b_8YQ7kNvwFBxLUv&_nc_oc=Adn0L-emR8yxyWF7hRpX9c0dJTy6D0ek37EwbRXwvG0vvAVrgctWaQc2Hw1ywRoAqxY&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&_nc_gid=sj2401s9ZsAIvNNRi4rCyg&oh=00_AfTSCoZ-NO1oHDrewaHEba6Ytbjc87tV5jaCqmdqjb8qGQ&oe=688610AE");
+}
+
+.new-chabad {
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/492001471_3991856984363358_5706854619713244920_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=3kJ32IGEvAsQ7kNvwEXjdZ9&_nc_oc=AdmyD4ZoUSgsP_IJ_AM07z9A7q9pb7laOQEG5KyDhXJrwb5Jff2IauhukEmYlq6afCA&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=4dJBglPWS0N-YWmf4phAMg&oh=00_AfQ16t0RCPc-Htl2tbCyBFkcbYFTkRiUO3uPVd_EF7nuXQ&oe=68860DA0");
+}
+
+.expansion {
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/481679106_958935563047281_4849955801731518529_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=XfnMZMzzS9kQ7kNvwHYjEnR&_nc_oc=AdlCV3q9aCoJkTUotUidMwQQel3JGKxL1onBHq9HaYU1sxWCuXYv0ROLDAAtgytvtvQ&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=mGFxnag0bbXCa2hMw_WAEw&oh=00_AfSdxq68q3mWxszYqesoXaf4O-lmA8xw1dNu-lCXYbARJQ&oe=6886130F");
+}
+
+.juda-hebrew-school {
+  background-image: url("https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/481195355_3933197876895936_4665989110093881614_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=PS_dnITwynUQ7kNvwF8Eivx&_nc_oc=AdlJcxw37qYE7k8OgHwUWg03sFWmqIfE3p0H6P9gaKSTCv2ov_9Ttprq0-TnPKY_Czg&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&_nc_gid=MyB6KrhK3RlmiixecoxbHA&oh=00_AfRPrP_w7Sg1eIIqIBQSG1WAIYrCcPKot96GNmt7f-W-yg&oe=68860615");
+}
+
+.first-womens-gala {
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/505860849_9690126251113847_8733131275478852302_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=qGQ4CWiBshwQ7kNvwHnYthm&_nc_oc=AdkX8JstKOSlJ55bjlyrl-AiMIO6awDJZweP0uR0bYNP-mW17a_6kM_yqghHo82A-lw&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=D7d764d8xNxnD-C7PYIdNA&oh=00_AfT1fZ0iOBvpXNvUJ4ao7yqHfPsj9_YH0ArYLl_2FSGUzg&oe=68861017");
 }
 
 .year-item:hover {
-  border-color: #065f46;
+  border-color: #8b1739;
   background-color: #ecfdf5;
+  opacity: 0.8;
 }
 
 .year-item.active {
-  background-color: #065f46;
+  background-color: #8b1739;
   color: white;
-  border-color: #065f46;
+  border-color: #8b1739;
   min-width: 250px;
+  position: relative;
+}
+
+.active .year-description {
+  display: block;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  font-weight: bold;
+  font-family: Georgia, serif;
+  color: #fff;
 }
 
 .year-number {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: Georgia, serif;
+  position: relative;
 }
 
 .year-description {
   font-size: 0.875rem;
   margin-top: 0.25rem;
-  opacity: 0.8;
-}
-
-/* Timeline Images */
-.timeline-images {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.timeline-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: end;
-}
-
-.timeline-image.active {
-  opacity: 1;
+  display: none;
 }
 
 .image-overlay {
@@ -463,7 +546,7 @@ nav a.active {
 
 /* Testimonials Section */
 .testimonials {
-  background-color: #065f46;
+  background-color: #8b1739;
   color: white;
   padding: 4rem 0;
   position: relative;
@@ -523,7 +606,7 @@ nav a.active {
 }
 
 .testimonial-quote {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-style: italic;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -545,7 +628,7 @@ nav a.active {
   font-size: 4rem;
   position: absolute;
   bottom: -2rem;
-  right: -2rem;
+  right: -1.7rem;
   opacity: 0.3;
   font-family: Georgia, serif;
 }
@@ -603,6 +686,7 @@ nav a.active {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  padding-bottom: 5px;
 }
 
 .nav-arrow:hover {
@@ -684,16 +768,33 @@ nav a.active {
 
 .campaign-content-div {
   padding: 4rem 0;
+  text-align: center;
 }
 
 .campaign-content-container {
-  max-width: 48rem;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
+.campaign-center {
+  display: flex;
+  justify-content: center;
+}
+
 .campaign-content-div h2 {
-  color: #065f46;
+  color: #8b1739;
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.campaign-logo {
+  background-image: url("https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-1/326494590_756729269128684_2536170988681463967_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=FaHIuDZ8AV8Q7kNvwGOgSS5&_nc_oc=AdkLzZ5NUMdbcHCIaTFSrUnOeVkYlUP2fNm7I7YJiMpgPH_cxS01D__QCqogp048HLc&_nc_zt=24&_nc_ht=scontent-lga3-3.xx&_nc_gid=ZHRbW464DT0rU0SVRFwncw&oh=00_AfQyyrWYRMVeAiywweZu7LqQ6IL-G78EfvQhSqUtxgyjKQ&oe=688616DC");
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
 }
 
 .campaign-content-div h3 {
@@ -701,6 +802,16 @@ nav a.active {
   margin: 2rem 0 1rem;
 }
 
+.header-font {
+  font-family: "Libre Baskerville", serif;
+  font-size: 48px !important;
+  text-align: center;
+}
+
+.align-center {
+  text-align: center;
+  color: #fff;
+}
 .campaign-content-div ul {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
@@ -711,25 +822,29 @@ nav a.active {
 }
 
 .campaign-progress {
-  background-color: #ecfdf5;
-  border: 1px solid #d1fae5;
   border-radius: 0.5rem;
   padding: 1.5rem;
-  margin: 2rem 0;
+  width: 760px;
+  margin: 5rem auto;
+}
+
+.campaign-progress h4 {
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  color: #8b1739;
 }
 
 .progress-bar-container {
   width: 100%;
   background-color: #e5e7eb;
-  border-radius: 9999px;
   height: 1rem;
   margin-bottom: 1rem;
 }
 
 .progress-bar {
-  background-color: #059669;
+  background-color: #8b1739;
   height: 1rem;
-  border-radius: 9999px;
   width: 0%;
   transition: width 0.6s ease;
 }
@@ -738,7 +853,7 @@ nav a.active {
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #8b1739;
 }
 
 .donate-button-container {
@@ -750,6 +865,63 @@ nav a.active {
 .donate-button {
   font-size: 1.125rem;
   padding: 1.5rem 2rem;
+}
+
+#formBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.contact-row {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.contact-form {
+  background-color: #e4e4e4;
+  padding: 40px;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+  width: 100%;
+  padding: 5px 4px;
+  font-family: inherit;
+  border: 0px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  min-height: 2.5rem;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  margin-top: 1rem;
+  resize: none;
+}
+
+.ccoFormFooter {
+  margin-top: 1rem;
+}
+
+.contact-form input[type="Submit"] {
+  background-color: #8b1739;
+  color: #fff;
+}
+
+.contact-form input[type="Reset"] {
+  color: #8b1739;
+}
+
+.contact-form input[type="Submit"],
+.contact-form input[type="Reset"] {
+  border-radius: 0.25rem;
+  padding: 8px 16px;
+  cursor: pointer;
 }
 
 /* Footer */
