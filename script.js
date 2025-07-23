@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const priceAndBtn = document.createElement("div");
           priceAndBtn.className = "price-btn-container";
-          itemDiv.appendChild(priceAndBtn);
 
           let actionEl;
           if (item.reserved) {
@@ -111,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           priceAndBtn.appendChild(actionEl);
+          itemDiv.appendChild(priceAndBtn);
           categoryContainer.appendChild(itemDiv);
         });
 
