@@ -18,10 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Remove old back link
-  const oldBackLink = document.querySelector(".cco_templateless_template");
-  if (oldBackLink) oldBackLink.remove();
-
   // Timeline Click Handler
   document.querySelectorAll(".year-item").forEach((yearItem) => {
     yearItem.addEventListener("click", function () {
@@ -472,3 +468,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function init() {
+  const observer = new MutationObserver(() => {
+    const oldBackLink = document.querySelector(".cco_templateless_template");
+    if (oldBackLink) oldBackLink.remove();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
+  // Also run immediately in case it's already in the DOM
+  const oldBackLink = document.querySelector(".cco_templateless_template");
+  if (oldBackLink) oldBackLink.remove();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}

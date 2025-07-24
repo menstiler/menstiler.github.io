@@ -8,12 +8,13 @@
 </head>
 <body>
   <!-- Header -->
-   <co:template id="HeaderSection" name="header_section" title="Header Section" type="static" detached="true">
+  <co:template id="HeaderSection" name="header_section" title="Header Section" type="static" detached="true">
+     <!-- <script src="https://menstiler.github.io/script.js"></script>  -->
    <div class="sticky-top">
     <div class="container">
       <div class="header-content">
         <div class="logo">
-      <h2>Chabad of Islip Township Center</h2>
+      <h2><a href="/6968063">Chabad of Islip Township Center</a></h2>
       </div>
        <div class="burger-menu" id="burger-menu">
           <div class="burger-line"></div>
@@ -23,15 +24,16 @@
       </div>
       <nav id="nav-menu">
         <ul>
-          <li><a href="#campaign">Campaign</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#donations">Donations</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/6968063#campaign">Campaign</a></li>
+          <li><a href="/6968063#timeline">Timeline</a></li>
+          <li><a href="/6968063#donations">Donations</a></li>
+          <li><a href="/6968063#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
 </div>
-
+</co:template>
+  <co:template title="Content Area" name="content_area" id="ContentArea" type="static" detached="true" >
 <div class="scroll-container">
   <!-- Hero div -->
   <div class="hero">
@@ -39,19 +41,17 @@
     <div class="container">
       <div class="hero-content">
         <p>Building Community Together</p>
-        <h2>A Living Landmark <em class="italic">in</em> <span>Islip</span></h2>
+        <h2 class="header-font ">A Living Landmark <em class="italic">in</em> <span>Islip</span></h2>
         <p>We are pleased and proud to invite you to join us in building a vibrant community presence in Islip, a living landmark that will promote love for tradition – and for our fellow neighbors – in one of the country's premier locations.</p>
         <div class="arrow-container">
           <div class="arrow">
-            <img src="https://menstiler.github.io/keyboard_double_arrow_down.png" />
-            <!-- <img src="./keyboard_double_arrow_down.png" /> -->
+            <a href="#campaign">
+            <img src="https://menstiler.github.io/keyboard_double_arrow_down.png" /></a>
           </div>
 </div>
       </div>
     </div>
   </div>
-  </co:template>
-  <co:template title="Content Area" actions="edit,delete" name="content_area" id="ContentArea" type="static" detached="true">
   <!-- Campaign div -->
   <div class="campaign" id="campaign">
     <div class="container">
@@ -139,7 +139,7 @@
   <div class="timeline" id="timeline">
     <div class="container">
       <div class="timeline-header">
-        <h2>Our Journey Through Time</h2>
+        <h2>Looking Back at Landmark Moments</h2>
         <p>Explore the milestones and memories that have shaped our community over the years.</p>
       </div>
 
@@ -307,6 +307,7 @@
     </div>
   </div>
   <div class="container">
+    <h2>Building Dedications</h2>
     <div class="dedication-list" id="dedication-list"></div>
   </div>
     <div id="donation-options">
@@ -372,7 +373,6 @@
                                   <div class="grey f-small"></div></div>
                           
                           <div align="center"><input type="submit" value="Submit" name="SubmitCCO" tabindex="1000">
-                              <input type="reset" value="Reset" tabindex="1001" id="reset1" name="reset1"></div>
                           
                               <p align="center" style="font-size: 8pt; color: #666666; font-family: Verdana, Helvetica; margin-bottom: 3px; margin-top: 6px;">
                                   <img valign="absbottom" src="https://w2.chabad.org/images/global/icons/lock.gif" width="16" height="16" alt="Secure">
@@ -386,7 +386,6 @@
                </div>
   </co:template>
 </div>
-<!-- <script src="https://menstiler.github.io/script.js"></script>  -->
 <script src="script.js"></script> 
 
 </body>
