@@ -9,7 +9,7 @@
 <body>
   <!-- Header -->
   <co:template id="HeaderSection" name="header_section" title="Header Section" type="static" detached="true">
-     <!-- <script src="https://menstiler.github.io/script.js"></script>  -->
+    <script src="https://menstiler.github.io/script.js"></script>  
    <div class="sticky-top">
     <div class="container">
       <div class="header-content">
@@ -24,10 +24,10 @@
       </div>
       <nav id="nav-menu">
         <ul>
-          <li><a href="/6968063#campaign">Campaign</a></li>
-          <li><a href="/6968063#timeline">Timeline</a></li>
-          <li><a href="/6968063#donations">Donations</a></li>
-          <li><a href="/6968063#contact">Contact</a></li>
+          <li><a href="#campaign">Campaign</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#donations">Donations</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -309,7 +309,6 @@
   <div class="container">
     <h2>Building Dedications</h2>
     <div class="dedication-list" id="dedication-list"></div>
-  </div>
     <div id="donation-options">
       <div class="dedication-category" style="margin-top: 1rem;">
         <h4>General Donations</h4>
@@ -330,6 +329,7 @@
   </div>
 
   <button id="donate-now" style="margin-top: 20px;">Donate</button>
+  </div>
 </div>
     <div id="contact" class="contact-form">
       <h2>Contact Us</h2>
@@ -386,7 +386,7 @@
                </div>
   </co:template>
 </div>
-<script src="script.js"></script> 
+<script type="module" src="script.js"></script> 
 
 </body>
 </html>

@@ -36,6 +36,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // DOM update for checkboxes
+  const items = document.querySelectorAll("#cid_1 label span");
+  items.forEach(function (el) {
+    if (el.innerHTML.includes("-")) {
+      el.innerHTML.split("-");
+      el.innerHTML =
+        "<div>" + el.innerHTML.replace("-", "</div><div>") + "</div>";
+    }
+    var spanText = el.innerText.toLowerCase();
+    if (spanText.includes("reserved") || spanText.includes("dedicated")) {
+      el.closest(".form-checkbox-item").classList.add("reserved-dedication");
+    }
+  });
+
   // Scrape dedications from another page
   async function scrapeEvents() {
     try {
@@ -167,8 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Handle checkbox changes
   function handleCheckboxChange(event) {
     const checkbox = event.target;
-    const name = checkbox.value;
-    const price = getPriceFromCheckbox(checkbox);
+    const name = checkbox.value.split("-")[0].trim();
+    const price = checkbox.value.split("-")[1].trim();
     const tableBody = document.getElementById("donation-table-body");
     const rowId = `row-${name.replace(/\s+/g, "-")}`;
 
@@ -212,7 +226,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(
       "donation-total"
     ).value = `$${total.toLocaleString()}`;
-    document.getElementById("donation-total-raw").value = total;
+    document.getElementById("total_amount").value = total;
+    document.getElementById(
+      "total_amount"
+    ).textContent = `$${total.toLocaleString()}`;
   }
 
   // Checkboxes initialized
@@ -248,17 +265,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .split(",")
         .map((opt) => opt.trim().toLowerCase());
       options.forEach((option) => {
-        const label = Array.from(document.querySelectorAll("label[for]")).find(
-          (lbl) => lbl.textContent.trim().toLowerCase() === option
+        const checkboxInput = Array.from(
+          document.querySelectorAll("input[type='checkbox']")
+        ).find(
+          (lbl) => lbl.value.split("-")[0].trim().toLowerCase() === option
         );
 
-        if (label) {
-          const inputId = label.getAttribute("for");
-          const checkbox = document.getElementById(inputId);
-          if (checkbox && checkbox.type === "checkbox") {
-            checkbox.checked = true;
-            handleCheckboxChange({ target: checkbox });
-          }
+        if (checkboxInput && checkbox.type === "checkbox") {
+          checkboxInput.checked = true;
+          handleCheckboxChange({ target: checkbox });
         }
       });
 
@@ -301,22 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   checkOptionsFromParams();
-
-  const radios = document.querySelectorAll('input[name="payment-method"]');
-  const creditCardSection = document.getElementById("credit-card-payment");
-  const callMeMessage = document.getElementById("call-me-message");
-
-  radios.forEach((radio) => {
-    radio.addEventListener("change", function () {
-      if (this.value === "credit-card") {
-        creditCardSection.style.display = "block";
-        callMeMessage.style.display = "none";
-      } else if (this.value === "call-me") {
-        creditCardSection.style.display = "none";
-        callMeMessage.style.display = "block";
-      }
-    });
-  });
 
   let selectedAmount = null;
 
@@ -468,25 +467,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-function init() {
-  const observer = new MutationObserver(() => {
-    const oldBackLink = document.querySelector(".cco_templateless_template");
-    if (oldBackLink) oldBackLink.remove();
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
-
-  // Also run immediately in case it's already in the DOM
-  const oldBackLink = document.querySelector(".cco_templateless_template");
-  if (oldBackLink) oldBackLink.remove();
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
