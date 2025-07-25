@@ -53,9 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Scrape dedications from another page
   async function scrapeEvents() {
     try {
-      const res = await fetch(
-        "/templates/articlecco_cdo/aid/6968386/jewish/Untitled.htm"
-      );
+      const res = await fetch("/6968386");
       const html = await res.text();
       const doc = new DOMParser().parseFromString(html, "text/html");
 
@@ -119,9 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
             actionEl.className = "dedicate-disabled";
           } else {
             actionEl = document.createElement("a");
-            actionEl.href = `/templates/articlecco_cdo/aid/6968640/jewish/Untitled.htm?${new URLSearchParams(
-              { options: item.options }
-            )}`;
+            actionEl.href = `/6970745?${new URLSearchParams({
+              options: item.options,
+            })}`;
             actionEl.textContent = "Dedicate";
             actionEl.className = "dedicate-link";
           }
@@ -356,9 +354,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Redirect with amount in query params
-    const url = `/templates/articlecco_cdo/aid/6968640/jewish/Untitled.htm?amount=${encodeURIComponent(
-      selectedAmount
-    )}`;
+    const url = `/6970745?amount=${encodeURIComponent(selectedAmount)}`;
     window.location.href = url;
   });
 
