@@ -117,9 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
             actionEl.className = "dedicate-disabled";
           } else {
             actionEl = document.createElement("a");
-            actionEl.href = `/6970745?${new URLSearchParams({
-              options: item.options,
-            })}`;
+            actionEl.href = `/templates/articlecco_cdo/aid/6970745/jewish/Donations.htm?${new URLSearchParams(
+              { options: item.options }
+            )}`;
             actionEl.textContent = "Dedicate";
             actionEl.className = "dedicate-link";
           }
@@ -354,7 +354,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Redirect with amount in query params
-    const url = `/6970745?amount=${encodeURIComponent(selectedAmount)}`;
+    const url = `/templates/articlecco_cdo/aid/6970745/jewish/Donations.htm?amount=${encodeURIComponent(
+      selectedAmount
+    )}`;
     window.location.href = url;
   });
 
