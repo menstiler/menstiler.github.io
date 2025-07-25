@@ -227,7 +227,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("total_amount").value = total;
     document.getElementById(
       "total_amount"
-    ).textContent = `$${total.toLocaleString()}`;
+    ).textContent = `$${total.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    })}`;
   }
 
   // Checkboxes initialized
@@ -269,9 +272,9 @@ document.addEventListener("DOMContentLoaded", function () {
           (lbl) => lbl.value.split("-")[0].trim().toLowerCase() === option
         );
 
-        if (checkboxInput && checkbox.type === "checkbox") {
+        if (checkboxInput && checkboxInput.type === "checkbox") {
           checkboxInput.checked = true;
-          handleCheckboxChange({ target: checkbox });
+          handleCheckboxChange({ target: checkboxInput });
         }
       });
 
