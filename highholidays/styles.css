@@ -1,0 +1,1371 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:200,400,700|La+Belle+Aurore");
+
+.cco_templateless_template a {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  background-color: #7d7070;
+}
+
+.widget-1 {
+  background: 0 0;
+  border: none;
+}
+
+.widget_content {
+  padding: 0;
+}
+
+.cco_templatelates_content {
+  margin-bottom: 0;
+}
+
+.no_margin .g960 {
+  float: none;
+}
+
+.cco_templateless_page #BodyContainer {
+  width: 100%;
+}
+
+.cco_templateless_page #chabad_main_content {
+  background-image: url(/images/Shluchim/minisites/themes/highHolidays/High-Holidays_background.jpg);
+  background-blend-mode: screen;
+  background-size: contain;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+a.parent.arrow:hover {
+  background: url(/images/shluchim/minisites/down_triangle_black.gif) right 5px
+    center no-repeat;
+}
+
+.sPromo-wrap .caption,
+.textWrapper {
+  background: rgba(255, 255, 255, 0.75);
+  bottom: 0;
+  width: 100%;
+}
+
+.sPromo-wrap {
+  display: inline-block;
+  margin-left: 4px;
+  width: 100%;
+  max-height: 250px;
+  position: relative;
+}
+
+.sPromo-wrap:first-child {
+  margin-left: 0;
+}
+
+.sPromo-wrap a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.sPromo-wrap img {
+  height: 100%;
+  border: 1px solid #c3c1b8;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.sPromo-wrap .caption {
+  position: absolute;
+  height: 38px;
+  line-height: 36px;
+  font-weight: 400;
+  font-size: 15pt;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bannerCta button,
+.read-more_link a {
+  box-shadow: none;
+  text-shadow: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sPromo-wrap:hover img {
+  opacity: 0.5;
+}
+
+.section_root #co_body_container {
+  width: 100%;
+}
+
+.section_root #ContentBody .content-area-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sPromo-flex {
+  max-height: 250px;
+  flex: 1 1 250px;
+  min-width: 200px;
+  max-width: 500px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid #c3c1b8;
+}
+
+.sPromo-flex a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.sPromo-flex img {
+  height: 100%;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.read-more_link a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 18px;
+  transition: all 0.4s;
+}
+
+.read-more_link a:hover {
+  text-decoration: none;
+}
+
+.co_photo_gallery_head {
+  font-size: 20pt;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.appeal .title,
+.co_calendar_head,
+.co_photo_gallery_head,
+.custom_message .title,
+.feature_caption,
+.feature_caption a,
+.features_title,
+.prepResource-title {
+  font-family: Oswald, Arimo, sans-serif;
+  color: #9e8657;
+}
+
+.features_title {
+  margin-bottom: 10px;
+}
+
+.co_calendar_head::before {
+  content: url(/images/Shluchim/minisites/themes/highHolidays/High-Holidays_apple.png);
+}
+
+div#chabad_main_content {
+  width: 100%;
+}
+
+.cco_templateless_template {
+  background-image: none;
+  background-color: inherit;
+}
+
+.cco_templateless_template a {
+  font-size: 15pt;
+  padding-left: 50px;
+  text-decoration: none;
+  line-height: 40px;
+  height: 40px;
+}
+
+.chabad_header .headerTitle,
+.chabad_header .headerTitle a {
+  font-size: 100pt;
+  padding-top: 100px;
+  line-height: 130px;
+  font-family: "Abril Fatface", sans-serif;
+  color: #5a2d2d;
+}
+
+.article-header__title {
+  font-size: 30px;
+}
+
+.article-header__subtitle,
+.article-header__title {
+  color: #8f2702;
+  font-family: Montserrat, sans-serif;
+}
+
+.centerName {
+  font-size: 27pt;
+  color: #5a2d2d;
+  font-family: "Abril Fatface", sans-serif;
+}
+
+html body.cco_body .holidayDates,
+html body.cco_body .holidayDates p {
+  font-size: 23pt;
+  font-weight: lighter;
+  color: #2d2317;
+  font-family: Montserrat, sans-serif;
+}
+
+div#chabad_head .chabad_navigator_bar {
+  background-color: #e3c188;
+  width: 100%;
+  border: none;
+  margin: 0;
+  height: 45px;
+}
+
+div#chabad_head .chabad_navigator_bar ul {
+  display: inline-block;
+  margin: auto;
+}
+
+div#chabad_head .chabad_navigator_bar ul li a {
+  font-size: 20px;
+  font-weight: 400;
+  visibility: visible;
+  line-height: 45px;
+  margin-top: 0;
+  color: #fff;
+  font-family: Montserrat, sans-serif !important;
+  border-right: inherit;
+}
+
+div#chabad_head .chabad_navigator_bar ul li ul li:hover {
+  background: #e8d2ae;
+}
+
+div#chabad_head .chabad_navigator_bar ul li ul li a {
+  color: #7d530e;
+  line-height: 28px;
+  min-width: 140px;
+}
+
+div#chabad_head .chabad_navigator_bar ul li .sub_menu {
+  top: 45px !important;
+  text-align: left;
+}
+
+#navigation li.parent:last-child a.parent {
+  /* border-right: 0 solid #c3c1b8; */
+  border-right: inherit;
+}
+
+#navigation li.parent.selected a.parent {
+  color: #000;
+  font-weight: 700;
+  background-color: #e8d2ae;
+}
+
+#navigation li.parent a.parent {
+  transition: all 0.5s;
+  background-color: #e3c188;
+}
+
+#navigation li.parent a.parent:hover,
+#navigation li.parent a.parent:hover + .sub_menu_toggle {
+  background-color: #e8d2ae;
+  color: #7d530e;
+}
+
+.arrow {
+  transition: none !important;
+}
+
+.sub_menu .item {
+  background-color: #e3c188;
+}
+
+.sub_menu .item a {
+  border-right: 0 !important;
+  max-width: 100% !important;
+}
+
+.sub_menu .item a:hover {
+  color: #000;
+}
+
+.large_banner {
+  border: 1px solid #c3c1b8;
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bannerCta button,
+.donate_link a,
+.read-more_link a {
+  border: 2px solid #2d2317;
+  font-family: Montserrat, sans-serif;
+}
+
+.bannerContainer a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.bannerContainer .wrapper-message a {
+  position: unset;
+}
+
+.donate_link a,
+.read-more_link a {
+  color: #2d2317;
+  background: 0 0;
+}
+
+.donate_link a:hover,
+.read-more_link a:hover {
+  background: #2d2317;
+  color: #fff;
+}
+
+.textWrapper {
+  padding: 11px 100px;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.textWrapper span {
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+}
+
+.textWrapper .big {
+  display: block;
+  font-size: 22px;
+  margin: 5px;
+}
+
+.bannerCta button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 18px;
+  transition: all 0.4s;
+  color: #fff;
+  background: #2d2317;
+}
+
+.small_promos {
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.wrap-image .bannerContainer img,
+.wrap-image .statimg {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.wrap-image:hover .bannerContainer img,
+.wrap-image:hover .statimg {
+  opacity: 0.5;
+}
+
+.wrap-image:hover .wrap-image2 {
+  opacity: 1;
+}
+
+.wrap-image2 {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.custom_message {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.custom_message .message {
+  font-family: Montserrat, sans-serif;
+  font-size: 16pt;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px;
+}
+
+#co_calendar,
+#co_photo_gallery {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.custom_message .title {
+  font-size: 34pt;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#co_calendar {
+  display: inline-block;
+  text-align: left;
+}
+
+#co_calendar .item {
+  float: left;
+  padding: 15px;
+}
+
+.co_calendar_head,
+.features_title,
+.photo_title {
+  font-size: 20pt;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.co_date,
+.co_title_calendar a {
+  font-size: 17pt;
+  text-decoration: none;
+  line-height: 25px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.co_content {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.co_calendar_text {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  background-color: #e3cca4;
+  background-clip: content-box;
+}
+
+.co_date,
+.co_title_calendar a,
+.sPromo-wrap .caption {
+  font-family: Oswald, Arimo, sans-serif;
+}
+
+.co_text_calendar {
+  padding-top: 10px;
+}
+
+.co_date::after {
+  content: "\a>>>";
+  white-space: pre;
+}
+
+.co_photo_gallery {
+  text-align: center;
+}
+
+.co_photo_gallery a {
+  display: inline;
+}
+
+.co_photo_gallery a:hover {
+  text-decoration: none !important;
+}
+
+.co_photo_gallery a img {
+  width: 20%;
+  margin: 4px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.co_features {
+  display: inline-block;
+  margin: 5px;
+  width: 250px;
+}
+
+.co_features img {
+  width: 100%;
+}
+
+.feature_caption,
+.feature_caption a {
+  font-size: 14pt;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+#footerContainer,
+#footerContainer a,
+.footer,
+.footer a {
+  font-size: 15px;
+  color: #2d2317;
+}
+
+.co_photo_gallery_footer {
+  display: none;
+}
+
+#footerContainer,
+.footer {
+  margin-top: 0;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background-color: #ece3c7;
+  font-family: Montserrat, sans-serif;
+}
+
+.large_bottom_margin {
+  margin: 20px;
+}
+
+.g960 {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mobile .footer_inner_container .back_to_top {
+  left: 10px;
+  bottom: 25px;
+  width: 30px;
+  height: 30px;
+}
+
+.mobile .footer_inner_container .back_to_top .arrow {
+  margin: -3px -6px;
+}
+
+.chabad_header {
+  width: 100%;
+}
+
+@media only screen and (max-device-width: 650px) {
+  .textWrapper {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .textWrapper .big {
+    color: #000;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  #co_calendar .item .calendar-width,
+  .calendar-width {
+    max-width: 936px;
+  }
+
+  .co_content {
+    width: 100%;
+  }
+
+  #co_calendar .item .normal-width {
+    width: 300px;
+  }
+
+  #co_calendar .item .normal-width.last {
+    width: 600px;
+  }
+
+  #co_calendar .item.medium-width,
+  #co_calendar .item.normal-width,
+  #co_calendar .item.small-width {
+    width: 203px;
+  }
+
+  #co_calendar .item.large-width {
+    width: 300px;
+  }
+
+  .custom_message .message,
+  body.mobile #navigation.chabad_navigator_bar #menu {
+    width: 100%;
+  }
+
+  div#chabad_body_content {
+    background-color: #fff;
+  }
+
+  .chabad_header {
+    background-position: bottom center;
+    background-attachment: inherit;
+  }
+
+  .chabad_header .headerTitle {
+    padding-top: 90px;
+  }
+
+  .holidayDates {
+    padding-bottom: 75px;
+  }
+
+  body.mobile #navigation.chabad_navigator_bar #menu li:not(.heading) {
+    padding: 0;
+  }
+
+  div#chabad_head .chabad_navigator_bar ul li a {
+    border-right: 0 !important;
+  }
+
+  body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
+    /* margin-top: 10px; */
+    height: 45px;
+  }
+
+  .bannerCta button {
+    margin-top: 0;
+  }
+
+  .small_promos {
+    margin-top: 10px;
+  }
+
+  .co_features {
+    width: 25%;
+  }
+
+  .co_photo_gallery_head {
+    text-align: center;
+  }
+
+  .co_photo_gallery a {
+    margin: 5px;
+  }
+
+  .co_photo_gallery a img {
+    width: 27%;
+  }
+
+  .g960.footer {
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 651px) {
+  #co_calendar .item {
+    min-height: 175px;
+  }
+
+  .co_calendar_text {
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+}
+
+@media only screen and (min-device-width: 1025px) {
+  #co_calendar .item.small-width {
+    width: 160px;
+  }
+
+  #co_calendar .item.normal-width {
+    width: 200px;
+  }
+
+  #co_calendar .item.medium-width {
+    width: 267px;
+  }
+
+  #co_calendar .item.large-width {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
+  .co_calendar_text {
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .co_calendar_text {
+    padding-left: 62px;
+    padding-right: 62px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .co_calendar_text {
+    padding-left: 53px;
+    padding-right: 52px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+  .co_calendar_text {
+    padding-left: 62px;
+    padding-right: 62px;
+  }
+}
+
+@media only screen and (max-device-width: 650px) {
+  .co_photo_gallery_head,
+  .textWrapper span {
+    text-align: center;
+  }
+
+  .textWrapper {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .textWrapper .big {
+    color: #000;
+    margin: 15px;
+  }
+
+  .cco_templateless_template a {
+    padding-left: 0;
+  }
+
+  div.chabad_left_column {
+    padding-top: 10px;
+  }
+
+  .chabad_header {
+    background-size: cover;
+    background-position: center 0;
+    background-attachment: inherit;
+  }
+
+  .chabad_header .headerTitle {
+    font-size: 75px;
+    padding-top: 50px;
+    line-height: 90px;
+  }
+
+  .centerName,
+  .holidayDates {
+    font-size: 20pt;
+  }
+
+  .holidayDates {
+    padding-bottom: 60px;
+  }
+
+  div#chabad_head .chabad_navigator_bar ul li a {
+    border-right: none;
+    line-height: 45px;
+  }
+
+  body.mobile #navigation.chabad_navigator_bar #menu {
+    width: 100%;
+    height: 45px;
+  }
+
+  body.mobile .g960.footer {
+    padding: 10px;
+  }
+
+  .textWrapper {
+    padding: 5px;
+    float: none;
+    left: 0;
+    height: auto !important;
+  }
+
+  .textWrapper .wrapper-message {
+    display: none;
+  }
+
+  .sPromo-wrap {
+    margin: 8px 8px 8px auto;
+  }
+
+  .small_promos img {
+    width: 75%;
+    display: initial;
+  }
+
+  .custom_message .title {
+    font-size: 25pt;
+  }
+
+  .custom_message .message {
+    width: 100%;
+    font-size: 15pt;
+    padding: 10px;
+    color: #9e8657;
+  }
+
+  #co_calendar {
+    display: block;
+    clear: both;
+  }
+
+  #co_calendar .item {
+    float: none;
+    width: 100% !important;
+    height: auto;
+  }
+
+  .co_features,
+  .photo {
+    display: inline-block;
+    margin: 0 auto;
+    width: 45%;
+    padding-bottom: 15px;
+  }
+
+  .feature_caption a {
+    font-size: 10pt;
+  }
+
+  .co_photo_gallery a img {
+    width: 49% !important;
+  }
+}
+
+@media only screen and (max-device-width: 650px) and (max-width: 650px) {
+  .small_promos {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.co_photo_gallery a {
+  margin: 0;
+}
+
+.cco_templateless_page .chabad_header {
+  padding: 50px 0;
+}
+
+.chabad_header {
+  padding: 40px;
+  height: auto;
+  text-align: center;
+  /* background-position: right bottom; */
+  /* background-repeat: no-repeat; */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* background-blend-mode: screen; */
+}
+
+.appeal .message,
+.appeal .title,
+.section_root #co_body_container {
+  text-align: left;
+}
+
+.chabad_header .headerTitle {
+  padding: 0;
+}
+
+.holidayDates {
+  padding-top: 20px;
+}
+
+.sub_menu {
+  visibility: visible;
+}
+
+.appeal {
+  padding: 0 100px;
+}
+
+.appeal .title {
+  text-transform: uppercase;
+  font-size: 20pt;
+}
+
+.appeal .read-more_link {
+  margin: 25px 0;
+  width: 15%;
+}
+
+.appeal .custom_message {
+  padding: 25px;
+}
+
+.appeal .message {
+  padding: 20px 0;
+  font-family: Montserrat, sans-serif !important;
+  color: #9e8657;
+}
+
+.appealImg img {
+  width: 40%;
+  float: right;
+}
+
+div#chabad_head .chabad_navigator_bar ul li {
+  background-color: #fff;
+  color: #fff;
+}
+
+body.mobile .chabad_navigator_bar #menu .item.heading {
+  background-color: #e3c188;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  body.mobile #navigation.chabad_navigator_bar #menu li:not(.heading) {
+    padding-left: 0;
+    background-color: #e3c188;
+  }
+}
+
+#co_calendar div.co_calendar_body .item.item.first {
+  background-color: #835b4d;
+}
+
+#co_calendar div.co_calendar_body .item:nth-child(3),
+#co_calendar div.co_calendar_body .item:nth-child(5).last {
+  background-color: #835b4d;
+}
+
+#co_calendar div.co_calendar_body .item:nth-child(2),
+#co_calendar div.co_calendar_body .item:nth-child(4),
+#co_calendar div.co_calendar_body .item:nth-child(5),
+#co_calendar div.co_calendar_body .item:nth-child(7) {
+  background-color: #e3c188;
+}
+
+#co_calendar div.co_calendar_body .item.medium-width:nth-child(5) {
+  background-color: #835b4d;
+}
+
+#co_calendar div.co_calendar_body .item.medium-width:nth-child(6) {
+  background-color: #e3c188;
+}
+
+#co_calendar div.co_calendar_body div div div:nth-child(6),
+#co_calendar div.co_calendar_body div div div:nth-child(8) {
+  background-color: #835b4d;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  body.mobile .chabad_navigator_bar #menu .item.heading a {
+    background: url(/images/shluchim/minisites/down_triangle_white.gif) right
+      center no-repeat;
+  }
+
+  body.mobile .chabad_navigator_bar .sub_menu_toggle {
+    background: url(/images/shluchim/minisites/down_triangle_white.gif) center
+      center no-repeat;
+  }
+
+  body.mobile div.chabad_navigator_bar #menu .sub_menu ul {
+    border-left: 3px solid #fff;
+  }
+
+  body.mobile #navigation.chabad_navigator_bar #menu li:not(.heading) {
+    padding-left: 0;
+  }
+
+  .cco_templateless_page .chabad_header,
+  .chabad_header {
+    background-blend-mode: screen;
+    background-position: left bottom;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .chabad_header .headerTitle {
+    padding-top: 50px;
+  }
+
+  .holidayDates {
+    padding-bottom: 50px;
+  }
+
+  div#chabad_head .chabad_navigator_bar ul li ul li {
+    min-height: 0;
+  }
+
+  .arrow:hover {
+    background: 0 0;
+  }
+
+  .sPromo-wrap .caption {
+    max-width: 100%;
+  }
+
+  #co_calendar div.co_calendar_body .item:nth-child(5),
+  #co_calendar div.co_calendar_body .item:nth-child(7) {
+    background-color: #835b4d;
+  }
+
+  #co_calendar div.co_calendar_body .item:nth-child(6),
+  #co_calendar div.co_calendar_body .item:nth-child(8) {
+    background-color: #e3c188;
+  }
+}
+
+@media only screen and (max-device-width: 650px) {
+  .chabad_header .headerTitle,
+  .chabad_header .headerTitle a {
+    font-size: 65px;
+    line-height: 70px;
+  }
+
+  .appeal,
+  .appeal .custom_message {
+    padding: 10px;
+  }
+
+  .appeal .message,
+  .appeal .title {
+    text-align: center;
+  }
+
+  .appeal .read-more_link {
+    width: 100%;
+  }
+
+  .appealImg img {
+    float: none;
+    width: 75%;
+  }
+
+  .sPromo-wrap {
+    margin: 8px auto;
+  }
+}
+
+.sub_menu,
+.sub_menu .item {
+  background-color: #e3c188;
+}
+
+.special_message {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  padding: 11px 25px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.special_message .bannerCta {
+  text-align: center;
+}
+
+.special_message .bannerCta button {
+  cursor: pointer;
+}
+
+.co_features_home {
+  width: 150px !important;
+  vertical-align: top;
+}
+
+#RegisterSinglePage:has(.event_description img)
+  :is(#RegisterHeader .column1, #RegisterHeader .column2) {
+  width: auto;
+}
+
+.embedded_form .small {
+  display: none;
+}
+
+.form-checkbox-item,
+.form-radio-item {
+  align-items: center;
+}
+
+.form-multiple-column:has(label[for^="input_tran"]) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section_root #ContentBody .content-area-parent:has(#RegisterSinglePage) {
+  display: block;
+}
+
+.section_root #co_body_container:has(#RegisterSinglePage) {
+  text-align: initial;
+}
+
+.co_body td,
+.co_body tr,
+.co_body table {
+  max-width: 90vw;
+}
+
+.chabad_header {
+  background-size: cover;
+}
+
+.latest_features {
+  width: -webkit-fill-available;
+}
+
+.special_message {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  padding: 11px 25px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.special_message .messageCta {
+  text-align: center;
+}
+
+.special_message .messageCta button {
+  cursor: pointer;
+}
+
+.special_message .bannerCta {
+  display: block !important;
+}
+
+@media only screen and (min-width: 1024px) {
+  .co_features_home {
+    width: 215px;
+  }
+}
+
+.co_features_home {
+  vertical-align: top;
+}
+
+.features_title {
+  line-height: 130%;
+}
+
+div[name="co_section"][real_id^="column_promo"] {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  .sPromo-flex {
+    overflow: hidden;
+    margin: auto;
+  }
+}
+
+.sPromo-wrap {
+  overflow: hidden;
+}
+
+.cco_templateless_template {
+  overflow: hidden;
+  margin-top: -30px;
+}
+
+.chabad_header {
+  background-image: url("https://w2.chabad.org/media/images/1329/jEpV13291460.png");
+  height: auto;
+}
+
+.chabad-header-inner img {
+  width: 650px;
+  height: auto;
+
+  @media (max-device-width: 650px) {
+    width: 100%;
+  }
+}
+
+.cco_templateless_page .chabad_header {
+  padding: 50px 0;
+}
+
+.div#chabad_head .chabad_navigator_bar {
+  margin: 10px auto;
+}
+
+.cco_templateless_page #chabad_main_content {
+  background-image: inherit;
+}
+
+div#chabad_head .chabad_navigator_bar {
+  background-color: inherit;
+}
+
+#navigation li.parent a.parent {
+  background-color: inherit;
+  color: #5a2d2d;
+  border-bottom: 2px solid #ff9d00;
+  margin-right: 5px;
+
+  @media (max-width: 650px) {
+    width: 100%;
+    border-bottom: 0px;
+  }
+}
+
+div#chabad_head .chabad_navigator_bar ul li {
+  background-color: inherit;
+}
+
+div#chabad_head .chabad_navigator_bar ul li a {
+  color: white;
+  padding: 0px 24px;
+}
+
+.ct-header .ct-nav .ct-nav-inner .chabad_menu_content .navi .item.parent {
+  font-size: 0;
+}
+
+div#chabad_head .chabad_navigator_bar ul li a {
+  text-transform: uppercase;
+  font-family: "Muli", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-right: inherit;
+}
+
+#navigation li.parent.selected a.parent {
+  color: #000;
+  font-weight: 700;
+  background-color: #e8d2ae;
+}
+
+.text-container {
+  text-align: center;
+  font-family: "Montserrat";
+  /* margin: 5% auto; */
+  font-size: 18px;
+}
+
+.actions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.actions-container .action a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 30px;
+  width: 250px;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    opacity: 0.8;
+    -webkit-transition: opacity 0.3s;
+    cursor: pointer;
+  }
+
+  img {
+    width: 140px;
+    height: auto;
+  }
+}
+
+body.mobile #chabad_head .chabad_content_head,
+body.mobile #chabad_head > .chabad_header {
+  display: block;
+}
+
+body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
+  margin-top: inherit;
+}
+
+.appeal-container {
+  background-image: url(https://chabadofislip.com/media/images/1329/uPFI13291498.png);
+  padding: 50px 10px 120px;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  font-family: "Montserrat";
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.appeal-button-container a {
+  background: #d0df8c;
+  color: black;
+  padding: 15px 20px;
+  font-size: 16px;
+  text-decoration: none;
+
+  &:hover {
+    background: #ece3c7;
+    transition: 0.3s;
+  }
+}
+
+.appeal-header {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.appeal-text {
+  max-width: 950px;
+  text-align: center;
+}
+
+div#content_page {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.form-submit-button {
+  background: #b6427c !important;
+  color: white !important;
+  border: 0px !important;
+  padding: 15px 35px !important;
+  font-size: 20px !important;
+  box-shadow: none !important;
+
+  &:hover {
+    transition: all 500ms;
+    opacity: 0.8;
+  }
+}
+
+img.form-image {
+  width: 70% !important;
+}
+
+.clearfix.bh.mobile-only.align_right {
+  top: 0 !important;
+}
