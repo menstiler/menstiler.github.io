@@ -55,9 +55,7 @@ function getFromSheet() {
 }
 
 if (document.readyState !== "loading") {
-  sectionRuleInjection();
   getFromSheet();
 } else {
-  document.addEventListener("DOMContentLoaded", sectionRuleInjection);
   document.addEventListener("DOMContentLoaded", getFromSheet);
 }
