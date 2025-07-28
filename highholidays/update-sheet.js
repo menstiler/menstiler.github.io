@@ -1,6 +1,3 @@
-const url =
-  "https://script.google.com/macros/s/AKfycbyXHSx4zoO2iKpAI1X7_G6MQzkNkoeA7h6jIPCsDdtQmv9IZcyJyvotSGk8JjrcNcQo/exec";
-
 function getElementValue(field) {
   const td = Array.from(document.querySelectorAll("td")).find(
     (el) => el.textContent.trim() === field
