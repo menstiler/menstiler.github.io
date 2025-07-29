@@ -14,7 +14,6 @@ async function pageSetUp() {
               </div>
             </div>`);
   target.after(`<div id='donors'>
-    <h4>Thank you to our latest donors</h4>
     <div id="latest-donors"></div>
 </div>`);
 }

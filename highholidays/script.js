@@ -63,9 +63,9 @@ async function getFromSheet(page) {
       .then((data) => {
         const $latestDonors = jQuery("#latest-donors");
 
-        if (page === "main" && data.rows.length > 0) {
+        if (data.rows.length > 0) {
           const newDiv = document.createElement("div");
-          newDiv.textContent = "Latest Donors";
+          newDiv.textContent = "Thank you to our latest donors";
           newDiv.className = "donors-title";
           $latestDonors[0].parentNode.insertBefore(newDiv, $latestDonors[0]);
         }
