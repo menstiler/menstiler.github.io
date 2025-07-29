@@ -30,7 +30,7 @@ PAGE_SCRIPTS.forEach((rule) => {
 });
 
 const url =
-  "https://script.google.com/macros/s/AKfycbyXHSx4zoO2iKpAI1X7_G6MQzkNkoeA7h6jIPCsDdtQmv9IZcyJyvotSGk8JjrcNcQo/exec";
+  "https://script.google.com/macros/s/AKfycbxkrccuFunyrrWOO1lrbs2yqh4npzMeaTGi0h9Zjftzr2QNrnyI3olndMbduY6TX-t0/exec";
 
 function getFromSheet() {
   try {
@@ -40,11 +40,38 @@ function getFromSheet() {
         return response.json();
       })
       .then((data) => {
-        console.log("Total:", data.total);
-        console.log("Rows:", data.rows);
+        const $latestDonors = jQuery("#latest-donors");
 
-        // Example: display total in an element
-        // document.getElementById('total-display').textContent = `Total: $${data.total.toLocaleString()}`;
+        if (data.rows.length > 0) {
+          const newDiv = document.createElement("div");
+          newDiv.textContent = "Latest Donors";
+          newDiv.className = "donors-title";
+          $latestDonors[0].parentNode.insertBefore(newDiv, $latestDonors[0]);
+        }
+
+        if (data.goal && data.total) {
+          const percent = Math.min((data.total / data.goal) * 100, 100);
+
+          // Update DOM
+          const bar = document.querySelector(".progress-bar");
+          const label = document.querySelector(".campaign-progress h4");
+          const percentEl = document.querySelector(
+            ".campaign-progress .percent"
+          );
+
+          if (bar) {
+            bar.style.width = `${percent}%`;
+            bar.setAttribute("aria-valuenow", percent.toFixed(0));
+          }
+
+          if (label) {
+            label.textContent = `$${data.total.toLocaleString()} OF $${data.goal.toLocaleString()} RAISED`;
+          }
+
+          if (percentEl) {
+            percentEl.textContent = `${percent.toFixed(0)}%`;
+          }
+        }
       })
       .catch((error) => {
         console.error("Fetch error:", error);
@@ -54,8 +81,24 @@ function getFromSheet() {
   }
 }
 
-if (document.readyState !== "loading") {
+function checkScrollable() {
+  const wrapper = document.getElementById("latest-donors-wrapper");
+  const inner = document.getElementById("latest-donors");
+  if (inner.scrollWidth <= wrapper.clientWidth) {
+    wrapper.classList.add("no-scroll");
+  } else {
+    wrapper.classList.remove("no-scroll");
+  }
+}
+
+function init() {
   getFromSheet();
+  window.addEventListener("resize", checkScrollable);
+  checkScrollable();
+}
+
+if (document.readyState !== "loading") {
+  init();
 } else {
-  document.addEventListener("DOMContentLoaded", getFromSheet);
+  document.addEventListener("DOMContentLoaded", init);
 }
