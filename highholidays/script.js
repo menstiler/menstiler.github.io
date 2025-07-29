@@ -51,9 +51,9 @@ PAGE_SCRIPTS.forEach((rule) => {
 });
 
 const url =
-  "https://script.google.com/macros/s/AKfycbw2zEseoRzzBhP9CjRzxDBfH39M3m5QY9bQT5lk4vinarFAV-Grb-uFEph2CNFXCIdY/exec";
+  "https://script.google.com/macros/s/AKfycbwV36Y3eQ-T-Zzq8v9-DkRF0_sc0rn_sM-hKFA6vTldzhOJRRFYx8T9wB3jv6c7_SED/exec";
 
-async function getFromSheet(page) {
+async function getFromSheet() {
   try {
     await fetch(url)
       .then((response) => {
@@ -64,10 +64,10 @@ async function getFromSheet(page) {
         const $latestDonors = jQuery("#latest-donors");
 
         if (data.rows.length > 0) {
-          const newDiv = document.createElement("div");
-          newDiv.textContent = "Thank you to our latest donors";
-          newDiv.className = "donors-title";
-          $latestDonors[0].parentNode.insertBefore(newDiv, $latestDonors[0]);
+          const newEl = document.createElement("h4");
+          newEl.textContent = "Thank you to our latest donors";
+          newEl.className = "donors-title";
+          $latestDonors[0].parentNode.insertBefore(newEl, $latestDonors[0]);
         }
 
         if (data.goal && data.total) {
@@ -120,7 +120,7 @@ async function getFromSheet(page) {
           );
         });
 
-        if (page === "donate" && data.rows.length > 7) {
+        if (data.rows.length > 7) {
           addScrollingIndicator();
         }
       })
@@ -143,7 +143,7 @@ function checkScrollable() {
 }
 
 async function init() {
-  await getFromSheet("main");
+  await getFromSheet();
   window.addEventListener("resize", checkScrollable);
   checkScrollable();
 }

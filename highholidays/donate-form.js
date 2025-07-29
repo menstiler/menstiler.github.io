@@ -20,7 +20,6 @@ async function pageSetUp() {
 
 async function init() {
   await pageSetUp();
-  getFromSheet("donate");
 }
 
 if (document.readyState !== "loading") {

@@ -248,7 +248,7 @@ img.form-image {
   scroll-behavior: smooth;
   padding: 1rem;
   scroll-snap-type: x mandatory;
-  scroll-padding: 1rem; /* justify-content: center; */
+  scroll-padding: 1rem;
   margin: 0 auto;
 }
 
@@ -316,6 +316,7 @@ img.form-image {
   align-items: center;
   justify-content: center;
   height: 100%;
+  font-family: "Montserrat";
 }
 
 .donor-inner .donor {
@@ -326,6 +327,10 @@ img.form-image {
 .donor-inner .amount {
   margin-bottom: 7px;
   font-weight: bold;
+}
+
+.dedication-text {
+  font-family: "Montserrat";
 }
 
 .donors-title {

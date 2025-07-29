@@ -1,117 +1,120 @@
-.campaign-progress {
-  font-family: "Montserrat";
-  margin: 2rem;
-  margin: 2rem auto;
-  border-radius: 0;
-}
-
-.progress-bar-container {
-  border: 0px;
-}
-
-.progress-bar {
-  background-color: #b53a78;
-  border-radius: 0;
-}
-
-.body_wrapper.clearfix.co_body {
-  display: flex;
-  justify-content: space-between;
-
-  @media (max-width: 650px) {
-    flex-direction: column;
-  }
-}
-
-.campaign-article {
-  font-size: 20px;
-  font-family: "Montserrat";
-  text-align: center;
-  margin: 2rem;
-}
-
-.dedication-text {
-  margin-top: 5px;
-  font-size: 0;
-  max-height: 0px;
-  color: #eee8d5;
-  transition: max-height 0.5s, color 0.5s linear;
-}
-
-.donor-wrap:hover .dedication-text {
-  font-size: 14px;
-  height: auto;
-  color: var(--color-primary);
-  max-height: 50px;
-  margin-bottom: 8px;
-}
-
-#donors h4 {
-  font-family: "Montserrat";
-  text-align: center;
-  border-bottom: 1px solid;
-  padding-bottom: 1rem;
-  font-size: 20px;
-  margin-bottom: 0;
-  position: relative;
-}
-
-#donors.scrolled-donors:not(:hover):after,
-#donors:not(.scrolled-donors):after {
-  background: linear-gradient(0, #fff, hsla(0, 0%, 100%, 0) 100%);
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-}
-
-#donors {
-  position: relative;
-  max-height: 500px;
-  margin-left: 35px;
-
-  @media (max-width: 650px) {
-    margin-left: 0;
-  }
-}
-
-#latest-donors {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  grid-template-rows: auto;
-  gap: 1rem;
-  grid-column-gap: 2rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 1rem;
-  scroll-snap-type: x mandatory;
-  max-height: inherit;
-  overflow: scroll;
-  padding: 10px 0;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
-}
-
-.donor-wrap {
-  width: 100px;
-  padding: 8px;
-  transition: transform 0.3s ease;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:hover {
-    transform: scale(1.03);
+.content_page {
+  .campaign-progress {
+    font-family: "Montserrat";
+    margin: 2rem;
+    margin: 2rem auto;
+    border-radius: 0;
   }
 
-  &:first-child {
-    margin-left: 0;
+  .progress-bar-container {
+    border: 0px;
   }
 
-  &:last-child {
-    margin-right: 0;
+  .progress-bar {
+    background-color: #b53a78;
+    border-radius: 0;
+  }
+
+  .body_wrapper.clearfix.co_body {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
+  }
+
+  .campaign-article {
+    font-size: 20px;
+    font-family: "Montserrat";
+    text-align: center;
+    margin: 2rem;
+  }
+
+  .dedication-text {
+    margin-top: 5px;
+    font-size: 0;
+    max-height: 0px;
+    color: #eee8d5;
+    transition: max-height 0.5s, color 0.5s linear;
+  }
+
+  .donor-wrap:hover .dedication-text {
+    font-size: 14px;
+    height: auto;
+    color: var(--color-primary);
+    max-height: 50px;
+    margin-bottom: 8px;
+  }
+
+  #donors h4 {
+    font-family: "Montserrat";
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-bottom: 1rem;
+    font-size: 20px;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  #donors.scrolled-donors:not(:hover):after,
+  #donors:not(.scrolled-donors):after {
+    background: linear-gradient(0, #fff, hsla(0, 0%, 100%, 0) 100%);
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+  }
+
+  #donors {
+    position: relative;
+    max-height: 500px;
+    margin-left: 35px;
+    width: 600px;
+
+    @media (max-width: 650px) {
+      margin-left: 0;
+    }
+  }
+
+  #latest-donors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    max-height: inherit;
+    overflow: scroll;
+    padding: 10px 0;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+
+  .donor-wrap {
+    width: 125px;
+    padding: 8px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
