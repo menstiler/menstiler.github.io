@@ -15,7 +15,7 @@
     border-radius: 0;
   }
 
-  .body_wrapper.clearfix.co_body {
+  .donate-form-container {
     display: flex;
     justify-content: space-between;
 
@@ -71,12 +71,13 @@
 
   #donors {
     position: relative;
-    max-height: 500px;
+    max-height: 600px;
     margin-left: 35px;
     width: 600px;
 
     @media (max-width: 650px) {
       margin-left: 0;
+      width: 100%;
     }
   }
 
@@ -88,11 +89,10 @@
     scroll-behavior: smooth;
     padding: 1rem;
     scroll-snap-type: x mandatory;
-    max-height: inherit;
+    max-height: 500px;
     overflow: scroll;
     padding: 10px 0;
     padding-bottom: 50px;
-    margin-bottom: 50px;
     justify-content: center;
   }
 

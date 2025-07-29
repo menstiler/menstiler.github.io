@@ -50,6 +50,15 @@ PAGE_SCRIPTS.forEach((rule) => {
   }
 });
 
+function addScrollingIndicator() {
+  const $donorsContainer = jQuery("div#donors");
+
+  const latestDonorsEl = document.getElementById("latest-donors");
+  latestDonorsEl.addEventListener("scroll", function () {
+    $donorsContainer.addClass("scrolled-donors");
+  });
+}
+
 const url =
   "https://script.google.com/macros/s/AKfycbwV36Y3eQ-T-Zzq8v9-DkRF0_sc0rn_sM-hKFA6vTldzhOJRRFYx8T9wB3jv6c7_SED/exec";
 
@@ -62,12 +71,16 @@ async function getFromSheet() {
       })
       .then((data) => {
         const $latestDonors = jQuery("#latest-donors");
+        const $formContainer = jQuery(".body_wrapper.clearfix.co_body");
 
         if (data.rows.length > 0) {
           const newEl = document.createElement("h4");
           newEl.textContent = "Thank you to our latest donors";
           newEl.className = "donors-title";
           $latestDonors[0].parentNode.insertBefore(newEl, $latestDonors[0]);
+          $formContainer.addClass("donate-form-container");
+        } else {
+          $formContainer.removeClass("donate-form-container");
         }
 
         if (data.goal && data.total) {
