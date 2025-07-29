@@ -23,6 +23,11 @@ async function sendToSheet() {
   let amount = getElementValue("Total Amount");
   let dedication = getElementValue("In Honor/Memory of");
   let submissionId = getElementValue("Submission Id");
+  let anonymous = getElementValue("Checkbo13");
+
+  if (anonymous && anonymous === "Donate anonymously") {
+    anonymous = "true";
+  }
 
   if (submissionId === localStorage.getItem("submissionId")) {
     return;
@@ -33,6 +38,7 @@ async function sendToSheet() {
     amount,
     dedication,
     submissionId,
+    anonymous,
   };
 
   try {

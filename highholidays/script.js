@@ -1,10 +1,29 @@
 const PAGE_SCRIPTS = [
   {
-    aid: "ArticleCcoResponse_cdo/aid/6973996",
+    aid: "ArticleCcoResponse_cdo/aid/6974961",
     href: "https://menstiler.github.io/highholidays/update-sheet.js",
     type: "script",
   },
+  {
+    aid: "6974961",
+    href: "https://menstiler.github.io/highholidays/donate-form.css",
+    type: "style",
+  },
+  {
+    aid: "6974961",
+    href: "https://menstiler.github.io/highholidays/donate-form.js",
+    type: "script",
+  },
 ];
+
+function pageSpecificStyling(url) {
+  const styles = document.createElement("link");
+  styles.rel = "stylesheet";
+  styles.type = "text/css";
+  styles.media = "screen";
+  styles.href = url;
+  document.getElementsByTagName("head")[0].appendChild(styles);
+}
 
 function pageSpecificJs(url) {
   const script = document.createElement("script");
@@ -34,7 +53,7 @@ PAGE_SCRIPTS.forEach((rule) => {
 const url =
   "https://script.google.com/macros/s/AKfycbw2zEseoRzzBhP9CjRzxDBfH39M3m5QY9bQT5lk4vinarFAV-Grb-uFEph2CNFXCIdY/exec";
 
-async function getFromSheet() {
+async function getFromSheet(page) {
   try {
     await fetch(url)
       .then((response) => {
@@ -44,7 +63,7 @@ async function getFromSheet() {
       .then((data) => {
         const $latestDonors = jQuery("#latest-donors");
 
-        if (data.rows.length > 0) {
+        if (page === "main" && data.rows.length > 0) {
           const newDiv = document.createElement("div");
           newDiv.textContent = "Latest Donors";
           newDiv.className = "donors-title";
@@ -100,6 +119,10 @@ async function getFromSheet() {
           </div>`
           );
         });
+
+        if (page === "donate" && data.rows.length > 7) {
+          addScrollingIndicator();
+        }
       })
       .catch((error) => {
         console.error("Fetch error:", error);
@@ -112,7 +135,7 @@ async function getFromSheet() {
 function checkScrollable() {
   const wrapper = document.getElementById("latest-donors-wrapper");
   const inner = document.getElementById("latest-donors");
-  if (inner.scrollWidth <= wrapper.clientWidth) {
+  if (inner && inner.scrollWidth <= wrapper.clientWidth) {
     wrapper.classList.add("no-scroll");
   } else {
     wrapper.classList.remove("no-scroll");
@@ -120,7 +143,7 @@ function checkScrollable() {
 }
 
 async function init() {
-  await getFromSheet();
+  await getFromSheet("main");
   window.addEventListener("resize", checkScrollable);
   checkScrollable();
 }
