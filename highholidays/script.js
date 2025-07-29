@@ -32,7 +32,7 @@ PAGE_SCRIPTS.forEach((rule) => {
 });
 
 const url =
-  "https://script.google.com/macros/s/AKfycbyRsLQ7L0BQEgmOeC5FERo3Os19OlXVZ-dNtEOemhwdS_aDfQBu5stqQub_m2TvahTU/exec";
+  "https://script.google.com/macros/s/AKfycbw2zEseoRzzBhP9CjRzxDBfH39M3m5QY9bQT5lk4vinarFAV-Grb-uFEph2CNFXCIdY/exec";
 
 async function getFromSheet() {
   try {
