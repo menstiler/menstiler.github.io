@@ -308,6 +308,7 @@ img.form-image {
 .donor-inner {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
