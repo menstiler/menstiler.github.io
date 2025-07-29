@@ -32,9 +32,9 @@ PAGE_SCRIPTS.forEach((rule) => {
 const url =
   "https://script.google.com/macros/s/AKfycbxkrccuFunyrrWOO1lrbs2yqh4npzMeaTGi0h9Zjftzr2QNrnyI3olndMbduY6TX-t0/exec";
 
-function getFromSheet() {
+async function getFromSheet() {
   try {
-    fetch(url)
+    await fetch(url)
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
@@ -117,8 +117,8 @@ function checkScrollable() {
   }
 }
 
-function init() {
-  getFromSheet();
+async function init() {
+  await getFromSheet();
   window.addEventListener("resize", checkScrollable);
   checkScrollable();
 }
