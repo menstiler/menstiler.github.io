@@ -94,7 +94,7 @@ div#chabad_head .chabad_navigator_bar ul li a {
   margin-bottom: 5%;
 }
 
-.actions-container .action a {
+.actions-container .action {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,6 +105,15 @@ div#chabad_head .chabad_navigator_bar ul li a {
   text-decoration: none;
   text-align: center;
   font-weight: 500;
+  position: relative;
+
+  a {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 
   &:hover {
     opacity: 0.8;
