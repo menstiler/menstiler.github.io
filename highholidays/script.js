@@ -121,6 +121,7 @@ async function init() {
   await getFromSheet();
   window.addEventListener("resize", checkScrollable);
   checkScrollable();
+  localStorage.removeItem("scriptHasRun");
 }
 
 if (document.readyState !== "loading") {

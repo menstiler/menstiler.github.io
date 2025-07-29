@@ -18,6 +18,10 @@ function getElementValue(field) {
 }
 
 async function sendToSheet() {
+  if (localStorage.getItem("scriptHasRun")) {
+    return;
+  }
+
   let firstName = getElementValue("Full Name - First Name");
   let lastName = getElementValue("Full Name - Last Name");
   let amount = getElementValue("Total Amount");
@@ -39,6 +43,7 @@ async function sendToSheet() {
       body: JSON.stringify(data),
     });
     console.log("Data sent");
+    localStorage.setItem("scriptHasRun", "true");
   } catch (err) {
     console.error("Error:", err);
   }
