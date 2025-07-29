@@ -257,6 +257,7 @@ img.form-image {
   text-align: center;
   background: #eee8d5;
   color: black;
+  font-size: 15px;
 }
 
 .donor-wrap:hover {
@@ -304,13 +305,19 @@ img.form-image {
   justify-content: center;
 }
 
+.donor-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .donor-inner .donor {
   font-style: italic;
 }
 
 .donor-inner .donor,
 .donor-inner .amount {
-  margin: 7px auto;
+  margin-bottom: 7px;
   font-weight: bold;
 }
 
