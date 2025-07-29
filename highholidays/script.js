@@ -26,8 +26,6 @@ function injectAsset(rule) {
 PAGE_SCRIPTS.forEach((rule) => {
   if (window.location.href.indexOf(rule.aid) !== -1) {
     injectAsset(rule);
-  } else {
-    localStorage.removeItem("scriptHasRun");
   }
 });
 
@@ -123,6 +121,9 @@ async function init() {
   await getFromSheet();
   window.addEventListener("resize", checkScrollable);
   checkScrollable();
+  window.addEventListener("unload", function () {
+    localStorage.removeItem("scriptHasRun");
+  });
 }
 
 if (document.readyState !== "loading") {
