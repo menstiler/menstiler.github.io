@@ -60,7 +60,7 @@ async function getFromSheet() {
           );
 
           if (bar) {
-            bar.style.width = `${percent}%`;
+            bar.style.width = `min(calc(${percent}% + 20px), 100%)`;
             bar.setAttribute("aria-valuenow", percent.toFixed(0));
           }
 

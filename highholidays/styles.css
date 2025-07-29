@@ -135,10 +135,6 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
   justify-content: center;
   align-items: center;
   width: 100%;
-
-  @media (max-width: 650px) {
-    padding: 50px 10px 120px;
-  }
 }
 
 .appeal-button-container a {
@@ -157,11 +153,13 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
 .appeal-header {
   font-size: 25px;
   font-weight: 700;
+  padding: 0px 10px;
 }
 
 .appeal-text {
   max-width: 950px;
   text-align: center;
+  padding: 0px 10px;
 }
 
 div#content_page {
@@ -287,11 +285,19 @@ img.form-image {
 #latest-donors-wrapper::before {
   left: 0;
   background: linear-gradient(to right, #b83b77, transparent);
+
+  @media (max-width: 650px) {
+    background: none;
+  }
 }
 
 #latest-donors-wrapper::after {
   right: 0;
   background: linear-gradient(to left, #b84e80, transparent);
+
+  @media (max-width: 650px) {
+    background: none;
+  }
 }
 
 #latest-donors-wrapper.no-scroll #latest-donors {
