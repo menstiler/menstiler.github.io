@@ -72,6 +72,32 @@ function getFromSheet() {
             percentEl.textContent = `${percent.toFixed(0)}%`;
           }
         }
+
+        data.rows.reverse().forEach((entry, index) => {
+          const { name, amount, dedication } = entry;
+
+          const dedicationEl = dedication
+            ? `<div class="dedication-text">${dedication}</div>`
+            : "";
+
+          const amountNum = parseInt(amount);
+
+          $latestDonors.append(
+            `<div class="donor-wrap">
+            <div class="donor-inner">
+              <div>
+                <div class="donor">
+                  ${name}
+                </div>
+                <div class="amount">
+                  ${"$" + amountNum.toLocaleString()}
+                </div>
+                ${dedicationEl}
+              </div>
+            </div>
+          </div>`
+          );
+        });
       })
       .catch((error) => {
         console.error("Fetch error:", error);
