@@ -32,15 +32,19 @@
   background-image: inherit;
 }
 
+body.mobile .chabad_navigator_bar #menu .item.heading,
+body.mobile #navigation.chabad_navigator_bar #menu li:not(.heading),
 div#chabad_head .chabad_navigator_bar {
-  background-color: inherit;
+  background-color: #e274ad;
 }
 
 #navigation li.parent a.parent {
-  background-color: inherit;
-  color: #5a2d2d;
-  border-bottom: 2px solid #ff9d00;
+  color: #fff;
   margin-right: 5px;
+
+  &:hover {
+    background-color: #d6609d;
+  }
 
   @media (max-width: 650px) {
     width: 100%;
@@ -49,19 +53,13 @@ div#chabad_head .chabad_navigator_bar {
 }
 
 div#chabad_head .chabad_navigator_bar ul li {
+  font-size: 0;
   background-color: inherit;
 }
 
 div#chabad_head .chabad_navigator_bar ul li a {
   color: white;
   padding: 0px 24px;
-}
-
-.ct-header .ct-nav .ct-nav-inner .chabad_menu_content .navi .item.parent {
-  font-size: 0;
-}
-
-div#chabad_head .chabad_navigator_bar ul li a {
   text-transform: uppercase;
   font-size: 15px;
   letter-spacing: 2px;
@@ -69,16 +67,20 @@ div#chabad_head .chabad_navigator_bar ul li a {
   border-right: inherit;
 }
 
+.ct-header .ct-nav .ct-nav-inner .chabad_menu_content .navi .item.parent {
+  font-size: 0;
+}
+
 #navigation li.parent.selected a.parent {
-  color: #000;
   font-weight: 700;
-  background-color: #e8d2ae;
+  background-color: #d6609d;
 }
 
 .text-container {
   text-align: center;
   font-family: "Montserrat";
-  font-size: 18px;
+  font-size: 22px;
+  line-height: 38px;
 }
 
 .actions-container {
