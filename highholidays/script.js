@@ -136,16 +136,15 @@ async function getFromSheet() {
             loadScript(
               "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
               () => {
+                const jq = jQuery.noConflict(true);
                 // Step 3: Initialize the ticker
                 tickerTrack.style.display = "block";
-                $(function () {
-                  $(".ticker-track").webTicker({
-                    speed: 50,
-                    direction: "left",
-                    startEmpty: true,
-                    duplicate: true,
-                    hoverpause: true,
-                  });
+                jq(".ticker-track").webTicker({
+                  speed: 50,
+                  direction: "left",
+                  startEmpty: true,
+                  duplicate: true,
+                  hoverpause: true,
                 });
               }
             );
