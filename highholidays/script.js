@@ -99,6 +99,14 @@ async function getFromSheet() {
         tickerTrack.style.display = "none";
         tickerTrack.innerHTML = "";
 
+        if (donors.length > 0) {
+          const $latestDonors = jQuery(".ticker-container");
+          const newEl = document.createElement("h4");
+          newEl.textContent = "Thank you to our latest donors";
+          newEl.className = "donors-title";
+          $latestDonors[0].parentNode.insertBefore(newEl, $latestDonors[0]);
+        }
+
         donors.forEach((donor) => {
           const li = document.createElement("li");
           li.className = "donor-item";
