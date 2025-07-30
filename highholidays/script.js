@@ -172,8 +172,6 @@ function checkScrollable() {
 
 async function init() {
   await getFromSheet();
-  window.addEventListener("resize", checkScrollable);
-  checkScrollable();
 }
 
 if (document.readyState !== "loading") {
