@@ -60,7 +60,7 @@ function addScrollingIndicator() {
 }
 
 const url =
-  "https://script.google.com/macros/s/AKfycbwVmTCZcg00DFpnvojuF-KLMaTMRXcAhGHk4yJKx_37KOK9_uLd3q83Y5DCUf3-xpHf/exec";
+  "https://script.google.com/macros/s/AKfycbzLpU_LO-1-e4maE-XYT4q9afsvtv5Yastuu8MoqlSnq8aJFbpTvaJ6llpVlFH-3Y3S/exec";
 
 async function getFromSheet() {
   try {
@@ -110,9 +110,10 @@ async function getFromSheet() {
         donors.forEach((donor) => {
           const li = document.createElement("li");
           li.className = "donor-item";
-          li.innerHTML = `<div class="name">${
-            donor.name
-          }</div><div class="amount"> $${donor.amount.toLocaleString()}</div>${
+          const displayName = Boolean(donor.anonymous)
+            ? "Anonymous"
+            : donor.name;
+          li.innerHTML = `<div class="name">${displayName}</div><div class="amount"> $${donor.amount.toLocaleString()}</div>${
             donor.dedication
               ? `<div class="dedication">${donor.dedication}</div>`
               : ""
