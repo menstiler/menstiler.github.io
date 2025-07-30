@@ -8,6 +8,7 @@
 
   .progress-bar-container {
     border: 0px;
+    border-radius: 0;
   }
 
   .progress-bar {
@@ -118,5 +119,82 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+
+  .ticker-track {
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    height: 50px !important;
+  }
+
+  .ticker-track ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Ticker items */
+  .ticker-track li {
+    margin-right: 20px;
+    color: #333;
+    font-weight: 500;
+    list-style: none;
+    white-space: nowrap;
+  }
+
+  .tickercontainer {
+    height: 50px !important;
+    display: flex;
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .donor-item {
+    background: #eee8d5;
+    border-radius: 5px;
+    font-family: "Montserrat";
+    font-size: 15px;
+    padding: 10px 15px !important;
+    height: 50px;
+    display: flex;
+    gap: 1rem;
+  }
+  .donor-item .name {
+    font-style: italic;
+  }
+
+  .donor-item .name,
+  .donor-item .amount {
+    font-weight: 700;
+  }
+
+  .donor-item .dedication {
+    font-weight: 400;
+  }
+
+  .tickercontainer:before,
+  .tickercontainer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    pointer-events: none;
+  }
+
+  .tickercontainer:before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      white 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+  }
+
+  .tickercontainer:after {
+    right: 0;
+    background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
   }
 }

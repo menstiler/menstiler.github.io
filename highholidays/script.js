@@ -60,7 +60,7 @@ function addScrollingIndicator() {
 }
 
 const url =
-  "https://script.google.com/macros/s/AKfycbwV36Y3eQ-T-Zzq8v9-DkRF0_sc0rn_sM-hKFA6vTldzhOJRRFYx8T9wB3jv6c7_SED/exec";
+  "https://script.google.com/macros/s/AKfycbwVmTCZcg00DFpnvojuF-KLMaTMRXcAhGHk4yJKx_37KOK9_uLd3q83Y5DCUf3-xpHf/exec";
 
 async function getFromSheet() {
   try {
@@ -70,19 +70,6 @@ async function getFromSheet() {
         return response.json();
       })
       .then((data) => {
-        const $latestDonors = jQuery("#latest-donors");
-        const $formContainer = jQuery(".body_wrapper.clearfix.co_body");
-
-        if (data.rows.length > 0) {
-          const newEl = document.createElement("h4");
-          newEl.textContent = "Thank you to our latest donors";
-          newEl.className = "donors-title";
-          $latestDonors[0].parentNode.insertBefore(newEl, $latestDonors[0]);
-          $formContainer.addClass("donate-form-container");
-        } else {
-          $formContainer.removeClass("donate-form-container");
-        }
-
         if (data.goal && data.total) {
           const percent = Math.min((data.total / data.goal) * 100, 100);
 
@@ -107,35 +94,55 @@ async function getFromSheet() {
           }
         }
 
-        data.rows.reverse().forEach((entry, index) => {
-          const { name, amount, dedication } = entry;
+        const donors = data.rows.reverse();
+        const tickerTrack = document.querySelector(".ticker-track");
+        tickerTrack.style.display = "none";
+        tickerTrack.innerHTML = "";
 
-          const dedicationEl = dedication
-            ? `<div class="dedication-text">${dedication}</div>`
-            : "";
-
-          const amountNum = parseInt(amount);
-
-          $latestDonors.append(
-            `<div class="donor-wrap">
-            <div class="donor-inner">
-              <div>
-                <div class="donor">
-                  ${name}
-                </div>
-                <div class="amount">
-                  ${"$" + amountNum.toLocaleString()}
-                </div>
-                ${dedicationEl}
-              </div>
-            </div>
-          </div>`
-          );
+        donors.forEach((donor) => {
+          const li = document.createElement("li");
+          li.className = "donor-item";
+          li.innerHTML = `<div class="name">${
+            donor.name
+          }</div><div class="amount"> $${donor.amount.toLocaleString()}</div>${
+            donor.dedication
+              ? `<div class="dedication">${donor.dedication}</div>`
+              : ""
+          }`;
+          tickerTrack.appendChild(li);
         });
 
-        if (data.rows.length > 7) {
-          addScrollingIndicator();
+        function loadScript(src, callback) {
+          const script = document.createElement("script");
+          script.src = src;
+          script.onload = callback;
+          script.onerror = () => console.error(`Failed to load script: ${src}`);
+          document.head.appendChild(script);
         }
+
+        // Step 1: Load jQuery
+        loadScript(
+          "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+          () => {
+            // Step 2: Load Web Ticker plugin after jQuery is ready
+            loadScript(
+              "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
+              () => {
+                // Step 3: Initialize the ticker
+                tickerTrack.style.display = "block";
+                $(function () {
+                  $(".ticker-track").webTicker({
+                    speed: 50,
+                    direction: "left",
+                    startEmpty: true,
+                    duplicate: true,
+                    hoverpause: true,
+                  });
+                });
+              }
+            );
+          }
+        );
       })
       .catch((error) => {
         console.error("Fetch error:", error);
