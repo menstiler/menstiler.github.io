@@ -1,4 +1,47 @@
+div#chabad_body_content {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+div.chabad_left_column {
+  padding: 0px;
+}
+
+body.mobile div#chabad_body_content {
+  padding: 0px;
+}
+
+.body_wrapper.clearfix.co_body {
+  padding: 25px 5px 0;
+  margin: 0 auto;
+  width: 925px;
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}
+
 .content_page {
+  .master-content-wrapper {
+    background-image: url(https://chabadofislip.com/media/images/1329/uPFI13291498.png);
+    background-size: cover;
+    /* position: absolute; */
+    padding: 50px 0;
+    color: white;
+    top: -50px;
+    bottom: 300px;
+    right: 0;
+    left: 0;
+    /* width: 100%; */
+    /* margin: auto; */
+  }
+
+  .article-header__subtitle,
+  .article-header__title {
+    color: #fff;
+  }
+
   .campaign-progress {
     font-family: "Montserrat";
     margin: 2rem;
@@ -7,13 +50,13 @@
   }
 
   .progress-bar-container {
-    border: 0px;
-    border-radius: 0;
+    border: 1px solid;
+    border-radius: 5px;
   }
 
   .progress-bar {
     background-color: #b53a78;
-    border-radius: 0;
+    border-radius: 5px;
   }
 
   .donate-form-container {
@@ -187,7 +230,7 @@
     left: 0;
     background: linear-gradient(
       to right,
-      white 0%,
+      #b63577 0%,
       rgba(255, 255, 255, 0) 100%
     );
     z-index: 1;
@@ -195,6 +238,10 @@
 
   .tickercontainer:after {
     right: 0;
-    background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      to left,
+      #ba657f 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 }
