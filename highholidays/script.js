@@ -130,17 +130,26 @@ async function getFromSheet() {
           tickerTrack.appendChild(li);
         });
 
-        // Step 1: Load jQuery
-        const jq = jQuery.noConflict(true);
-        // Step 3: Initialize the ticker
-        tickerTrack.style.display = "block";
-        jq(".ticker-track").webTicker({
-          speed: 50,
-          direction: "left",
-          startEmpty: true,
-          duplicate: true,
-          hoverpause: true,
-        });
+        function loadScript(src, callback) {
+          const script = document.createElement("script");
+          script.src = src;
+          script.onload = callback;
+          script.onerror = () => console.error(`Failed to load script: ${src}`);
+          document.head.appendChild(script);
+        }
+
+        function setUpTicker() {
+          const jq = jQuery.noConflict(true);
+          tickerTrack.style.display = "block";
+          jq(".ticker-track").webTicker({
+            speed: 50,
+            direction: "left",
+            startEmpty: true,
+            duplicate: true,
+            hoverpause: true,
+          });
+        }
+        setUpTicker();
       })
       .catch((error) => {
         console.error("Fetch error:", error);
