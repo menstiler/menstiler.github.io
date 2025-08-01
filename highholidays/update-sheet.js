@@ -18,15 +18,14 @@ function getElementValue(field) {
 }
 
 async function sendToSheet() {
-  let firstName = getElementValue("Full Name - First Name");
-  let lastName = getElementValue("Full Name - Last Name");
   let amount = getElementValue("Total Amount");
-  let dedication = getElementValue("In Honor/Memory of");
+  let dedication = getElementValue("Message or Dedication");
   let submissionId = getElementValue("Submission Id");
   let anonymous = getElementValue("Checkbo13");
+  let displayName = getElementValue("Name to be displayed");
 
   if (anonymous && anonymous === "Donate anonymously") {
-    anonymous = "true";
+    displayName = "Anonymous";
   }
 
   if (submissionId === localStorage.getItem("submissionId")) {
@@ -34,11 +33,10 @@ async function sendToSheet() {
   }
 
   let data = {
-    name: `${firstName} ${lastName}`,
+    displayName,
     amount,
     dedication,
     submissionId,
-    anonymous,
   };
 
   try {

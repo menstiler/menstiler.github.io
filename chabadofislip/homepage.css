@@ -1,0 +1,270 @@
+div#feedback_bar {
+}
+.wrapper.body_container {
+}
+body.lang_en.dir_ltr.home.cco_body {
+}
+body.lang_en.dir_ltr.home.cco_body {
+}
+div#header {
+  background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg");
+  padding-top: 30px;
+  padding-bottom: 40%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+#feedback_bar {
+  margin-right: 0;
+}
+
+#header_branding,
+body .site_title,
+body.cco_body .site_title {
+  margin-left: 0;
+}
+.home #header:before {
+  content: "Welcome to Chabad of Islip Township";
+  position: absolute;
+  width: 1000px;
+  height: 150px;
+  left: 0;
+  right: 0;
+  top: 38%;
+  font-size: 100px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  line-height: 106px;
+  margin: 0 auto;
+}
+
+.home #header:after {
+  content: "Experience Jewish Life on the South Shore";
+  position: absolute;
+  width: 750px;
+  height: 150px;
+  left: 0;
+  right: 0;
+  top: 70%;
+  font-size: 31px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  /* background: #ffffff42; */
+  line-height: 42px;
+  margin: 0 auto;
+}
+
+body > #header > .wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-right: 45px;
+  padding-left: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 10rem;
+}
+
+body #tabContentMain .co_menu_home_image,
+body.cco_body #tabContentMain .co_menu_home_image,
+#header_container .cco_search_header #MainSearchForm,
+#header_container.header_container {
+  display: none;
+}
+
+.co_menu_item a.bg_extension,
+body #co_menu_container #tabContentMain .co_menu_item.arrow.hover span.parent,
+body #tabContentMain .co_menu_item.hover,
+body.cco_body #tabContentMain .co_menu_item.hover,
+body #tabContentMain .co_menu_item.arrow span.parent,
+body.cco_body #tabContentMain .co_menu_item.arrow span.parent,
+body .co_menu_container,
+body.cco_body .co_menu_container,
+body #tabContentMain .co_menu_item,
+body.cco_body #tabContentMain .co_menu_item,
+body #tabContentMain .co_menu_item_divider,
+body.cco_body #tabContentMain .co_menu_item_divider {
+  background-image: none;
+  background-color: transparent;
+}
+
+body.cco_body #tabContentMain .co_menu_item span.parent a {
+  color: #8b1738;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.cco_body #tabContentMain .co_menu_item.arrow span.parent div {
+  padding: 0 12px 0 20px;
+}
+
+body.cco_body #tabContentMain .co_menu_item.hover span.parent a {
+  color: #f57822;
+}
+
+body.cco_body #tabContentMain .co_menu_item.multi_level .co_submenu_container {
+  border-top-color: #f57822;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+}
+
+body.cco_body
+  #tabContentMain
+  .co_menu_item.multi_level
+  .co_submenu_container
+  a.item {
+  background: #ffffff;
+}
+
+#tabContentMain .co_menu_item.arrow .co_submenu_container a.item,
+#tabContentMain .co_menu_item.arrow .co_submenu_container a.item span,
+body.cco_body #tabContentMain .co_submenu_container .co_column a {
+  color: #8b1738;
+}
+
+.co_menu_item.multi_level .co_submenu_container a.item.hover span,
+.co_menu_item.multi_level .co_submenu_container a.item:hover span {
+  color: #f57822 !important;
+}
+
+h5 {
+  font-size: 40px;
+  color: #8b1738;
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.chabad_description_box {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.text {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 20px;
+}
+
+.action {
+  margin: 0 auto;
+  text-align: center;
+  /* width: 150px; */
+}
+
+.action a {
+  text-align: center;
+  background: #8b1738;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 20px;
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+    background: transparent;
+    color: #8b1738;
+    border: 2px solid #8b1738;
+  }
+}
+
+.promos-container {
+  margin: 0 auto;
+  padding: 30px 0 50px;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  width: 75%;
+  gap: 2rem;
+}
+
+.promo-box {
+  background-color: #e2d2d0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  text-align: center;
+  transform: translateY(-5px);
+  overflow: hidden;
+  min-height: 250px;
+  position: relative;
+}
+
+.promo-box a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  &:hover + .promo-box-info {
+    opacity: 0.3;
+  }
+}
+
+.promo-box-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.7;
+  background-size: cover;
+  background-position: center;
+  background-color: #d1fae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #065f46;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.shul {
+  background-image: url(https://w2.chabad.org/media/images/1097/PgBS10976181.jpg);
+}
+
+.adult-education {
+  background-image: url(https://w2.chabad.org/media/images/1097/cGxY10976222.jpg);
+}
+
+.womens-circle {
+}
+
+.hebrew-school {
+}
+
+.photos {
+}
+
+.donate {
+}
+
+.shabbat {
+}
+
+.fire-island {
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}

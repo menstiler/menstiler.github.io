@@ -14,6 +14,16 @@ const PAGE_SCRIPTS = [
     href: "https://menstiler.github.io/highholidays/donate-form.js",
     type: "script",
   },
+  {
+    aid: "6974961",
+    href: "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+    type: "script",
+  },
+  {
+    aid: "6974961",
+    href: "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
+    type: "script",
+  },
 ];
 
 function pageSpecificStyling(url) {
@@ -60,7 +70,7 @@ function addScrollingIndicator() {
 }
 
 const url =
-  "https://script.google.com/macros/s/AKfycbzLpU_LO-1-e4maE-XYT4q9afsvtv5Yastuu8MoqlSnq8aJFbpTvaJ6llpVlFH-3Y3S/exec";
+  "https://script.google.com/macros/s/AKfycbxuCoaAYacI0hFWUCGFEnOg4uy9zVrJkARU1JikbjiuEVZKMnYC-bNt9XBiJ8ip9LEg/exec";
 
 async function getFromSheet() {
   try {
@@ -110,10 +120,9 @@ async function getFromSheet() {
         donors.forEach((donor) => {
           const li = document.createElement("li");
           li.className = "donor-item";
-          const displayName = Boolean(donor.anonymous)
-            ? "Anonymous"
-            : donor.name;
-          li.innerHTML = `<div class="name">${displayName}</div><div class="amount"> $${donor.amount.toLocaleString()}</div>${
+          li.innerHTML = `<div class="name">${
+            donor.displayName
+          }</div><div class="amount"> $${donor.amount.toLocaleString()}</div>${
             donor.dedication
               ? `<div class="dedication">${donor.dedication}</div>`
               : ""
@@ -121,36 +130,17 @@ async function getFromSheet() {
           tickerTrack.appendChild(li);
         });
 
-        function loadScript(src, callback) {
-          const script = document.createElement("script");
-          script.src = src;
-          script.onload = callback;
-          script.onerror = () => console.error(`Failed to load script: ${src}`);
-          document.head.appendChild(script);
-        }
-
         // Step 1: Load jQuery
-        loadScript(
-          "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-          () => {
-            // Step 2: Load Web Ticker plugin after jQuery is ready
-            loadScript(
-              "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
-              () => {
-                const jq = jQuery.noConflict(true);
-                // Step 3: Initialize the ticker
-                tickerTrack.style.display = "block";
-                jq(".ticker-track").webTicker({
-                  speed: 50,
-                  direction: "left",
-                  startEmpty: true,
-                  duplicate: true,
-                  hoverpause: true,
-                });
-              }
-            );
-          }
-        );
+        const jq = jQuery.noConflict(true);
+        // Step 3: Initialize the ticker
+        tickerTrack.style.display = "block";
+        jq(".ticker-track").webTicker({
+          speed: 50,
+          direction: "left",
+          startEmpty: true,
+          duplicate: true,
+          hoverpause: true,
+        });
       })
       .catch((error) => {
         console.error("Fetch error:", error);
@@ -170,7 +160,92 @@ function checkScrollable() {
   }
 }
 
+function pageSetup() {
+  const divEl = document.createElement("div");
+  divEl.id = "amount-display";
+  divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div>`;
+  document.getElementById("id_19").appendChild(divEl);
+
+  $amountInput = document.getElementById("input_19");
+  $amountInput.setAttribute("min", "0");
+
+  document.querySelectorAll(".form-radio[name='q21_input21']").forEach((el) =>
+    el.addEventListener("change", function (e) {
+      if (e.target.value === "Other") {
+        $amountInput.focus();
+        return;
+      }
+      const total = parseFloat(e.target.value.replace("$", ""));
+      $amountInput.setValue(total);
+      document.querySelector("#amount-display .amount").textContent =
+        total.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+        });
+      $amountInput.dispatchEvent(new Event("change", { bubbles: true }));
+    })
+  );
+
+  $amountInput.addEventListener("input", function (e) {
+    const total = parseFloat(e.target.value);
+    let displayAmount = parseFloat(e.target.value).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+    if (isNaN(total)) {
+      displayAmount = "$0";
+    }
+    document.querySelector("#amount-display .amount").textContent =
+      displayAmount;
+  });
+
+  document
+    .querySelector("input[name='q23_input23']")
+    .addEventListener("change", function (e) {
+      $displayNameInput = document.querySelector("input[name='q24_input24']");
+      $anonymousInput = document.querySelector("input[name='q13_input13[]']");
+      if (!$anonymousInput.checked) {
+        $displayNameInput.setValue(e.target.value);
+      }
+    });
+
+  document
+    .querySelector("input[name='q13_input13[]']")
+    .addEventListener("change", function (e) {
+      $displayNameInput = document.querySelector("input[name='q24_input24']");
+      $nameInput = document.querySelector("input[name='q23_input23']");
+      if (e.target.checked) {
+        $displayNameInput.setValue("Anonymous");
+        $displayNameInput.disable();
+      } else {
+        $displayNameInput.setValue($nameInput.value);
+        $displayNameInput.enable();
+      }
+    });
+  document
+    .querySelector(".form-submit-button")
+    .addEventListener("click", function (e) {
+      if ($amountInput.value <= 0) {
+        e.preventDefault();
+        e.stopPropagation();
+        const divEl = document.createElement("div");
+        divEl.classList.add("form-error-message");
+        divEl.innerHTML = `<i class="fa fa-fw fa-exclamation-circle"></i>&nbsp; Please add an amount greater than 0<div class="form-error-arrow"><div class="form-error-arrow-inner"></div></div>`;
+        $amountInput.after(divEl);
+        $amountInput.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+      setTimeout(() => {
+        e.target.enable();
+        e.target.textContent = "Submit";
+      }, 1000);
+    });
+}
+
 async function init() {
+  pageSetup();
   await getFromSheet();
 }
 
