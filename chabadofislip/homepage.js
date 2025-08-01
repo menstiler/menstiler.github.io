@@ -1,5 +1,6 @@
-const parentElement = document.getElementById("content");
-const widgetHtml = `<div class="chabad_description_box">
+function init() {
+  const parentElement = document.getElementById("content");
+  const widgetHtml = `<div class="chabad_description_box">
 <div class="header">
 <h5>We are here to serve you!</h5> 
 </div>
@@ -54,8 +55,16 @@ Chabad of Islip is your home on the Great South Bay to experience the beauty, wa
 </div>
 
 `;
-parentElement.insertAdjacentHTML("beforeBegin", widgetHtml);
 
-const elementToMove = document.getElementById("HeaderSubscribeContainer");
+  parentElement.insertAdjacentHTML("beforeBegin", widgetHtml);
 
-parentElement.after(elementToMove);
+  const elementToMove = document.getElementById("HeaderSubscribeContainer");
+
+  parentElement.after(elementToMove);
+}
+
+if (document.readyState !== "loading") {
+  init();
+} else {
+  document.addEventListener("DOMContentLoaded", init);
+}
