@@ -19,11 +19,6 @@ const PAGE_SCRIPTS = [
     href: "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
     type: "script",
   },
-  {
-    aid: "6974961",
-    href: "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
-    type: "script",
-  },
 ];
 
 function pageSpecificStyling(url) {
@@ -138,18 +133,20 @@ async function getFromSheet() {
           document.head.appendChild(script);
         }
 
-        function setUpTicker() {
-          const jq = jQuery.noConflict(true);
-          tickerTrack.style.display = "block";
-          jq(".ticker-track").webTicker({
-            speed: 50,
-            direction: "left",
-            startEmpty: true,
-            duplicate: true,
-            hoverpause: true,
-          });
-        }
-        setUpTicker();
+        loadScript(
+          "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
+          () => {
+            const jq = jQuery.noConflict(true);
+            tickerTrack.style.display = "block";
+            jq(".ticker-track").webTicker({
+              speed: 50,
+              direction: "left",
+              startEmpty: true,
+              duplicate: true,
+              hoverpause: true,
+            });
+          }
+        );
       })
       .catch((error) => {
         console.error("Fetch error:", error);
