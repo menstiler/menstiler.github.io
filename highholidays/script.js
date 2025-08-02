@@ -14,11 +14,6 @@ const PAGE_SCRIPTS = [
     href: "https://menstiler.github.io/highholidays/donate-form.js",
     type: "script",
   },
-  {
-    aid: "6974961",
-    href: "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-    type: "script",
-  },
 ];
 
 function pageSpecificStyling(url) {
@@ -134,17 +129,24 @@ async function getFromSheet() {
         }
 
         loadScript(
-          "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
+          "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
           () => {
-            const jq = jQuery.noConflict(true);
-            tickerTrack.style.display = "block";
-            jq(".ticker-track").webTicker({
-              speed: 50,
-              direction: "left",
-              startEmpty: true,
-              duplicate: true,
-              hoverpause: true,
-            });
+            $j = jQuery.noConflict();
+            loadScript(
+              "https://cdn.jsdelivr.net/gh/mazedigital/Web-Ticker@master/jquery.webticker.min.js",
+              () => {
+                tickerTrack.style.display = "block";
+                $j(function () {
+                  $j(".ticker-track").webTicker({
+                    speed: 50,
+                    direction: "left",
+                    startEmpty: true,
+                    duplicate: true,
+                    hoverpause: true,
+                  });
+                });
+              }
+            );
           }
         );
       })
@@ -172,62 +174,61 @@ function pageSetup() {
   divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div>`;
   document.getElementById("id_19").appendChild(divEl);
 
+  $amountOptions = document.querySelectorAll(".form-radio[name='q21_input21']");
   $amountInput = document.getElementById("input_19");
+  $anonymousInput = document.querySelector("input[name='q13_input13[]']");
+  $nameInput = document.querySelector("input[name='q23_input23']");
+  $displayNameInput = document.querySelector("input[name='q24_input24']");
+  $displayAmount = document.querySelector("#amount-display .amount");
   $amountInput.setAttribute("min", "0");
 
-  document.querySelectorAll(".form-radio[name='q21_input21']").forEach((el) =>
+  $amountOptions.forEach((el) =>
     el.addEventListener("change", function (e) {
       if (e.target.value === "Other") {
+        $amountInput.setValue("");
+        $displayAmount.textContent = "$0";
         $amountInput.focus();
-        return;
-      }
-      const total = parseFloat(e.target.value.replace("$", ""));
-      $amountInput.setValue(total);
-      document.querySelector("#amount-display .amount").textContent =
-        total.toLocaleString("en-US", {
+      } else {
+        const total = parseFloat(e.target.value.replace("$", ""));
+        $amountInput.setValue(total);
+        $displayAmount.textContent = total.toLocaleString("en-US", {
           style: "currency",
           currency: "USD",
         });
+      }
+
       $amountInput.dispatchEvent(new Event("change", { bubbles: true }));
     })
   );
 
   $amountInput.addEventListener("input", function (e) {
     const total = parseFloat(e.target.value);
-    let displayAmount = parseFloat(e.target.value).toLocaleString("en-US", {
+    let amountToDisplay = parseFloat(e.target.value).toLocaleString("en-US", {
       style: "currency",
       currency: "USD",
     });
     if (isNaN(total)) {
-      displayAmount = "$0";
+      amountToDisplay = "$0";
     }
-    document.querySelector("#amount-display .amount").textContent =
-      displayAmount;
+    $displayAmount.textContent = amountToDisplay;
   });
 
-  document
-    .querySelector("input[name='q23_input23']")
-    .addEventListener("change", function (e) {
-      $displayNameInput = document.querySelector("input[name='q24_input24']");
-      $anonymousInput = document.querySelector("input[name='q13_input13[]']");
-      if (!$anonymousInput.checked) {
-        $displayNameInput.setValue(e.target.value);
-      }
-    });
+  $nameInput.addEventListener("change", function (e) {
+    if (!$anonymousInput.checked) {
+      $displayNameInput.setValue(e.target.value);
+    }
+  });
 
-  document
-    .querySelector("input[name='q13_input13[]']")
-    .addEventListener("change", function (e) {
-      $displayNameInput = document.querySelector("input[name='q24_input24']");
-      $nameInput = document.querySelector("input[name='q23_input23']");
-      if (e.target.checked) {
-        $displayNameInput.setValue("Anonymous");
-        $displayNameInput.disable();
-      } else {
-        $displayNameInput.setValue($nameInput.value);
-        $displayNameInput.enable();
-      }
-    });
+  $anonymousInput.addEventListener("change", function (e) {
+    if (e.target.checked) {
+      $displayNameInput.setValue("Anonymous");
+      $displayNameInput.disable();
+    } else {
+      $displayNameInput.setValue($nameInput.value);
+      $displayNameInput.enable();
+    }
+  });
+
   document
     .querySelector(".form-submit-button")
     .addEventListener("click", function (e) {
@@ -243,10 +244,6 @@ function pageSetup() {
           block: "center",
         });
       }
-      setTimeout(() => {
-        e.target.enable();
-        e.target.textContent = "Submit";
-      }, 1000);
     });
 }
 
