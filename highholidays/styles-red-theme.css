@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap");
 
 :root {
-  --header-bg: url("https://w2.chabad.org/media/images/1329/yaxb13297926.png");
-  --appeal-bg: url("https://w2.chabad.org/media/images/1329/KHJK13297919.png");
+  --header-bg: url("https://w2.chabad.org/media/images/1329/rgER13297986.png");
+  --appeal-bg: url("");
   --primary-color: #a22922;
   --primary-color-hover: #c05c57;
 }
@@ -144,7 +144,7 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
 }
 
 .appeal-container {
-  background-image: var(--appeal-bg);
+  background-color: #d5862f;
   padding: 50px 0px;
   background-position: center;
   background-size: cover;
