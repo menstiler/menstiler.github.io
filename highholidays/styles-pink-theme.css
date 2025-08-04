@@ -4,6 +4,8 @@
 :root {
   --header-bg: url("https://w2.chabad.org/media/images/1329/jEpV13291460.png");
   --appeal-bg: url("https://w2.chabad.org/media/images/1329/uPFI13291498.png");
+  --primary-color: #e274ad;
+  --primary-color-hover: #d6609d;
 }
 
 .cco_templateless_template {
@@ -40,7 +42,7 @@
 body.mobile .chabad_navigator_bar #menu .item.heading,
 body.mobile #navigation.chabad_navigator_bar #menu li:not(.heading),
 div#chabad_head .chabad_navigator_bar {
-  background-color: #e274ad;
+  background-color: var(--primary-color);
 }
 
 #navigation li.parent a.parent {
@@ -49,7 +51,7 @@ div#chabad_head .chabad_navigator_bar {
   margin-right: 5px;
 
   &:hover {
-    background-color: #d6609d;
+    background-color: var(--primary-color-hover);
     color: white;
   }
 
@@ -80,7 +82,7 @@ div#chabad_head .chabad_navigator_bar ul li a {
 
 #navigation li.parent.selected a.parent {
   font-weight: 700;
-  background-color: #d6609d;
+  background-color: var(--primary-color-hover);
   color: #fff;
 }
 
