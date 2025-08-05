@@ -109,15 +109,6 @@ function init() {
 
   const parentElement = document.getElementById("content");
 
-  // footer
-  const footer = document.getElementById("footer");
-
-  parentElement.append(footer);
-
-  if (window.location.pathname !== "/") {
-    return;
-  }
-
   // text and actions
   parentElement.insertAdjacentHTML("beforeBegin", widgetHtml);
 
@@ -128,6 +119,15 @@ function init() {
 
   if (subscribeContainer) {
     parentElement.append(subscribeContainer);
+  }
+
+  // footer
+  const footer = document.getElementById("footer");
+
+  parentElement.append(footer);
+
+  if (window.location.pathname !== "/") {
+    return;
   }
 
   if (jQuery("body").hasClass("mobile") && !subscribeContainer) {
