@@ -1,22 +1,52 @@
-div#feedback_bar {
-}
-.wrapper.body_container {
-}
-body.lang_en.dir_ltr.home.cco_body {
-}
-body.lang_en.dir_ltr.home.cco_body {
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 div#header {
   background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg");
   padding-top: 30px;
-  padding-bottom: 40%;
-  background-position: center;
+  padding-bottom: 20px;
   background-size: cover;
   position: relative;
+  transition: all 0.3s;
+  background-position-y: -100px;
+
+  @media (max-width: 650px) {
+    padding-top: 0;
+    height: 250px;
+    background-position-x: center;
+  }
+}
+
+body:not(.home).mobile div#header {
+  background: none;
+  height: auto;
+}
+
+.home div#content:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  z-index: -1;
+  background: linear-gradient(to bottom, #ffffff 0%, rgb(255 255 255 / 0%)),
+    url(https://w2.chabad.org/media/images/1329/utDJ13295443.jpg);
+}
+
+.home div#header {
+  padding-bottom: 40%;
+  background-position-y: center;
 }
 
 #feedback_bar {
   margin-right: 0;
+}
+
+body.cco_body #tabContentMain .co_menu_item:nth-of-type(1n + 16) {
+  display: none;
 }
 
 #header_branding,
@@ -24,6 +54,7 @@ body .site_title,
 body.cco_body .site_title {
   margin-left: 0;
 }
+
 .home #header:before {
   content: "Welcome to Chabad of Islip Township";
   position: absolute;
@@ -38,6 +69,14 @@ body.cco_body .site_title {
   font-weight: bold;
   line-height: 106px;
   margin: 0 auto;
+
+  @media (max-width: 650px) {
+    width: auto;
+    top: 30%;
+    font-size: 25px;
+    padding: 0 10px;
+    line-height: 30px;
+  }
 }
 
 .home #header:after {
@@ -47,14 +86,20 @@ body.cco_body .site_title {
   height: 150px;
   left: 0;
   right: 0;
-  top: 70%;
+  top: 75%;
   font-size: 31px;
   color: white;
   text-align: center;
   font-weight: bold;
-  /* background: #ffffff42; */
   line-height: 42px;
   margin: 0 auto;
+
+  @media (max-width: 650px) {
+    width: auto;
+    top: 60%;
+    font-size: 18px;
+    line-height: 25px;
+  }
 }
 
 body > #header > .wrapper {
@@ -68,9 +113,33 @@ body > #header > .wrapper {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 10rem;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+body > #header > .wrapper.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background-color: rgb(255 255 255 / 80%);
+  background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg");
+  background-size: cover;
+  background-position-y: -100px;
+}
+
+body.home > #header > .wrapper.fixed-header {
+  background-image: none;
+}
+
+.wrapper.fixed-header.scrolled-header {
+  background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg") !important;
+  background-size: cover;
 }
 
 body #tabContentMain .co_menu_home_image,
@@ -92,20 +161,35 @@ body #tabContentMain .co_menu_item,
 body.cco_body #tabContentMain .co_menu_item,
 body #tabContentMain .co_menu_item_divider,
 body.cco_body #tabContentMain .co_menu_item_divider {
-  background-image: none;
+  background-image: none !important;
   background-color: transparent;
 }
 
 body.cco_body #tabContentMain .co_menu_item span.parent a {
+  font-family: "Mulish", Arial, sans-serif !important;
+  transition: color 300ms;
+  text-transform: uppercase;
+}
+
+body.home.cco_body #tabContentMain .co_menu_item span.parent a {
   color: #8b1738;
-  font-family: "IBM Plex Sans", sans-serif;
+}
+
+body #tabContentMain .co_menu_item.selected span.parent a {
+  color: #8b1738;
+  border-bottom: 2px solid #8b1738;
+  padding-bottom: 3px;
 }
 
 .cco_body #tabContentMain .co_menu_item.arrow span.parent div {
-  padding: 0 12px 0 20px;
+  padding: 0 16px 0;
 }
 
 body.cco_body #tabContentMain .co_menu_item.hover span.parent a {
+  color: #f57822;
+}
+
+body.home.cco_body #tabContentMain .co_menu_item.hover span.parent a {
   color: #f57822;
 }
 
@@ -126,6 +210,7 @@ body.cco_body
 #tabContentMain .co_menu_item.arrow .co_submenu_container a.item span,
 body.cco_body #tabContentMain .co_submenu_container .co_column a {
   color: #8b1738;
+  font-family: "Montserrat", Arial, sans-serif;
 }
 
 .co_menu_item.multi_level .co_submenu_container a.item.hover span,
@@ -133,63 +218,84 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   color: #f57822 !important;
 }
 
-h5 {
+.chabad_description_box h5 {
+  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   color: #8b1738;
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;
+
+  @media (max-width: 650px) {
+    font-size: 25px;
+    line-height: 35px;
+    padding: 0 10px;
+  }
 }
 
 .chabad_description_box {
-  padding-top: 60px;
-  padding-bottom: 50px;
+  padding: 70px 0;
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
 .text {
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   padding: 40px 0;
   font-size: 20px;
+
+  @media (max-width: 650px) {
+    line-height: 30px;
+    padding: 0 10px;
+  }
 }
 
 .action {
   margin: 0 auto;
   text-align: center;
-  /* width: 150px; */
+  @media (max-width: 650px) {
+    margin-top: 30px;
+  }
 }
 
 .action a {
+  font-family: "Mulish", Arial, sans-serif;
   text-align: center;
-  background: #8b1738;
-  border-radius: 10px;
+  border: 2px solid #8b1738;
   padding: 15px 20px;
   font-size: 20px;
-  color: white;
+  color: #8b1738;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 
   &:hover {
     text-decoration: none;
-    background: transparent;
-    color: #8b1738;
+    background: #8b1738;
+    color: white;
     border: 2px solid #8b1738;
   }
 }
 
 .promos-container {
   margin: 0 auto;
-  padding: 30px 0 50px;
+  padding: 70px 0;
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: repeat(4, 1fr);
   width: 75%;
   gap: 2rem;
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 }
 
 .promo-box {
   background-color: #e2d2d0;
-  border-radius: 0.5rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -210,7 +316,7 @@ h5 {
   z-index: 1;
 
   &:hover + .promo-box-info {
-    opacity: 0.3;
+    opacity: 1;
   }
 }
 
@@ -220,51 +326,407 @@ h5 {
   right: 0;
   left: 0;
   bottom: 0;
-  opacity: 0.7;
+  opacity: 0.8;
   background-size: cover;
   background-position: center;
-  background-color: #d1fae5;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #065f46;
   font-size: 1.5rem;
   transition: all 0.3s ease-in-out;
+  will-change: opacity;
+  mix-blend-mode: multiply;
 }
 
-.shul {
-  background-image: url(https://w2.chabad.org/media/images/1097/PgBS10976181.jpg);
+.promo-box:hover {
+  .title {
+    transform: translateY(75px);
+  }
 }
 
-.adult-education {
-  background-image: url(https://w2.chabad.org/media/images/1097/cGxY10976222.jpg);
-}
-
-.womens-circle {
-}
-
-.hebrew-school {
-}
-
-.photos {
-}
-
-.donate {
-}
-
-.shabbat {
-}
-
-.fire-island {
-}
-
-.title {
+.promo-box .title {
+  font-family: "Mulish", Arial, sans-serif !important;
   position: absolute;
-  top: 50%;
+  top: 45%;
   bottom: 0;
   left: 0;
   right: 0;
-  color: white;
+  color: #fff;
   font-weight: bold;
   font-size: 20px;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 25px;
+  padding: 0 10px;
+}
+
+.shul-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/nXBy13295438.jpg);
+}
+
+.adult-education-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/tPTD13295442.jpg);
+}
+
+.womens-circle-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/Fsjt13295444.jpg);
+}
+
+.hebrew-school-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/OmBr13295446.jpg);
+}
+
+.photos-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/OmBr13295446.jpg);
+}
+
+.donate-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/unOY13295441.jpg);
+}
+
+.shabbat-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/jXrN13295440.jpg);
+}
+
+.fire-island-bg {
+  background-image: url(https://w2.chabad.org/media/images/1329/yxMQ13295445.jpg);
+}
+
+div#HeaderSubscribeContainer {
+  display: flex !important;
+  margin: 0px auto;
+  width: 100% !important;
+  padding-top: 50px;
+}
+
+body.cco_body #tabContentMain .search_menu_item {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+body.cco_body #tabContentMain .search_menu_item .search-trigger {
+  color: #fff;
+}
+
+body.home.cco_body #tabContentMain .search_menu_item .search-trigger {
+  color: #8b1738;
+}
+
+#header #tabContentMain {
+  padding-right: 13px;
+}
+
+#header #tabContentMain.js-search-added {
+  padding-right: 0;
+}
+
+body.cco_body #tabContentMain .cco_search_header {
+  display: none;
+  position: absolute;
+  right: -16px;
+  top: 60px;
+  z-index: 2222;
+  background: white;
+  border-top: 1px solid #f57822;
+}
+
+body.cco_body #tabContentMain .cco_search_header.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#header_container.clearfix .cco_search_header {
+  display: none;
+}
+
+#header_container #co_menu_container_wrapper .cco_search_header {
+  display: block;
+}
+
+#header .cco_search_header {
+  overflow: hidden;
+  transition: width 300ms;
+  height: 50px;
+  width: 188px;
+  margin-right: 0;
+  padding-top: 0;
+  margin-top: 0px;
+  position: relative;
+}
+
+#header .cco_search_header .co_global_input,
+#header .cco_search_header .co_global_input_container {
+  height: auto;
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+}
+
+#header .cco_search_header .co_global_input {
+  padding: 4px 6px;
+  height: 26px;
+  color: #333;
+  font-size: 11px;
+}
+
+#header .cco_search_header .co_global_submit {
+  height: 26px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#header .cco_search_header .co_global_submit .button {
+  padding-right: 8px;
+  padding-left: 8px;
+  border-bottom: none;
+  border-radius: 0;
+  color: #fff;
+  height: 26px;
+  padding-top: 0;
+  padding-bottom: 2px;
+  background: #8b1738;
+}
+
+#header .cco_search_header .co_global_submit .button:before {
+  content: "\f002";
+  font-family: "FontAwesome";
+}
+
+.co_search_form.margin05 {
+  border: 1px solid black;
+}
+
+div#SubscribeFormContainer {
+  width: 100%;
+}
+
+.home {
+  div.co_form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1rem;
+    width: 100%;
+    float: clear;
+    flex: 3;
+    max-width: 950px;
+  }
+
+  input#Fname,
+  input#Lname,
+  input#SubscribeEmail {
+    font-family: "Montserrat", Arial, sans-serif !important;
+
+    width: 25%;
+    border-radius: 0;
+    border: 0;
+    padding: 10px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+  }
+
+  .form_group {
+    display: flex;
+    width: 45%;
+    gap: 1rem;
+  }
+
+  input#SubscribeEmail {
+    width: 100%;
+  }
+
+  div#CoButton_wrapper {
+    width: 50%;
+    padding-left: 0;
+  }
+
+  button#CoButton {
+    border: 0;
+    color: white;
+    background: hsl(343 72% 32% / 0.8);
+    transition: background 0.4s;
+    height: 50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 0;
+
+    span {
+      font-family: "Mulish", Arial, sans-serif !important;
+    }
+    &:hover {
+      background: #8b1738;
+      color: white;
+    }
+  }
+
+  .break_floats,
+  .light_grey.f-small,
+  .blue.f-small.bold.small_vertical_padding.medium_horizontal_padding.footer_box {
+    display: none;
+  }
+}
+
+.home:not(.mobile) div#content {
+  position: relative;
+  margin-top: 100px;
+}
+
+.home .g960.footer_family_text.bottom_padding {
+  float: none;
+}
+
+.home img.footer_hr {
+  display: none;
+}
+
+.home .footer_inner_container,
+.home .footer3 span,
+.home .footer_text a {
+  color: white !important;
+  font-family: "Montserrat", Arial, sans-serif !important;
+}
+
+#content #BodyContainer .body_wrapper.clearfix {
+  background: transparent !important;
+}
+
+.home #content #BodyContainer .body_wrapper {
+  text-align: center;
+
+  &:before {
+    content: "Upcoming  Events";
+    color: #8b1738;
+    font-size: 25px;
+    line-height: 120%;
+    font-weight: normal;
+    background: #fff;
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    top: -50px;
+    z-index: 2;
+    text-transform: uppercase;
+    font-family: "Montserrat", Arial, sans-serif !important;
+  }
+
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -35px;
+    height: 2px;
+    width: 100%;
+    background: #f6d0d1;
+    content: " ";
+    z-index: 1;
+  }
+}
+
+.cycle-prevNav span,
+.cycle-nextNav span {
+  background: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+}
+
+.cycle-directionNav a:hover span:after {
+  color: #f57822;
+}
+
+.cycle-prevNav span:after,
+.cycle-nextNav span:after {
+  color: #8b1738;
+  font-family: "FontAwesome";
+  font-size: 62px;
+  top: 18px;
+  right: 41px;
+  position: absolute;
+}
+
+.cycle-prevNav span:after {
+  content: "\f104";
+}
+
+.cycle-nextNav span:after {
+  content: "\f105";
+  left: 41px;
+}
+
+a.cycle-prevNav,
+a.cycle-nextNav {
+  font-size: 0;
+  text-indent: 0 !important;
+}
+
+.mobile .promo_slider .circles div.selected,
+.promo_slider .cycle-controlNav a.active {
+  background: #8b1738;
+}
+
+.mobile .promo_slider .circles div {
+  background: #f57822;
+}
+
+.promo_slider .cycle-controlNav a {
+  background: #f57822;
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+}
+
+.slides {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.promo_slider.v380 .slider {
+  border: 0;
+}
+
+.widget-1.promo_slider.custom.v380.feed.no_caption {
+  background: none;
+  border: 0;
+}
+
+.promo_slider .cycle-directionNav a {
+  width: 62px;
+  height: 62px;
+  background: none;
+}
+
+body .site_title,
+body.cco_body .site_title {
+  background: url(https://chabadofislip.com/media/images/1329/wrrj13298572.png) !important;
+  background-size: cover !important;
+}
+
+.dir_ltr.mobile .promo_slider .cycle-directionNav a.cycle-prevNav,
+.dir_ltr.mobile .promo_slider .cycle-directionNav a.cycle-nextNav {
+  background: none !important;
+}
+
+.mobile div#content {
+  position: relative;
+}
+
+.mobile .footer_inner_container .back_to_top .arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+table.main_menu_container.first.global {
+  max-width: 100%;
 }
