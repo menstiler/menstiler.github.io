@@ -21,7 +21,7 @@ body:not(.home).mobile div#header {
   height: auto;
 }
 
-.home div#content:before {
+div#content:before {
   content: "";
   position: absolute;
   left: 0;
@@ -38,6 +38,15 @@ body:not(.home).mobile div#header {
   @media (max-width: 650px) {
     background-size: cover;
     background-position: right -150px center;
+  }
+}
+
+body:not(.home) div#content:before {
+  height: 200px;
+
+  @media (max-width: 650px) {
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -732,7 +741,7 @@ body.cco_body .site_title {
 .mobile .footer_inner_container .back_to_top {
   height: 40px;
   width: 40px;
-  bottom: 100px;
+  bottom: 50px;
 }
 
 table.main_menu_container.first.global {
