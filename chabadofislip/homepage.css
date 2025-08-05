@@ -535,7 +535,7 @@ div#SubscribeFormContainer {
     background: rgba(255, 255, 255, 0.8);
     font-size: 15px;
 
-    @media (max-width: 650) {
+    @media (max-width: 650px) {
       width: 100%;
     }
   }
