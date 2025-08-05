@@ -34,6 +34,11 @@ body:not(.home).mobile div#header {
   z-index: -1;
   background: linear-gradient(to bottom, #ffffff 0%, rgb(255 255 255 / 0%)),
     url(https://w2.chabad.org/media/images/1329/utDJ13295443.jpg);
+
+  @media (max-width: 650px) {
+    background-size: cover;
+    background-position: right -150px center;
+  }
 }
 
 .home div#header {
@@ -290,7 +295,7 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   gap: 2rem;
 
   @media (max-width: 650px) {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(1, minmax(120px, 1fr));
   }
 }
 
@@ -529,6 +534,10 @@ div#SubscribeFormContainer {
     height: 50px;
     background: rgba(255, 255, 255, 0.8);
     font-size: 15px;
+
+    @media (max-width: 650) {
+      width: 100%;
+    }
   }
 
   .form_group {
@@ -717,16 +726,30 @@ body.cco_body .site_title {
 
 .mobile div#content {
   position: relative;
+  z-index: 1;
 }
 
-.mobile .footer_inner_container .back_to_top .arrow {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+.mobile .footer_inner_container .back_to_top {
+  height: 40px;
+  width: 40px;
+  bottom: 100px;
 }
 
 table.main_menu_container.first.global {
   max-width: 100%;
+}
+
+.home.mobile .subscribe-form {
+  padding: 10px;
+}
+
+.home.mobile .subscribe-form,
+.home.mobile .subscribe-form .split-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile .footer_container {
+  background: transparent;
 }

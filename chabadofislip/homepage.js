@@ -117,16 +117,24 @@ function init() {
   parentElement.insertAdjacentHTML("beforeBegin", widgetHtml);
 
   // subscription
-  const elementToMove = document.getElementById("HeaderSubscribeContainer");
+  const subscribeContainer = document.getElementById(
+    "HeaderSubscribeContainer"
+  );
 
-  if (elementToMove) {
-    parentElement.append(elementToMove);
+  if (subscribeContainer) {
+    parentElement.append(subscribeContainer);
   }
 
   // footer
   const footer = document.getElementById("footer");
 
   parentElement.append(footer);
+
+  if (jQuery("body").hasClass("mobile") && !subscribeContainer) {
+    const subscribeForm =
+      '<form class="subscribe-form" method="get" action="/subscribe"><div class="split-label"><input type="text" id="Fname" name="first_name" value="" placeholder="First Name" aria-label="First Name"><input type="text" id="Lname" name="last_name" value="" placeholder="Last Name" aria-label="Last Name"></div><label><input type="email" id="SubscribeEmail" aria-label="Your Email" placeholder="Your Email" name="Email" value="" required="required"></label><button type="submit" id="CoButton" value="Subscribe " name="co_form_submit">Subscribe</button></form>';
+    jQuery(footer).prepend(subscribeForm);
+  }
 
   // small promos
   jQuery(".sneak-peek-container").hide();
