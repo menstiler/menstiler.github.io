@@ -11,7 +11,8 @@ Chabad of Islip is your home on the Great South Bay to experience the beauty, wa
 </div>
 `;
 
-const promosWidgetHtml = `<div class="promos-container">
+const promosWidgetHtml = `<div class="promos-bg">
+<div class="promos-container">
     <div class="promo-box">
     <a href="/3346420"></a>
     <div class="promo-box-info shul-bg"></div>
@@ -51,6 +52,7 @@ const promosWidgetHtml = `<div class="promos-container">
      <a href="/4046077"></a>
      <div class="promo-box-info fire-island-bg"></div>
     <div class="title">Fire Island Visitors</div>
+    </div>
     </div>
 </div>`;
 
@@ -114,32 +116,25 @@ function init() {
     // text and actions
     parentElement.insertAdjacentHTML("beforeBegin", textWidgetHtml);
 
-    jQuery(parentElement).append(promosWidgetHtml);
-
     // subscription
     const subscribeContainer = document.getElementById(
       "HeaderSubscribeContainer"
     );
 
     if (subscribeContainer) {
-      parentElement.append(subscribeContainer);
+      parentElement.after(subscribeContainer);
     }
+
+    parentElement.insertAdjacentHTML("afterend", promosWidgetHtml);
 
     if (jQuery("body").hasClass("mobile") && !subscribeContainer) {
       const subscribeForm =
-        '<form class="subscribe-form" method="get" action="/subscribe"><div class="split-label"><input type="text" id="Fname" name="first_name" value="" placeholder="First Name" aria-label="First Name"><input type="text" id="Lname" name="last_name" value="" placeholder="Last Name" aria-label="Last Name"></div><label><input type="email" id="SubscribeEmail" aria-label="Your Email" placeholder="Your Email" name="Email" value="" required="required"></label><button type="submit" id="CoButton" value="Subscribe " name="co_form_submit">Subscribe</button></form>';
+        '<form class="subscribe-form" method="get" action="/subscribe"><button type="submit" id="CoButton" value="Subscribe to our mailing list " name="co_form_submit">Subscribe to our mailing list</button></form>';
       jQuery(footer).prepend(subscribeForm);
     }
 
     // small promos
     jQuery(".sneak-peek-container").hide();
-  }
-
-  if (jQuery("body").hasClass("home") || jQuery("body").hasClass("mobile")) {
-    // footer
-    const footer = document.getElementById("footer");
-
-    parentElement.append(footer);
   }
 }
 
