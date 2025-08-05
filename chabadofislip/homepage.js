@@ -132,10 +132,12 @@ function init() {
     jQuery(".sneak-peek-container").hide();
   }
 
-  // footer
-  const footer = document.getElementById("footer");
+  if (jQuery("body").hasClass("home") || jQuery("body").hasClass("mobile")) {
+    // footer
+    const footer = document.getElementById("footer");
 
-  parentElement.append(footer);
+    parentElement.append(footer);
+  }
 }
 
 if (document.readyState !== "loading") {
