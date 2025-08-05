@@ -34,6 +34,7 @@ div#content:before {
   z-index: -1;
   background: linear-gradient(to bottom, #ffffff 0%, rgb(255 255 255 / 0%)),
     url(https://w2.chabad.org/media/images/1329/utDJ13295443.jpg);
+  height: 900px;
 
   @media (max-width: 650px) {
     background-size: cover;
@@ -637,6 +638,10 @@ div#SubscribeFormContainer {
     z-index: 2;
     text-transform: uppercase;
     font-family: "Montserrat", Arial, sans-serif !important;
+
+    @media screen and (max-width: 650px) {
+      top: 0;
+    }
   }
 
   &:after {
@@ -649,6 +654,10 @@ div#SubscribeFormContainer {
     background: #f6d0d1;
     content: " ";
     z-index: 1;
+
+    @media screen and (max-width: 650px) {
+      top: 13px;
+    }
   }
 }
 

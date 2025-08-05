@@ -1,4 +1,4 @@
-const widgetHtml = `<div class="chabad_description_box">
+const textWidgetHtml = `<div class="chabad_description_box">
 <div class="header">
 <h5>We are here to serve you!</h5> 
 </div>
@@ -9,7 +9,9 @@ Chabad of Islip is your home on the Great South Bay to experience the beauty, wa
 <a href="/2053758" class='learn-more-btn'>Learn More</a>
 </div>
 </div>
-<div class="promos-container">
+`;
+
+const promosWidgetHtml = `<div class="promos-container">
     <div class="promo-box">
     <a href="/3346420"></a>
     <div class="promo-box-info shul-bg"></div>
@@ -50,8 +52,7 @@ Chabad of Islip is your home on the Great South Bay to experience the beauty, wa
      <div class="promo-box-info fire-island-bg"></div>
     <div class="title">Fire Island Visitors</div>
     </div>
-</div>
-`;
+</div>`;
 
 function setUpSearch() {
   jQuery("#tabContentMain").append(
@@ -111,7 +112,9 @@ function init() {
 
   if (window.location.pathname === "/") {
     // text and actions
-    parentElement.insertAdjacentHTML("beforeBegin", widgetHtml);
+    parentElement.insertAdjacentHTML("beforeBegin", textWidgetHtml);
+
+    jQuery(parentElement).append(promosWidgetHtml);
 
     // subscription
     const subscribeContainer = document.getElementById(
