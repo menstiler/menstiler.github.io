@@ -44,6 +44,10 @@ div#content:before {
 body:not(.home) div#content:before {
   height: 200px;
 
+  @media (min-width: 650px) {
+    display: none;
+  }
+
   @media (max-width: 650px) {
     background-size: cover;
     background-position: center;
@@ -252,45 +256,45 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-}
 
-.text {
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  padding: 40px 0;
-  font-size: 20px;
+  .text {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 20px;
 
-  @media (max-width: 650px) {
-    line-height: 30px;
-    padding: 0 10px;
+    @media (max-width: 650px) {
+      line-height: 30px;
+      padding: 0 10px;
+    }
   }
-}
 
-.action {
-  margin: 0 auto;
-  text-align: center;
-  @media (max-width: 650px) {
-    margin-top: 30px;
+  .action {
+    margin: 0 auto;
+    text-align: center;
+    @media (max-width: 650px) {
+      margin-top: 30px;
+    }
   }
-}
 
-.action a {
-  font-family: "Mulish", Arial, sans-serif;
-  text-align: center;
-  border: 2px solid #8b1738;
-  padding: 15px 20px;
-  font-size: 20px;
-  color: #8b1738;
-  transition: all 0.3s;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-
-  &:hover {
-    text-decoration: none;
-    background: #8b1738;
-    color: white;
+  .action a {
+    font-family: "Mulish", Arial, sans-serif;
+    text-align: center;
     border: 2px solid #8b1738;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: #8b1738;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: none;
+      background: #8b1738;
+      color: white;
+      border: 2px solid #8b1738;
+    }
   }
 }
 
