@@ -109,35 +109,33 @@ function init() {
 
   const parentElement = document.getElementById("content");
 
-  // text and actions
-  parentElement.insertAdjacentHTML("beforeBegin", widgetHtml);
+  if (window.location.pathname === "/") {
+    // text and actions
+    parentElement.insertAdjacentHTML("beforeBegin", widgetHtml);
 
-  // subscription
-  const subscribeContainer = document.getElementById(
-    "HeaderSubscribeContainer"
-  );
+    // subscription
+    const subscribeContainer = document.getElementById(
+      "HeaderSubscribeContainer"
+    );
 
-  if (subscribeContainer) {
-    parentElement.append(subscribeContainer);
+    if (subscribeContainer) {
+      parentElement.append(subscribeContainer);
+    }
+
+    if (jQuery("body").hasClass("mobile") && !subscribeContainer) {
+      const subscribeForm =
+        '<form class="subscribe-form" method="get" action="/subscribe"><div class="split-label"><input type="text" id="Fname" name="first_name" value="" placeholder="First Name" aria-label="First Name"><input type="text" id="Lname" name="last_name" value="" placeholder="Last Name" aria-label="Last Name"></div><label><input type="email" id="SubscribeEmail" aria-label="Your Email" placeholder="Your Email" name="Email" value="" required="required"></label><button type="submit" id="CoButton" value="Subscribe " name="co_form_submit">Subscribe</button></form>';
+      jQuery(footer).prepend(subscribeForm);
+    }
+
+    // small promos
+    jQuery(".sneak-peek-container").hide();
   }
 
   // footer
   const footer = document.getElementById("footer");
 
   parentElement.append(footer);
-
-  if (window.location.pathname !== "/") {
-    return;
-  }
-
-  if (jQuery("body").hasClass("mobile") && !subscribeContainer) {
-    const subscribeForm =
-      '<form class="subscribe-form" method="get" action="/subscribe"><div class="split-label"><input type="text" id="Fname" name="first_name" value="" placeholder="First Name" aria-label="First Name"><input type="text" id="Lname" name="last_name" value="" placeholder="Last Name" aria-label="Last Name"></div><label><input type="email" id="SubscribeEmail" aria-label="Your Email" placeholder="Your Email" name="Email" value="" required="required"></label><button type="submit" id="CoButton" value="Subscribe " name="co_form_submit">Subscribe</button></form>';
-    jQuery(footer).prepend(subscribeForm);
-  }
-
-  // small promos
-  jQuery(".sneak-peek-container").hide();
 }
 
 if (document.readyState !== "loading") {
