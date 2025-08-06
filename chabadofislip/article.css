@@ -67,6 +67,18 @@ body:not(.home).mobile div#header {
   background: #8b1738;
 }
 
+.mobile .center_logo a span,
+.menu_items > div.item .parent_item {
+  font-family: "Mulish", sans-serif;
+}
+
+.menu_items .item .sub_items > div.sub_item,
+.blue,
+.blue a,
+.co_body .content .blue a,
+ul.small_links li,
+.co_form_input.active,
+.co_form_textarea.active,
 .co_index .item .subtitle,
 .co_index .item .subtitle a,
 .co_index .synopsis,
