@@ -10,7 +10,7 @@ body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
 }
 
 @media screen and (max-width: 650px) {
-  body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
+  .body_wrapper.clearfix.co_body {
     width: 100%;
     flex-direction: column;
   }
