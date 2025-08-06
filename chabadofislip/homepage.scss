@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 div#header {
   background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg");
   padding-top: 30px;
@@ -16,13 +17,14 @@ div#header {
     background-position-x: center;
   }
 }
+
 body:not(.home).mobile div#header {
   background: none;
   height: auto;
 }
 
 div.promos-bg {
-  background: linear-gradient(to bottom, #ffffff 0, rgba(255, 255, 255, 0.5)),
+  background: linear-gradient(to bottom, #ffffff 0, rgb(255 255 255 / 0.5)),
     url(https://w2.chabad.org/media/images/1329/utDJ13295443.jpg);
 }
 
@@ -31,6 +33,7 @@ div.promos-bg {
     background: none;
   }
 }
+
 body:not(.home) div#content:before {
   height: 200px;
 }
@@ -40,12 +43,14 @@ body:not(.home) div#content:before {
     display: none;
   }
 }
+
 @media (max-width: 650px) {
   body:not(.home) div#content:before {
     background-size: cover;
     background-position: center;
   }
 }
+
 .home div#header {
   padding-bottom: 40%;
   background-position-y: center;
@@ -72,25 +77,25 @@ body.cco_body .site_title {
   height: 150px;
   left: 0;
   right: 0;
-  top: 30%;
+  top: 38%;
   font-size: 100px;
   color: white;
   text-align: center;
   font-weight: bold;
   line-height: 106px;
   margin: 0 auto;
-  font-family: "Mulish", Arial, sans-serif !important;
 }
 
 @media (max-width: 966px) {
   .home #header:before {
     width: auto;
-    top: 23%;
+    top: 30%;
     font-size: 25px;
     padding: 0 10px;
     line-height: 30px;
   }
 }
+
 .home #header:after {
   content: "Experience Jewish Life on the South Shore";
   position: absolute;
@@ -98,24 +103,24 @@ body.cco_body .site_title {
   height: 150px;
   left: 0;
   right: 0;
-  top: 68%;
+  top: 75%;
   font-size: 31px;
   color: white;
   text-align: center;
   font-weight: bold;
   line-height: 42px;
   margin: 0 auto;
-  font-family: "Mulish", Arial, sans-serif !important;
 }
 
 @media (max-width: 966px) {
   .home #header:after {
     width: auto;
-    top: 52%;
+    top: 60%;
     font-size: 18px;
     line-height: 25px;
   }
 }
+
 body > #header > .wrapper {
   width: 100%;
   max-width: 100%;
@@ -140,8 +145,8 @@ body > #header > .wrapper.fixed-header {
   width: 100%;
   color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 9;
-  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  background-color: rgb(255 255 255 / 80%);
   background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg");
   background-size: cover;
   background-position-y: -100px;
@@ -248,6 +253,7 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
     padding: 0 10px;
   }
 }
+
 .chabad_description_box {
   padding: 75px 0;
   display: flex;
@@ -293,12 +299,14 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
     margin-top: 30px;
   }
 }
+
 @media (max-width: 650px) {
   .chabad_description_box .text {
     line-height: 30px;
     padding: 0 10px;
   }
 }
+
 .promos-container {
   margin: 0 auto;
   padding: 75px 0;
@@ -311,8 +319,7 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
 
 @media (max-width: 650px) {
   .promos-container {
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
-    width: 90%;
+    grid-template-columns: repeat(1, minmax(120px, 1fr));
   }
 }
 
@@ -328,15 +335,6 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   min-height: 250px;
   position: relative;
   z-index: 5;
-}
-
-@media (max-width: 650px) {
-  .promo-box {
-    min-height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .promo-box a {
@@ -375,12 +373,6 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   transform: translateY(75px);
 }
 
-@media (max-width: 650px) {
-  .promo-box:hover .title {
-    transform: none;
-  }
-}
-
 .promo-box .title {
   font-family: "Mulish", Arial, sans-serif !important;
   position: absolute;
@@ -396,13 +388,6 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   letter-spacing: 2px;
   line-height: 25px;
   padding: 0 10px;
-}
-
-@media (max-width: 650px) {
-  .promo-box .title {
-    position: static;
-    z-index: 1;
-  }
 }
 
 .shul-bg {
@@ -469,14 +454,20 @@ body.home.cco_body #tabContentMain .search_menu_item .search-trigger {
 }
 
 body.cco_body #tabContentMain .cco_search_header {
+  display: none;
+  position: absolute;
+  right: -16px;
+  top: 60px;
+  z-index: 2222;
   background: white;
+  border-top: 1px solid #f57822;
 }
 
 body.cco_body #tabContentMain .cco_search_header.show {
+  display: flex;
   justify-content: center;
-  width: 188px;
-  transition: width 0.3s;
-  padding: 0 initial;
+  align-items: center;
+  padding: 10px;
 }
 
 #header_container.clearfix .cco_search_header {
@@ -490,10 +481,11 @@ body.cco_body #tabContentMain .cco_search_header.show {
 #header .cco_search_header {
   overflow: hidden;
   transition: width 300ms;
-  width: 0;
+  height: 50px;
+  width: 188px;
   margin-right: 0;
   padding-top: 0;
-  margin-top: 13px;
+  margin-top: 0px;
   position: relative;
 }
 
@@ -535,177 +527,105 @@ body.cco_body #tabContentMain .cco_search_header.show {
   font-family: "FontAwesome";
 }
 
+.co_search_form.margin05 {
+  border: 1px solid black;
+}
+
 div#SubscribeFormContainer {
   width: 100%;
 }
 
-.home.mobile
-  #footer
-  .subscribe-form
-  div.co_form_container
-  div.co_form_container,
-.home div#HeaderSubscribeContainer div.co_form_container div.co_form_container,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  div.co_form_container
-  div.co_form_container,
-.home form.bottom_subscribe_box div.co_form_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  gap: 1rem;
-  width: 100%;
-  float: none;
-  flex: 3;
-  max-width: 950px;
-}
-.home.mobile #footer .subscribe-form div.co_form_container + .success,
-.home div#HeaderSubscribeContainer div.co_form_container + .success,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  div.co_form_container
-  + .success,
-.home form.bottom_subscribe_box + .success {
-  font-size: 25px;
-  color: #8b1738;
-  font-weight: bold;
-}
-.home.mobile #footer .subscribe-form div.co_form_container input#Fname,
-.home.mobile #footer .subscribe-form div.co_form_container input#Lname,
-.home.mobile #footer .subscribe-form div.co_form_container input#SubscribeEmail,
-.home div#HeaderSubscribeContainer div.co_form_container input#Fname,
-.home div#HeaderSubscribeContainer div.co_form_container input#Lname,
-.home div#HeaderSubscribeContainer div.co_form_container input#SubscribeEmail,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  input.mobile_input_field,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  input.mobile_input_field,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  input.mobile_input_field,
-.home form.bottom_subscribe_box input#Fname,
-.home form.bottom_subscribe_box input#Lname,
-.home form.bottom_subscribe_box input#SubscribeEmail {
-  font-family: "Montserrat", Arial, sans-serif !important;
-  width: 25%;
-  border-radius: 0;
-  border: 0;
-  padding: 10px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.8);
-  font-size: 15px;
-}
-.home.mobile #footer .subscribe-form div.co_form_container .form_group,
-.home div#HeaderSubscribeContainer div.co_form_container .form_group,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  div.co_form_container
-  .form_group,
-.home form.bottom_subscribe_box .form_group {
-  display: flex;
-  width: 45%;
-  gap: 1rem;
-}
-.home.mobile #footer .subscribe-form div.co_form_container input#SubscribeEmail,
-.home div#HeaderSubscribeContainer div.co_form_container input#SubscribeEmail,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  div.co_form_container
-  input#SubscribeEmail,
-.home form.bottom_subscribe_box input#SubscribeEmail {
-  width: 100%;
-}
-.home.mobile #footer .subscribe-form div.co_form_container div#CoButton_wrapper,
-.home div#HeaderSubscribeContainer div.co_form_container div#CoButton_wrapper,
-.home .mobile_wrapper_container form.bottom_subscribe_box div#CoButton_wrapper,
-.home form.bottom_subscribe_box div#CoButton_wrapper {
-  width: 50%;
-  padding-left: 0;
-}
-.home.mobile #footer .subscribe-form div.co_form_container button#CoButton,
-.home div#HeaderSubscribeContainer div.co_form_container button#CoButton,
-.home .mobile_wrapper_container form.bottom_subscribe_box input#CoButton,
-.home form.bottom_subscribe_box button#CoButton,
-.home.mobile #footer .subscribe-form button#CoButton {
-  border: 2px solid #8b1738;
-  color: #8b1738;
-  background: transparent;
-  transition: background 0.4s;
-  height: 50px;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border-radius: 0;
-}
-.home.mobile #footer .subscribe-form div.co_form_container button#CoButton span,
-.home div#HeaderSubscribeContainer div.co_form_container button#CoButton span,
-.home .mobile_wrapper_container form.bottom_subscribe_box input#CoButton span,
-.home form.bottom_subscribe_box button#CoButton span {
-  font-family: "Mulish", Arial, sans-serif !important;
-}
-.home.mobile #footer .subscribe-form div.co_form_container input#CoButton:hover,
-.home div#HeaderSubscribeContainer div.co_form_container button#CoButton:hover,
-.home .mobile_wrapper_container form.bottom_subscribe_box input#CoButton:hover,
-.home form.bottom_subscribe_box button#CoButton:hover,
-.home.mobile #footer .subscribe-form button#CoButton:hover {
-  background: #8b1738;
-  color: white;
-}
-.home.mobile #footer .subscribe-form div.co_form_container .break_floats,
-.home.mobile #footer .subscribe-form div.co_form_container .light_grey.f-small,
-.home.mobile
-  #footer
-  .subscribe-form
-  div.co_form_container
-  .blue.f-small.bold.small_vertical_padding.medium_horizontal_padding.footer_box,
-.home div#HeaderSubscribeContainer .break_floats,
-.home div#HeaderSubscribeContainer .light_grey.f-small,
-.home
-  div#HeaderSubscribeContainer
-  .blue.f-small.bold.small_vertical_padding.medium_horizontal_padding.footer_box,
-.home .mobile_wrapper_container form.bottom_subscribe_box .break_floats,
-.home .mobile_wrapper_container form.bottom_subscribe_box .light_grey.f-small,
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  .blue.f-small.bold.small_vertical_padding.medium_horizontal_padding.footer_box,
-.home form.bottom_subscribe_box .break_floats,
-.home form.bottom_subscribe_box .light_grey.f-small,
-.home
-  form.bottom_subscribe_box
+.home.mobile #footer .subscribe-form div.co_form_container,
+.home div#HeaderSubscribeContainer div.co_form_container,
+.home .mobile_wrapper_container form.subscribe_box div.co_form_container,
+.home form.subscribe_box {
+  div.co_form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1rem;
+    width: 100%;
+    float: clear;
+    flex: 3;
+    max-width: 950px;
+  }
+
+  + .success {
+    font-size: 25px;
+    color: #8b1738;
+    font-weight: bold;
+  }
+
+  input#Fname,
+  input#Lname,
+  input#SubscribeEmail {
+    font-family: "Montserrat", Arial, sans-serif !important;
+    width: 25%;
+    border-radius: 0;
+    border: 0;
+    padding: 10px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+  }
+
+  .form_group {
+    display: flex;
+    width: 45%;
+    gap: 1rem;
+  }
+
+  input#SubscribeEmail {
+    width: 100%;
+  }
+
+  div#CoButton_wrapper {
+    width: 50%;
+    padding-left: 0;
+  }
+
+  button#CoButton {
+    border: 2px solid #8b1738;
+    color: #8b1738;
+    background: transparent;
+    transition: background 0.4s;
+    height: 50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 0;
+
+    span {
+      font-family: "Mulish", Arial, sans-serif !important;
+    }
+
+    &:hover {
+      background: #8b1738;
+      color: white;
+    }
+  }
+
+  .break_floats,
+  .light_grey.f-small,
   .blue.f-small.bold.small_vertical_padding.medium_horizontal_padding.footer_box {
-  display: none;
+    display: none;
+  }
 }
 
 @media (max-width: 650px) {
-  .home.mobile #footer .subscribe-form input#Fname,
-  .home.mobile #footer .subscribe-form input#Lname,
-  .home.mobile #footer .subscribe-form input#SubscribeEmail,
-  .home div#HeaderSubscribeContainer input#Fname,
-  .home div#HeaderSubscribeContainer input#Lname,
-  .home div#HeaderSubscribeContainer input#SubscribeEmail,
-  .home .mobile_wrapper_container form.bottom_subscribe_box input#Fname,
-  .home .mobile_wrapper_container form.bottom_subscribe_box input#Lname,
-  .home
-    .mobile_wrapper_container
-    form.bottom_subscribe_box
-    input#SubscribeEmail,
-  .home form.bottom_subscribe_box input#Fname,
-  .home form.bottom_subscribe_box input#Lname,
-  .home form.bottom_subscribe_box input#SubscribeEmail {
-    width: 100%;
+  .home.mobile #footer .subscribe-form,
+  .home div#HeaderSubscribeContainer,
+  .home .mobile_wrapper_container form.subscribe_box,
+  .home form.subscribe_box {
+    input#Fname,
+    input#Lname,
+    input#SubscribeEmail {
+      width: 100%;
+    }
   }
 }
+
 .home:not(.mobile) div#content {
   position: relative;
 }
@@ -718,75 +638,55 @@ div#SubscribeFormContainer {
   display: none;
 }
 
-.home .footer_inner_container,
-.home .footer3 span,
-.home .footer_text a {
-  color: white !important;
-  font-family: "Montserrat", Arial, sans-serif !important;
+.home {
+  .footer_inner_container,
+  .footer3 span,
+  .footer_text a {
+    color: white !important;
+    font-family: "Montserrat", Arial, sans-serif !important;
+  }
 }
 
 #content #BodyContainer .body_wrapper.clearfix {
   background: transparent !important;
 }
-
 .home #content {
   background: #ececec;
 }
 
 .home #content #BodyContainer {
-  padding: 50px 0;
-}
-
-@media screen and (max-width: 650px) {
-  .home #content #BodyContainer {
-    padding-bottom: 25px;
-  }
+  padding: 75px 0;
 }
 
 .home #content #BodyContainer .body_wrapper {
   text-align: center;
-}
 
-.home #content #BodyContainer .article_index_container:before {
-  content: "Upcoming  Events";
-  color: #8b1738;
-  font-size: 25px;
-  line-height: 120%;
-  font-weight: normal;
-  background: #ececec;
-  display: inline-block;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  z-index: 2;
-  text-transform: uppercase;
-  font-family: "Montserrat", Arial, sans-serif !important;
-}
+  &:before {
+    content: "Upcoming  Events";
+    color: #8b1738;
+    font-size: 25px;
+    line-height: 120%;
+    font-weight: normal;
+    background: #ececec;
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    font-family: "Montserrat", Arial, sans-serif !important;
+  }
 
-.home #content #BodyContainer .body_wrapper:has(.g960):before {
-  content: "Upcoming  Events";
-  color: #8b1738;
-  font-size: 25px;
-  line-height: 120%;
-  font-weight: normal;
-  background: #ececec;
-  display: inline-block;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  z-index: 2;
-  text-transform: uppercase;
-  font-family: "Montserrat", Arial, sans-serif !important;
-}
-.home #content #BodyContainer .body_wrapper > .g960:after {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 63px;
-  height: 2px;
-  width: 100%;
-  background: #f6d0d1;
-  content: " ";
+  > .g960:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 88px;
+    height: 2px;
+    width: 100%;
+    background: #f6d0d1;
+    content: " ";
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -794,9 +694,10 @@ div#SubscribeFormContainer {
     top: -25px;
   }
   .home #content #BodyContainer .body_wrapper > .g960:after {
-    top: 38px;
+    top: 64px;
   }
 }
+
 .cycle-prevNav span,
 .cycle-nextNav span {
   background: none;
@@ -899,13 +800,13 @@ table.main_menu_container.first.global {
 
 .home.mobile #footer .subscribe-form {
   padding: 10px;
-}
 
-.home.mobile #footer .bottom_subscribe_box input#CoButton {
-  padding: 10px 20px;
-  font-size: 15px;
-  line-height: 20px;
-  width: 100%;
+  button#CoButton {
+    padding: 10px 20px;
+    font-size: 15px;
+    height: 70px;
+    line-height: 20px;
+  }
 }
 
 .home.mobile .subscribe-form,
@@ -922,54 +823,34 @@ table.main_menu_container.first.global {
   background: transparent;
 }
 
-.home .mobile_wrapper_container form.bottom_subscribe_box {
+.home .mobile_wrapper_container form.subscribe_box {
   text-align: center;
-  justify-content: center;
-  padding: 10px;
-  margin: 0 auto;
-  background: #ececec;
-}
-
-.home .mobile_wrapper_container form.bottom_subscribe_box .field-row {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.home
-  .mobile_wrapper_container
-  form.bottom_subscribe_box
-  .field-row
-  input.mobile_input_field {
-  width: 100%;
-}
-
-.home .mobile_wrapper_container form:before,
-.home #SubscribeFormContainer:before {
-  content: "Join Our Mailing List";
-  color: #8b1738;
-  font-size: 25px;
-  line-height: 120%;
-  font-weight: normal;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  z-index: 2;
-  left: 0px;
-  right: 0px;
-  text-transform: uppercase;
-  font-family: "Montserrat", Arial, sans-serif !important;
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  &:before {
+    content: "Join Our Mailing List";
+    color: #8b1738;
+    font-size: 25px;
+    line-height: 120%;
+    font-weight: normal;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    z-index: 2;
+    left: 0px;
+    right: 0px;
+    text-transform: uppercase;
+    font-family: "Montserrat", Arial, sans-serif !important;
+    bottom: 20px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 @media (max-width: 650px) {
-  .home .mobile_wrapper_container form.bottom_subscribe_box:before {
+  .home .mobile_wrapper_container form.subscribe_box:before {
     margin-top: 30px;
   }
 }
+
 div#footer {
   background-color: #8b1738;
 }
