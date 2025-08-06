@@ -10,7 +10,7 @@ body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
 }
 
 @media screen and (max-width: 650px) {
-  .body_wrapper.clearfix.co_body {
+  body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
     width: 100%;
     flex-direction: column;
   }
@@ -67,6 +67,9 @@ body:not(.home).mobile div#header {
   background: #8b1738;
 }
 
+.co_index .item .subtitle,
+.co_index .item .subtitle a,
+.co_index .synopsis,
 .co_body .light_grey a,
 .light_grey,
 .light_grey a,
