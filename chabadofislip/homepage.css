@@ -8,8 +8,10 @@ div#header {
   position: relative;
   transition: all 0.3s;
   background-position-y: -100px;
+}
 
-  @media (max-width: 650px) {
+@media (max-width: 650px) {
+  div#header {
     padding-top: 0;
     height: 250px;
     background-position-x: center;
@@ -24,20 +26,26 @@ body:not(.home).mobile div#header {
 div.promos-bg {
   background: linear-gradient(to bottom, #ffffff 0, rgb(255 255 255 / 0.5)),
     url(https://w2.chabad.org/media/images/1329/utDJ13295443.jpg);
+}
 
-  @media (max-width: 650px) {
+@media (max-width: 650px) {
+  div.promos-bg {
     background: none;
   }
 }
 
 body:not(.home) div#content:before {
   height: 200px;
+}
 
-  @media (min-width: 650px) {
+@media (min-width: 650px) {
+  body:not(.home) div#content:before {
     display: none;
   }
+}
 
-  @media (max-width: 650px) {
+@media (max-width: 650px) {
+  body:not(.home) div#content:before {
     background-size: cover;
     background-position: center;
   }
@@ -76,8 +84,10 @@ body.cco_body .site_title {
   font-weight: bold;
   line-height: 106px;
   margin: 0 auto;
+}
 
-  @media (max-width: 966px) {
+@media (max-width: 966px) {
+  .home #header:before {
     width: auto;
     top: 30%;
     font-size: 25px;
@@ -100,8 +110,10 @@ body.cco_body .site_title {
   font-weight: bold;
   line-height: 42px;
   margin: 0 auto;
+}
 
-  @media (max-width: 966px) {
+@media (max-width: 966px) {
+  .home #header:after {
     width: auto;
     top: 60%;
     font-size: 18px;
@@ -232,8 +244,10 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;
+}
 
-  @media (max-width: 650px) {
+@media (max-width: 650px) {
+  .chabad_description_box h5 {
     font-size: 25px;
     line-height: 35px;
     padding: 0 10px;
@@ -252,19 +266,11 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
     text-align: center;
     padding: 40px 0;
     font-size: 20px;
-
-    @media (max-width: 650px) {
-      line-height: 30px;
-      padding: 0 10px;
-    }
   }
 
   .action {
     margin: 0 auto;
     text-align: center;
-    @media (max-width: 650px) {
-      margin-top: 30px;
-    }
   }
 
   .action a {
@@ -288,6 +294,19 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   }
 }
 
+@media (max-width: 650px) {
+  .chabad_description_box .action {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .chabad_description_box .text {
+    line-height: 30px;
+    padding: 0 10px;
+  }
+}
+
 .promos-container {
   margin: 0 auto;
   padding: 75px 0;
@@ -296,8 +315,10 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   grid-template-columns: repeat(4, 1fr);
   width: 75%;
   gap: 2rem;
+}
 
-  @media (max-width: 650px) {
+@media (max-width: 650px) {
+  .promos-container {
     grid-template-columns: repeat(1, minmax(120px, 1fr));
   }
 }
@@ -516,7 +537,10 @@ div#SubscribeFormContainer {
   width: 100%;
 }
 
-.home {
+.home.mobile #footer .subscribe-form,
+.home div#HeaderSubscribeContainer,
+.home .mobile_wrapper_container form.subscribe_box,
+.home form.subscribe_box {
   div.co_form_container {
     display: flex;
     justify-content: center;
@@ -546,10 +570,6 @@ div#SubscribeFormContainer {
     height: 50px;
     background: rgba(255, 255, 255, 0.8);
     font-size: 15px;
-
-    @media (max-width: 650px) {
-      width: 100%;
-    }
   }
 
   .form_group {
@@ -595,6 +615,19 @@ div#SubscribeFormContainer {
   }
 }
 
+@media (max-width: 650px) {
+  .home.mobile #footer .subscribe-form,
+  .home div#HeaderSubscribeContainer,
+  .home .mobile_wrapper_container form.subscribe_box,
+  .home form.subscribe_box {
+    input#Fname,
+    input#Lname,
+    input#SubscribeEmail {
+      width: 100%;
+    }
+  }
+}
+
 .home:not(.mobile) div#content {
   position: relative;
 }
@@ -607,11 +640,13 @@ div#SubscribeFormContainer {
   display: none;
 }
 
-.home .footer_inner_container,
-.home .footer3 span,
-.home .footer_text a {
-  color: white !important;
-  font-family: "Montserrat", Arial, sans-serif !important;
+.home {
+  .footer_inner_container,
+  .footer3 span,
+  .footer_text a {
+    color: white !important;
+    font-family: "Montserrat", Arial, sans-serif !important;
+  }
 }
 
 #content #BodyContainer .body_wrapper.clearfix {
@@ -642,10 +677,6 @@ div#SubscribeFormContainer {
     z-index: 2;
     text-transform: uppercase;
     font-family: "Montserrat", Arial, sans-serif !important;
-
-    @media screen and (max-width: 650px) {
-      top: -25px;
-    }
   }
 
   > .g960:after {
@@ -657,10 +688,15 @@ div#SubscribeFormContainer {
     width: 100%;
     background: #f6d0d1;
     content: " ";
+  }
+}
 
-    @media screen and (max-width: 650px) {
-      top: 64px;
-    }
+@media screen and (max-width: 650px) {
+  .home #content #BodyContainer .body_wrapper:before {
+    top: -25px;
+  }
+  .home #content #BodyContainer .body_wrapper > .g960:after {
+    top: 64px;
   }
 }
 
@@ -764,7 +800,7 @@ table.main_menu_container.first.global {
   max-width: 100%;
 }
 
-.home.mobile .subscribe-form {
+.home.mobile #footer .subscribe-form {
   padding: 10px;
 
   button#CoButton {
@@ -789,7 +825,7 @@ table.main_menu_container.first.global {
   background: transparent;
 }
 
-.home form.subscribe_box {
+.home .mobile_wrapper_container form.subscribe_box {
   text-align: center;
   &:before {
     content: "Join Our Mailing List";
@@ -808,10 +844,12 @@ table.main_menu_container.first.global {
     bottom: 20px;
     margin: 0 auto;
     width: 100%;
+  }
+}
 
-    @media (max-width: 650px) {
-      margin-top: 30px;
-    }
+@media (max-width: 650px) {
+  .home .mobile_wrapper_container form.subscribe_box:before {
+    margin-top: 30px;
   }
 }
 
