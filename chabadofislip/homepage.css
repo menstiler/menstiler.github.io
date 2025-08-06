@@ -79,6 +79,7 @@ body.cco_body .site_title {
   font-weight: bold;
   line-height: 106px;
   margin: 0 auto;
+  font-family: "Mulish", Arial, sans-serif !important;
 }
 
 @media (max-width: 966px) {
@@ -104,6 +105,7 @@ body.cco_body .site_title {
   font-weight: bold;
   line-height: 42px;
   margin: 0 auto;
+  font-family: "Mulish", Arial, sans-serif !important;
 }
 
 @media (max-width: 966px) {
@@ -949,5 +951,3 @@ div#footer {
 .footer_container.footer_text.copyright_text {
   margin-top: 0;
 }
-
-/*# sourceMappingURL=homepage.css.map */
