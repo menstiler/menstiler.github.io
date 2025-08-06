@@ -10,7 +10,7 @@ body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
 }
 
 @media screen and (max-width: 650px) {
-  .body_wrapper.clearfix.co_body {
+  body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
     width: 100%;
     flex-direction: column;
   }
@@ -45,8 +45,8 @@ div#co_content_container {
   padding: 0;
 }
 
-#BodyContainer,
-body > #content > .wrapper {
+body:not(.home) #BodyContainer,
+body:not(.home) > #content > .wrapper {
   width: 100%;
 }
 
