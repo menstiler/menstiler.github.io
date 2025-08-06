@@ -359,3 +359,11 @@ img.form-image {
   align-self: center;
   font-family: "Montserrat";
 }
+
+.sub_menu item {
+  background-color: var(--primary-color);
+}
+
+.sub_menu item a {
+  color: white;
+}

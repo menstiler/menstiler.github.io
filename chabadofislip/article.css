@@ -1,0 +1,158 @@
+body:not(.cco_templateless_page) div#co_body_container {
+  padding: 50px 0;
+}
+
+body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
+  width: 1110px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 650px) {
+  .body_wrapper.clearfix.co_body {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+body:not(.cco_templateless_page)
+  h1.article-header__title.js-article-title.js-page-title {
+  color: white;
+  font-family: "Mulish", sans-serif;
+}
+
+header.article-header.cf {
+  border: 0;
+}
+
+.master-content-wrapper.g960 {
+  background: #8b1738;
+  color: white;
+  width: 100%;
+  margin: 0;
+  padding: 27px 180px;
+}
+
+@media screen and (max-width: 650px) {
+  .master-content-wrapper.g960 {
+    display: inline-flex;
+    padding: 20px 10px;
+  }
+}
+
+div#co_content_container {
+  padding: 0;
+}
+
+#BodyContainer,
+body > #content > .wrapper {
+  width: 100%;
+}
+
+.co_body h3,
+.co_body h3 a,
+.breadcrumbs__crumb,
+.article-header__subtitle {
+  color: #f57822;
+  font-family: "Mulish", sans-serif;
+}
+
+.breadcrumbs {
+  margin-bottom: 10px;
+  font-family: "Mulish", sans-serif;
+}
+
+body:not(.home).mobile div#header {
+  background: #8b1738;
+}
+
+.co_body .light_grey a,
+.light_grey,
+.light_grey a,
+.co_global_input,
+.co_body .small_header,
+.co_content_container .small_header,
+.co_index .item .title,
+.co_index .item .title a,
+.co_local_menu,
+.co_local_menu .item .item_sub a,
+.co_local_menu .item a,
+.co_local_menu .section_title a,
+.content_title,
+.content_title_container .content_title,
+.content_title_container h1,
+.secondary_navigation .header,
+.secondary_navigation .item.selected a,
+.small_links .more a,
+.co_local_menu .section_title div,
+.co_local_menu .section_title h1,
+.form-address-table td,
+.form-address-table th,
+#total_amount,
+.form-label-auto label,
+.form-label-left label,
+.form-label-right label,
+.form-label-top label,
+.form-sub-label,
+.form-checkbox-item LABEL,
+.form-grading-label,
+.form-radio-item LABEL,
+.form-captcha INPUT,
+.form-checkbox-other-input,
+.form-radio-other-input,
+.form-textarea,
+.form-textbox,
+.co_body .content p,
+.co_body .content p span,
+.footer_inner_container,
+.co_body .content .form-all .form-html li,
+.footer_inner_container .footer3,
+.footer_inner_container a {
+  font-family: "Montserrat", Arial, sans-serif !important;
+}
+
+.co_body .content .form-all .form-html b,
+.co_body .content .form-all .form-html li b {
+  font-weight: 600;
+}
+
+#CoButton,
+.form-submit-print,
+.form-submit-reset,
+.form-submit-button {
+  transition: background 0.4s;
+  letter-spacing: 2px;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.form-submit-print,
+.form-submit-reset {
+  background: transparent;
+  border: 2px solid #8b1738;
+  color: #8b1738;
+}
+.form-submit-print:hover,
+.form-submit-reset:hover {
+  color: #fff;
+  background: #8b1738;
+}
+
+#CoButton,
+.form-submit-button {
+  color: #fff;
+  background: #8b1738;
+  border: 1px solid #8b1738;
+}
+
+#CoButton:hover,
+.form-submit-button:hover {
+  color: #000;
+  background: transparent;
+  border: 2px solid #8b1738;
+}

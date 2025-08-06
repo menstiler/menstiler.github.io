@@ -118,6 +118,9 @@ function setUpSearch() {
 function setUpScrolling() {
   window.addEventListener("scroll", function () {
     const header = document.querySelector("#header");
+
+    if (!header) return;
+
     const headerOffsetTop = header.offsetTop; // Get the initial top position of the header
     const headerWrapper = document.querySelector("#header .wrapper");
 
