@@ -977,3 +977,15 @@ div#footer {
 .footer_container.footer_text.copyright_text {
   margin-top: 0;
 }
+
+.mobile .footer_inner_container .back_to_top .arrow {
+  background: none;
+}
+
+.mobile .footer_inner_container .back_to_top .arrow:before {
+  content: "\f077";
+  font-family: "Font Awesome 5 Pro", "Font Awesome 5 Brands";
+  color: #8b1738;
+  font-size: 20px;
+  font-weight: 900;
+}

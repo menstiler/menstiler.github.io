@@ -67,11 +67,16 @@ body:not(.home).mobile div#header {
   background: #8b1738;
 }
 
+.co_dialog .header_text,
 .mobile .center_logo a span,
 .menu_items > div.item .parent_item {
   font-family: "Mulish", sans-serif;
 }
 
+.co_body .content .grey a,
+.grey,
+.grey a,
+.co_dialog .co_dialog_content,
 .menu_items .item .sub_items > div.sub_item,
 .blue,
 .blue a,
@@ -146,28 +151,53 @@ ul.small_links li,
   border-radius: 0;
 }
 
+.cco_body .co_global_button .button {
+  transition: background 0.4s;
+  letter-spacing: 2px;
+  padding: 12px 10px;
+  text-transform: uppercase;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.cco_body .co_global_button .button,
 .form-submit-print,
 .form-submit-reset {
+  text-decoration: none;
   background: transparent;
   border: 2px solid #8b1738;
   color: #8b1738;
 }
+
+.cco_body .co_global_button .button:hover,
 .form-submit-print:hover,
 .form-submit-reset:hover {
   color: #fff;
   background: #8b1738;
+  border: 2px solid #8b1738;
 }
 
 #CoButton,
 .form-submit-button {
   color: #fff;
   background: #8b1738;
-  border: 1px solid #8b1738;
+  border: 2px solid #8b1738;
 }
 
 #CoButton:hover,
 .form-submit-button:hover {
-  color: #000;
+  color: #8b1738;
   background: transparent;
   border: 2px solid #8b1738;
+}
+
+#CoButton:active,
+.cco_body .co_global_button .button:active,
+.form-submit-reset:active,
+.form-submit-print:active,
+.form-submit-button:active {
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
 }
