@@ -33,13 +33,12 @@ body.mobile div#chabad_body_content {
     bottom: 300px;
     right: 0;
     left: 0;
-    /* width: 100%; */
-    /* margin: auto; */
   }
 
   .article-header__subtitle,
   .article-header__title {
     color: #fff;
+    font-weight: 600;
   }
 
   .campaign-progress {
@@ -209,7 +208,7 @@ body.mobile div#chabad_body_content {
 
   .donor-item .name,
   .donor-item .amount {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .donor-item .dedication {
@@ -408,7 +407,7 @@ body.mobile div#chabad_body_content {
 
     .form-radio-item label {
       font-size: 30px;
-      font-weight: 700;
+      font-weight: 500;
       font-family: "Montserrat";
     }
 

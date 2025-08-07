@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --primary-color: #8b1738;
+  --secondary-color: #f57822;
+  --primary-font: "Montserrat", Arial, sans-serif;
+  --secondary-font: "Mulish", Arial, sans-serif;
+}
+
 div#header {
   background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg");
   padding-top: 30px;
@@ -79,7 +87,7 @@ body.cco_body .site_title {
   font-weight: bold;
   line-height: 106px;
   margin: 0 auto;
-  font-family: "Mulish", Arial, sans-serif !important;
+  font-family: var(--secondary-font) !important;
 }
 
 @media (max-width: 966px) {
@@ -105,7 +113,7 @@ body.cco_body .site_title {
   font-weight: bold;
   line-height: 42px;
   margin: 0 auto;
-  font-family: "Mulish", Arial, sans-serif !important;
+  font-family: var(--secondary-font) !important;
 }
 
 @media (max-width: 966px) {
@@ -180,18 +188,18 @@ body.cco_body #tabContentMain .co_menu_item_divider {
 }
 
 body.cco_body #tabContentMain .co_menu_item span.parent a {
-  font-family: "Mulish", Arial, sans-serif !important;
+  font-family: var(--secondary-font) !important;
   transition: color 300ms;
   text-transform: uppercase;
 }
 
 body.home.cco_body #tabContentMain .co_menu_item span.parent a {
-  color: #8b1738;
+  color: var(--primary-color);
 }
 
 body #tabContentMain .co_menu_item.selected span.parent a {
-  color: #8b1738;
-  border-bottom: 2px solid #8b1738;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 3px;
 }
 
@@ -200,15 +208,15 @@ body #tabContentMain .co_menu_item.selected span.parent a {
 }
 
 body.cco_body #tabContentMain .co_menu_item.hover span.parent a {
-  color: #f57822;
+  color: var(--secondary-color);
 }
 
 body.home.cco_body #tabContentMain .co_menu_item.hover span.parent a {
-  color: #f57822;
+  color: var(--secondary-color);
 }
 
 body.cco_body #tabContentMain .co_menu_item.multi_level .co_submenu_container {
-  border-top-color: #f57822;
+  border-top-color: var(--secondary-color);
   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
 }
 
@@ -223,19 +231,19 @@ body.cco_body
 #tabContentMain .co_menu_item.arrow .co_submenu_container a.item,
 #tabContentMain .co_menu_item.arrow .co_submenu_container a.item span,
 body.cco_body #tabContentMain .co_submenu_container .co_column a {
-  color: #8b1738;
-  font-family: "Montserrat", Arial, sans-serif;
+  color: var(--primary-color);
+  font-family: var(--primary-font);
 }
 
 .co_menu_item.multi_level .co_submenu_container a.item.hover span,
 .co_menu_item.multi_level .co_submenu_container a.item:hover span {
-  color: #f57822 !important;
+  color: var(--secondary-color) !important;
 }
 
 .chabad_description_box h5 {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--primary-font);
   font-size: 40px;
-  color: #8b1738;
+  color: var(--primary-color);
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;
@@ -257,7 +265,7 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
 }
 
 .chabad_description_box .text {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--primary-font);
   text-align: center;
   padding: 40px 0;
   font-size: 20px;
@@ -269,12 +277,12 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
 }
 
 .chabad_description_box .action a {
-  font-family: "Mulish", Arial, sans-serif;
+  font-family: var(--secondary-font);
   text-align: center;
-  border: 2px solid #8b1738;
+  border: 2px solid var(--primary-color);
   padding: 15px 20px;
   font-size: 20px;
-  color: #8b1738;
+  color: var(--primary-color);
   transition: all 0.3s;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -283,9 +291,9 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
 
 .chabad_description_box .action a:hover {
   text-decoration: none;
-  background: #8b1738;
+  background: var(--primary-color);
   color: white;
-  border: 2px solid #8b1738;
+  border: 2px solid var(--primary-color);
 }
 
 @media (max-width: 650px) {
@@ -382,7 +390,7 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
 }
 
 .promo-box .title {
-  font-family: "Mulish", Arial, sans-serif !important;
+  font-family: var(--secondary-font) !important;
   position: absolute;
   top: 45%;
   bottom: 0;
@@ -457,7 +465,7 @@ body.cco_body #tabContentMain .search_menu_item .search-trigger {
 }
 
 body.home.cco_body #tabContentMain .search_menu_item .search-trigger {
-  color: #8b1738;
+  color: var(--primary-color);
 }
 
 #header #tabContentMain {
@@ -527,7 +535,7 @@ body.cco_body #tabContentMain .cco_search_header.show {
   height: 26px;
   padding-top: 0;
   padding-bottom: 2px;
-  background: #8b1738;
+  background: var(--primary-color);
 }
 
 #header .cco_search_header .co_global_submit .button:before {
@@ -570,7 +578,7 @@ div#SubscribeFormContainer {
   + .success,
 .home form.bottom_subscribe_box + .success {
   font-size: 25px;
-  color: #8b1738;
+  color: var(--primary-color);
   font-weight: bold;
 }
 .home.mobile #footer .subscribe-form div.co_form_container input#Fname,
@@ -594,7 +602,7 @@ div#SubscribeFormContainer {
 .home form.bottom_subscribe_box input#Fname,
 .home form.bottom_subscribe_box input#Lname,
 .home form.bottom_subscribe_box input#SubscribeEmail {
-  font-family: "Montserrat", Arial, sans-serif !important;
+  font-family: var(--primary-font) !important;
   width: 25%;
   border-radius: 0;
   border: 0;
@@ -637,8 +645,8 @@ div#SubscribeFormContainer {
 .home .mobile_wrapper_container form.bottom_subscribe_box input#CoButton,
 .home form.bottom_subscribe_box button#CoButton,
 .home.mobile #footer .subscribe-form button#CoButton {
-  border: 2px solid #8b1738;
-  color: #8b1738;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
   background: transparent;
   transition: background 0.4s;
   height: 50px;
@@ -651,14 +659,14 @@ div#SubscribeFormContainer {
 .home div#HeaderSubscribeContainer div.co_form_container button#CoButton span,
 .home .mobile_wrapper_container form.bottom_subscribe_box input#CoButton span,
 .home form.bottom_subscribe_box button#CoButton span {
-  font-family: "Mulish", Arial, sans-serif !important;
+  font-family: var(--secondary-font) !important;
 }
 .home.mobile #footer .subscribe-form div.co_form_container input#CoButton:hover,
 .home div#HeaderSubscribeContainer div.co_form_container button#CoButton:hover,
 .home .mobile_wrapper_container form.bottom_subscribe_box input#CoButton:hover,
 .home form.bottom_subscribe_box button#CoButton:hover,
 .home.mobile #footer .subscribe-form button#CoButton:hover {
-  background: #8b1738;
+  background: var(--primary-color);
   color: white;
 }
 .home.mobile #footer .subscribe-form div.co_form_container .break_floats,
@@ -722,7 +730,7 @@ div#SubscribeFormContainer {
 .home .footer3 span,
 .home .footer_text a {
   color: white !important;
-  font-family: "Montserrat", Arial, sans-serif !important;
+  font-family: var(--primary-font) !important;
 }
 
 #content #BodyContainer .body_wrapper.clearfix {
@@ -749,7 +757,7 @@ div#SubscribeFormContainer {
 
 .home #content #BodyContainer .article_index_container:before {
   content: "Upcoming  Events";
-  color: #8b1738;
+  color: var(--primary-color);
   font-size: 25px;
   line-height: 120%;
   font-weight: normal;
@@ -760,12 +768,12 @@ div#SubscribeFormContainer {
   position: relative;
   z-index: 2;
   text-transform: uppercase;
-  font-family: "Montserrat", Arial, sans-serif !important;
+  font-family: var(--primary-font) !important;
 }
 
 .home #content #BodyContainer .body_wrapper:has(.g960):before {
   content: "Upcoming  Events";
-  color: #8b1738;
+  color: var(--primary-color);
   font-size: 25px;
   line-height: 120%;
   font-weight: normal;
@@ -776,7 +784,7 @@ div#SubscribeFormContainer {
   position: relative;
   z-index: 2;
   text-transform: uppercase;
-  font-family: "Montserrat", Arial, sans-serif !important;
+  font-family: var(--primary-font) !important;
 }
 .home #content #BodyContainer .body_wrapper > .g960:after {
   position: absolute;
@@ -807,12 +815,12 @@ div#SubscribeFormContainer {
 }
 
 .cycle-directionNav a:hover span:after {
-  color: #f57822;
+  color: var(--secondary-color);
 }
 
 .cycle-prevNav span:after,
 .cycle-nextNav span:after {
-  color: #8b1738;
+  color: var(--primary-color);
   font-family: "FontAwesome";
   font-size: 62px;
   top: 18px;
@@ -837,15 +845,15 @@ a.cycle-nextNav {
 
 .mobile .promo_slider .circles div.selected,
 .promo_slider .cycle-controlNav a.active {
-  background: #8b1738;
+  background: var(--primary-color);
 }
 
 .mobile .promo_slider .circles div {
-  background: #f57822;
+  background: var(--secondary-color);
 }
 
 .promo_slider .cycle-controlNav a {
-  background: #f57822;
+  background: var(--secondary-color);
   margin: 2px;
   width: 10px;
   height: 10px;
@@ -947,7 +955,7 @@ table.main_menu_container.first.global {
 .home .mobile_wrapper_container form:before,
 .home #SubscribeFormContainer:before {
   content: "Join Our Mailing List";
-  color: #8b1738;
+  color: var(--primary-color);
   font-size: 25px;
   line-height: 120%;
   font-weight: normal;
@@ -958,7 +966,7 @@ table.main_menu_container.first.global {
   left: 0px;
   right: 0px;
   text-transform: uppercase;
-  font-family: "Montserrat", Arial, sans-serif !important;
+  font-family: var(--primary-font) !important;
   bottom: 20px;
   width: 100%;
   display: flex;
@@ -971,7 +979,7 @@ table.main_menu_container.first.global {
   }
 }
 div#footer {
-  background-color: #8b1738;
+  background-color: var(--primary-color);
 }
 
 .footer_container.footer_text.copyright_text {
@@ -985,7 +993,7 @@ div#footer {
 .mobile .footer_inner_container .back_to_top .arrow:before {
   content: "\f077";
   font-family: "Font Awesome 5 Pro", "Font Awesome 5 Brands";
-  color: #8b1738;
+  color: var(--primary-color);
   font-size: 20px;
   font-weight: 900;
 }

@@ -19,7 +19,7 @@ body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
 body:not(.cco_templateless_page)
   h1.article-header__title.js-article-title.js-page-title {
   color: white;
-  font-family: "Mulish", sans-serif;
+  font-family: var(--secondary-font);
 }
 
 header.article-header.cf {
@@ -27,7 +27,7 @@ header.article-header.cf {
 }
 
 .master-content-wrapper.g960 {
-  background: #8b1738;
+  background: var(--primary-color);
   color: white;
   width: 100%;
   margin: 0;
@@ -54,23 +54,23 @@ body:not(.home) > #content > .wrapper {
 .co_body h3 a,
 .breadcrumbs__crumb,
 .article-header__subtitle {
-  color: #f57822;
-  font-family: "Mulish", sans-serif;
+  color: var(--secondary-color);
+  font-family: var(--secondary-font);
 }
 
 .breadcrumbs {
   margin-bottom: 10px;
-  font-family: "Mulish", sans-serif;
+  font-family: var(--secondary-font);
 }
 
 body:not(.home).mobile div#header {
-  background: #8b1738;
+  background: var(--primary-color);
 }
 
 .co_dialog .header_text,
 .mobile .center_logo a span,
 .menu_items > div.item .parent_item {
-  font-family: "Mulish", sans-serif;
+  font-family: var(--secondary-font);
 }
 
 .co_body .content .grey a,
@@ -129,7 +129,7 @@ ul.small_links li,
 .co_body .content .form-all .form-html li,
 .footer_inner_container .footer3,
 .footer_inner_container a {
-  font-family: "Montserrat", Arial, sans-serif !important;
+  font-family: var(--primary-font) !important;
 }
 
 .co_body .content .form-all .form-html b,
@@ -167,30 +167,30 @@ ul.small_links li,
 .form-submit-reset {
   text-decoration: none;
   background: transparent;
-  border: 2px solid #8b1738;
-  color: #8b1738;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 .cco_body .co_global_button .button:hover,
 .form-submit-print:hover,
 .form-submit-reset:hover {
   color: #fff;
-  background: #8b1738;
-  border: 2px solid #8b1738;
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 #CoButton,
 .form-submit-button {
   color: #fff;
-  background: #8b1738;
-  border: 2px solid #8b1738;
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 #CoButton:hover,
 .form-submit-button:hover {
-  color: #8b1738;
+  color: var(--primary-color);
   background: transparent;
-  border: 2px solid #8b1738;
+  border: 2px solid var(--primary-color);
 }
 
 #CoButton:active,
@@ -198,6 +198,6 @@ ul.small_links li,
 .form-submit-reset:active,
 .form-submit-print:active,
 .form-submit-button:active {
-  -webkit-box-shadow: 0;
-  box-shadow: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
