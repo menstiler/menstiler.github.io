@@ -7,6 +7,16 @@
   --secondary-font: "Mulish", Arial, sans-serif;
 }
 
+body:after {
+  position: absolute;
+  content: 'ב"ה';
+  color: #fff;
+  display: block;
+  right: 10px;
+  top: 10px;
+  font-size: 12px;
+}
+
 div#header {
   background-image: url("https://w2.chabad.org/media/images/1329/iPrM13293477.jpg");
   padding-top: 30px;
