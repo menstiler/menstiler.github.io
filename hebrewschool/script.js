@@ -126,11 +126,22 @@ function setUpMenu() {
   });
 }
 
+function setUpListenerForSubmit() {
+  document
+    .querySelector('input[name="SubmitCCO"]')
+    .addEventListener("click", (e) => {
+      if (e.target.form.checkValidity()) {
+        e.target.value = "Please Wait...";
+      }
+    });
+}
+
 function init() {
   setUpScrolling();
   setUpMenu();
   addClassWhenHovering();
   toggleContactForm();
+  setUpListenerForSubmit();
 }
 
 if (document.readyState !== "loading") {
