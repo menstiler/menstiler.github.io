@@ -1,5 +1,5 @@
 function setUpScrolling() {
-  const header = document.querySelector("#header");
+  const header = document.querySelector(".sticky-top");
 
   if (!header) return;
 
