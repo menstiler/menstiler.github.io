@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 :root {
-  --primary-color: #8b1739;
+  --primary-color: #764095;
   --primary-font: 'League Spartan', arial, helvetica, sans-serif;
   --secondary-font: Helvetica, arial, sans-serif;
 }
@@ -82,6 +82,10 @@ body {
 
 .header-inner-container {
   padding-top: 140px;
+
+  @media (max-width: 650px) {
+    padding-top: 50px;
+  }
 }
 
 .header-title {
@@ -378,6 +382,11 @@ display: flex
     background-size: cover;
     height: 575px;
     background-attachment: fixed;
+    background-position: center;
+
+      @media screen and (max-width: 650px) {
+        height: 500px;
+      } 
 }
 
 .sticky-top {
@@ -392,6 +401,10 @@ width: 100%;
   img {
       max-height: 200px;
       transition: max-height .5s;
+
+      @media screen and (max-width: 650px) {
+        max-height: 120px;
+      }
     }
 
     .container {
@@ -1197,3 +1210,23 @@ h1.article-header__title.js-article-title.js-page-title {
 .ccoFormFooter p {
   display: block
 }
+
+.page-tools__tool {
+    padding: 0.3em 0;
+}
+
+.page-tools .fa.fa-print,
+.page-tools__tool .fa-facebook,
+.page-tools__tool .fa-twitter,
+.page-tools__tool .fa-envelope {
+    color: var(---primary-color);
+}
+
+.page-tools .fa {
+    font-size: 1em;
+}
+
+aside.page-tools-sidebar.js-page-tools-sidebar.hide_for_print {
+    width: 3em;
+}
+
