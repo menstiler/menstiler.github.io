@@ -1219,7 +1219,7 @@ h1.article-header__title.js-article-title.js-page-title {
 .page-tools__tool .fa-facebook,
 .page-tools__tool .fa-twitter,
 .page-tools__tool .fa-envelope {
-    color: var(---primary-color);
+    color: var(--primary-color);
 }
 
 .page-tools .fa {
