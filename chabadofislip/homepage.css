@@ -363,7 +363,7 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .promo-box a:hover + .promo-box-info {

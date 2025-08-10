@@ -386,6 +386,7 @@ display: flex
 
       @media screen and (max-width: 650px) {
         height: 500px;
+         background-attachment: initial;
       } 
 }
 
@@ -1211,22 +1212,25 @@ h1.article-header__title.js-article-title.js-page-title {
   display: block
 }
 
-.page-tools__tool {
-    padding: 0.3em 0;
-}
-
-.page-tools .fa.fa-print,
-.page-tools__tool .fa-facebook,
-.page-tools__tool .fa-twitter,
-.page-tools__tool .fa-envelope {
+@media screen and (min-width: 650px) {
+  .page-tools .fa.fa-print,
+  .page-tools__tool .fa-whatsapp,
+  .page-tools__tool .fa-facebook,
+  .page-tools__tool .fa-twitter,
+  .page-tools__tool .fa-envelope {
     color: var(--primary-color);
-}
+  }
 
-.page-tools .fa {
-    font-size: 1em;
-}
-
-aside.page-tools-sidebar.js-page-tools-sidebar.hide_for_print {
-    width: 3em;
+    .page-tools__tool {
+        padding: 0.3em 0;
+    }
+    
+    .page-tools .fa {
+        font-size: 1em;
+    }
+    
+    aside.page-tools-sidebar.js-page-tools-sidebar.hide_for_print {
+        width: 3em;
+  }
 }
 
