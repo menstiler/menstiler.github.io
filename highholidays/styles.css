@@ -367,10 +367,15 @@ img.form-image {
   font-weight: 600;
 }
 
-.sub_menu item {
+div#chabad_head .chabad_navigator_bar ul li .sub_menu .item {
   background-color: var(--primary-color);
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+  }
 }
 
-.sub_menu item a {
+div#chabad_head .chabad_navigator_bar ul li .sub_menu .item a {
   color: white;
 }
