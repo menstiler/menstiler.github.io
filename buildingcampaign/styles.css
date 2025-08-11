@@ -22,8 +22,8 @@ body.section_root .bh {
 }
 
 .cco_templateless_template {
-    overflow: hidden;
-    margin-top: -30px;
+  overflow: hidden;
+  margin-top: -30px;
 }
 
 .g960 {
@@ -53,7 +53,7 @@ body.section_root .bh {
 }
 
 body {
-      font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.6;
   color: #333;
 }
@@ -63,6 +63,15 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.sticky-top .container {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 500px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -147,14 +156,14 @@ header {
   align-items: center;
   position: relative;
 
-    h2 a {
-        text-decoration: none;
-        color: #000;
+  h2 a {
+    text-decoration: none;
+    color: #000;
 
-        &:hover {
-        cursor: pointer;
-        }
+    &:hover {
+      cursor: pointer;
     }
+  }
 }
 
 .logo {
@@ -217,8 +226,10 @@ header {
   }
 }
 
-nav {
-  margin-top: 1.5rem;
+#nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav ul {
@@ -238,15 +249,16 @@ nav ul {
 nav a {
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: color 0.2s;
 }
 
-nav a.active {
-  border-bottom: 2px solid #065f46;
+nav a.active,
+nav a:hover {
+  color: #f37c31;
 }
 
 /* Mobile Navigation */
@@ -315,24 +327,106 @@ nav a.active {
 /* Hero div */
 .hero {
   position: relative;
-  background-color: var(--primary-color);
   color: white;
   padding: 6rem 20px;
   text-align: center;
   overflow: hidden;
+  min-height: 500px;
 }
 
 .hero-bg {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-color);
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.red-bg::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/489334153_3975351269347263_7072103475834563032_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=EBDKlndIDNwQ7kNvwFZmfZc&_nc_oc=AdlVeIbzWugBQfezm9012PFPqM-he-tozhHAYgL3Hxg9cFNJ0URfcYrw2EIKJR2-_Gg&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=buNgXuX4i6cRKqq36eLEzQ&oh=00_AfRYHiwK0udWMUnujEfaAdRa4OjmC_ikKvgu5pEhwglorA&oe=68860EDF");
-  background-size: cover;
-  background-position: center;
+  bottom: 0;
+  right: 0;
+  background-image: url("https://w2.chabad.org/media/images/1329/utDJ13295443.jpg");
+  background-position: 85% 50%;
   opacity: 0.4;
-  background-attachment: fixed;
+  content: "";
+  z-index: -1;
+}
+
+.hero-clip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.hero-campaign-info {
+  display: flex;
+  background-color: var(--primary-color);
+  justify-content: center;
+  align-items: center;
+
+  .campaign-progress {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    width: 760px;
+    margin: 0;
+    color: #bdb78f;
+
+    .campaing-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-bar {
+      background-color: #bdb78f;
+      .percent {
+        color: var(--primary-color);
+        float: right;
+        width: min(calc(1% + 40px), 100%);
+        line-height: 1.7rem;
+        font-family: "Montserrat", sans-serif !important;
+      }
+    }
+
+    h4 {
+      color: #bdb78f;
+    }
+  }
+
+  .campaign-progress-cta {
+    background: #bdb78f;
+    border: 2px solid #bdb78f;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    font-family: var(--font-family-sans-serif);
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background: transparent;
+      color: #bdb78f;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -418,24 +512,25 @@ nav a.active {
 /* Campaign div */
 .campaign {
   padding: 4rem 0;
-  margin: 4rem 0;
 }
 
 .campaign-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
+.timeline-header h3,
 .campaign-header h3 {
   color: var(--primary-color);
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
-  font-family: "Montserrat", sans-serif!important";
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .campaign-header h2 {
   color: var(--primary-color);
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
 .campaign-grid {
@@ -454,8 +549,8 @@ nav a.active {
   display: flex;
   flex-direction: column;
   padding: 0 20px;
-      font-family: 'Open Sans', sans-serif;
-    text-align: center;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
 }
 
 .campaign-image {
@@ -550,7 +645,7 @@ nav a.active {
 }
 
 .info-box h3 {
-  font-family:'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
 }
 
@@ -613,8 +708,6 @@ nav a.active {
 /* Timeline div */
 .timeline {
   background-color: white;
-  padding: 4rem 0;
-  margin: 4rem auto;
 }
 
 .timeline-header {
@@ -624,8 +717,8 @@ nav a.active {
 
 .timeline-header h2 {
   color: var(--primary-color);
-margin: 4rem;
-  font-family: 'Libre Baskerville', serif;
+  margin: 2rem;
+  font-family: "Libre Baskerville", serif;
 }
 
 .timeline-header p {
@@ -641,7 +734,7 @@ margin: 4rem;
 }
 
 #timeline .container {
-    max-width: inherit;
+  max-width: inherit;
 }
 
 .year-bar {
@@ -651,8 +744,7 @@ margin: 4rem;
   padding: 1rem 0;
   scrollbar-width: thin;
   scrollbar-color: #d1d5db #f3f4f6;
-  margin: 5rem auto;
-  padding-right: 20px
+  padding-right: 20px;
 }
 
 .year-bar::-webkit-scrollbar {
@@ -685,12 +777,11 @@ margin: 4rem;
   opacity: 1.2;
   position: relative;
   overflow: hidden;
-    width: 250px;
+  width: 250px;
   color: white;
-
 }
 
-.year-bg {
+.year-bg img {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -699,6 +790,9 @@ margin: 4rem;
   background-size: cover;
   background-position: center;
   opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .grand-opening {
@@ -741,7 +835,6 @@ margin: 4rem;
   position: relative;
 }
 
-
 .year-description {
   display: block;
   bottom: 0;
@@ -753,21 +846,21 @@ margin: 4rem;
   font-weight: bold;
   font-family: Georgia, serif;
   color: #fff;
-font-size: 1.3rem;
+  font-size: 1.3rem;
   margin-top: 0.25rem;
 }
 
 .year-number {
   font-size: 2rem;
-    font-weight: bold;
-    font-family: Georgia, serif;
-    position: absolute;
-    color: #fff;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
-    top: 0px;
-    right: 0;
-    left: 0;
-    padding: 1rem;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  position: absolute;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  top: 0px;
+  right: 0;
+  left: 0;
+  padding: 1rem;
 }
 
 .image-overlay {
@@ -857,7 +950,7 @@ font-size: 1.3rem;
   margin-bottom: 2rem;
   position: relative;
   color: #bdb78f;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .testimonial-quote::before {
@@ -900,7 +993,7 @@ font-size: 1.3rem;
 .author-info h4 {
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .author-role {
@@ -1015,7 +1108,6 @@ font-size: 1.3rem;
 }
 
 .campaign-content-div {
-  padding: 4rem 0 0;
   text-align: center;
 }
 
@@ -1042,11 +1134,11 @@ font-size: 1.3rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   text-align: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
 .campaign-logo {
-  background-image: url("https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-1/326494590_756729269128684_2536170988681463967_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=FaHIuDZ8AV8Q7kNvwGOgSS5&_nc_oc=AdkLzZ5NUMdbcHCIaTFSrUnOeVkYlUP2fNm7I7YJiMpgPH_cxS01D__QCqogp048HLc&_nc_zt=24&_nc_ht=scontent-lga3-3.xx&_nc_gid=ZHRbW464DT0rU0SVRFwncw&oh=00_AfQyyrWYRMVeAiywweZu7LqQ6IL-G78EfvQhSqUtxgyjKQ&oe=688616DC");
+  background-image: url("https://w2.chabad.org/media/images/1329/wrrj13298572.png");
   width: 100px;
   height: 100px;
   background-size: cover;
@@ -1061,7 +1153,7 @@ font-size: 1.3rem;
 }
 
 .header-font {
-  font-family: "Libre Baskerville", serif!important;
+  font-family: "Libre Baskerville", serif !important;
   font-size: 48px !important;
   text-align: center;
   line-height: 1.5;
@@ -1143,7 +1235,6 @@ font-size: 1.3rem;
   align-items: center;
   width: 700px;
   margin: 0 auto;
-  gap: 0.3rem;
 }
 
 .contact-row {
@@ -1172,18 +1263,18 @@ font-size: 1.3rem;
 }
 
 .contact-form h2 {
-    color: var(--primary-color);
-    font-family: 'Libre Baskerville', serif;
-    text-align: center;
-    font-size: 4.2rem;
-    margin-bottom: 3rem;
+  color: var(--primary-color);
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  font-size: 4.2rem;
+  margin-bottom: 3rem;
 }
 
 .contact-form input[type="text"],
 .contact-form textarea {
   width: 100%;
-  padding: 10px 4px;
-  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
   border: 0px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -1199,16 +1290,6 @@ font-size: 1.3rem;
 
 .ccoFormFooter {
   margin-top: 1rem;
-}
-
-.contact-form input[type="Submit"] {
-  background-color: var(--primary-color);
-  color: #fff;
-  border-radius: 0.25rem;
-  padding: 10px 16px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
 }
 
 /* Footer */
@@ -1310,7 +1391,7 @@ font-size: 1.3rem;
   font-style: italic;
   color: var(--primary-color);
   margin-left: 15px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 a.dedicate-link {
@@ -1320,7 +1401,7 @@ a.dedicate-link {
   padding: 5px 13px;
   font-size: 12px;
   margin-left: 15px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   &:hover {
     text-decoration: none;
@@ -1331,9 +1412,9 @@ a.dedicate-link {
 }
 
 #amount-buttons {
-        display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-rows: auto;
 }
 
 #amount-buttons .amount-btn {
@@ -1345,7 +1426,7 @@ a.dedicate-link {
   min-height: 45px;
   color: var(--primary-color);
   font-size: 1.6rem;
-  font-family: 'Open Sans', sans-serif
+  font-family: "Open Sans", sans-serif;
 }
 
 #amount-buttons .amount-btn:hover,
@@ -1366,90 +1447,100 @@ a.dedicate-link {
   margin: 1rem;
   height: 45px;
   font-size: 1.7rem;
-  font-family: 'Open Sans', sans-serif
+  font-family: "Open Sans", sans-serif;
 }
 
+.contact-form input[type="Submit"],
 #donate-now {
   margin-top: 10px;
   margin-bottom: 5rem;
   color: white;
   background: var(--primary-color);
-  border-radius: 5px;
   padding: 10px 20px;
+  letter-spacing: 2px;
   font-size: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-sans-serif);
+  text-transform: uppercase;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+  }
 }
 
 h1.article-header__title.js-article-title.js-page-title {
-    display: none!important;
+  display: none !important;
 }
 
 #formBody {
-    width: 100%!important;
+  width: 100% !important;
 }
 
 #formBody .checkbox-container {
-    display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
-    grid-template-rows: auto;
-    width: 100%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  grid-template-rows: auto;
+  width: 100%;
 }
 #formBody .checkbox-container .item {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem;
-    font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 #formBody .checkbox-container .item label {
-        margin-left: 8px;
+  margin-left: 8px;
 }
 
 #donation-table {
-    margin: 5rem;
-    border: 1px solid rgba(0, 0, 0, .1);
-    padding: 20px;
-    border-radius: 10px;
-    border-collapse: separate;
-    width: 100%;
-    
-    th {
-        padding: 10px;
-        color: #025550
+  margin: 5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border-collapse: separate;
+  width: 100%;
+
+  th {
+    padding: 10px;
+    color: #025550;
+  }
+
+  td {
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: #025550;
+
+    div {
+      display: inline-block;
     }
 
-    td {
-        padding: 10px;
-        border-top: 1px solid rgba(0, 0, 0, .1);
-        color: #025550;
+    .remove-button {
+      display: block;
+      font-size: 1.3em;
+      height: 1em;
+      width: 1em;
+      text-align: center;
+      line-height: 1;
+      border-radius: 100%;
+      color: red !important;
+      text-decoration: none;
+      font-weight: 700;
+      border: 0;
+      background: none;
 
-        div {
-                display: inline-block;
-        }
-
-        .remove-button {
-            display: block;
-            font-size: 1.3em;
-            height: 1em;
-            width: 1em;
-            text-align: center;
-            line-height: 1;
-            border-radius: 100%;
-            color: red !important;
-            text-decoration: none;
-            font-weight: 700;
-            border: 0;
-            background: none;
-            
-            :hover {
-                color: #fff !important;
-                background: red;
-            }
-        }
+      :hover {
+        color: #fff !important;
+        background: red;
+      }
     }
+  }
 
-    tfoot th {
-        border-top: 1px solid rgba(0, 0, 0, .1);
-    }
+  tfoot th {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
