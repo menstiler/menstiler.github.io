@@ -363,6 +363,38 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = url;
   });
 
+  // Mobile menu functionality
+  const burgerMenu = document.getElementById("burger-menu");
+  const navMenu = document.getElementById("nav-menu");
+
+  function toggleMobileMenu() {
+    burgerMenu.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+
+  function closeMobileMenu() {
+    burgerMenu.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
+
+  // Event listeners for mobile menu
+  burgerMenu.addEventListener("click", toggleMobileMenu);
+
+  // Close menu when clicking on nav links
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  // Close menu on window resize if screen becomes larger
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      closeMobileMenu();
+    }
+  });
+});
+
+function setUpTestimonials() {
   // Testimonials functionality
   const testimonialItems = document.querySelectorAll(".testimonial-item");
   const dots = document.querySelectorAll(".dot");
@@ -437,34 +469,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Start auto-play
   startAutoPlay();
-
-  // Mobile menu functionality
-  const burgerMenu = document.getElementById("burger-menu");
-  const navMenu = document.getElementById("nav-menu");
-
-  function toggleMobileMenu() {
-    burgerMenu.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  }
-
-  function closeMobileMenu() {
-    burgerMenu.classList.remove("active");
-    navMenu.classList.remove("active");
-  }
-
-  // Event listeners for mobile menu
-  burgerMenu.addEventListener("click", toggleMobileMenu);
-
-  // Close menu when clicking on nav links
-  const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", closeMobileMenu);
-  });
-
-  // Close menu on window resize if screen becomes larger
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      closeMobileMenu();
-    }
-  });
-});
+}
