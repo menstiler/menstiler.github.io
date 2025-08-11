@@ -6,6 +6,11 @@
   --appeal-bg: url("https://w2.chabad.org/media/images/1329/uPFI13291498.png");
   --primary-color: #e274ad;
   --primary-color-hover: #d6609d;
+  --submit-color: #b6427c;
+  --appeal-bg-color: #d5862f;
+  --appeal-button-bg: #d0df8c;
+  --appeal-button-hover: #ece3c7;
+  --appeal-button-text: #000;
 }
 
 .cco_templateless_template {
@@ -144,6 +149,7 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
 
 .appeal-container {
   background-image: var(--appeal-bg);
+  background-color: var(--appeal-bg-color);
   padding: 50px 0px;
   background-position: center;
   background-size: cover;
@@ -158,14 +164,14 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
 }
 
 .appeal-button-container a {
-  background: #d0df8c;
-  color: black;
+  background: var(--appeal-button-bg);
+  color: var(--appeal-button-text);
   padding: 15px 20px;
   font-size: 16px;
   text-decoration: none;
 
   &:hover {
-    background: #ece3c7;
+    background: var(--appeal-button-hover);
     transition: 0.3s;
   }
 }
@@ -191,7 +197,7 @@ div#content_page {
 }
 
 .form-submit-button {
-  background: #b6427c !important;
+  background: var(--submit-color) !important;
   color: white !important;
   border: 0px !important;
   padding: 15px 35px !important;

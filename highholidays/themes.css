@@ -1,0 +1,23 @@
+.pink-theme {
+  --header-bg: url("https://w2.chabad.org/media/images/1329/jEpV13291460.png");
+  --appeal-bg: url("https://w2.chabad.org/media/images/1329/uPFI13291498.png");
+  --primary-color: #e274ad;
+  --primary-color-hover: #d6609d;
+  --submit-color: #b6427c;
+  --appeal-bg-color: #d5862f;
+  --appeal-button-bg: #d0df8c;
+  --appeal-button-hover: #ece3c7;
+  --appeal-button-text: #000;
+}
+
+.red-theme {
+  --header-bg: url("https://w2.chabad.org/media/images/1329/ZEEQ13298007.jpeg");
+  --appeal-bg: url("");
+  --primary-color: #a22922;
+  --primary-color-hover: #c05c57;
+  --submit-color: #a22922;
+  --appeal-bg-color: #d5862f;
+  --appeal-button-bg: #a22922;
+  --appeal-button-hover: #c05c57;
+  --appeal-button-text: #fff;
+}

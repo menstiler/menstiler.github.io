@@ -230,6 +230,10 @@ body.cco_body #tabContentMain .co_menu_item.multi_level .co_submenu_container {
   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
 }
 
+.co_menu_item.multi_level .co_submenu_container a.item span {
+  padding: 4px 0;
+}
+
 body.cco_body
   #tabContentMain
   .co_menu_item.multi_level
