@@ -4,6 +4,7 @@
 
 :root {
   --primary-color: #8b1739;
+  --secondary-font: "Libre Baskerville", serif;
   --font-family-sans-serif: "Poppins", sans-serif;
 }
 
@@ -404,11 +405,11 @@ nav a:hover {
   background-color: var(--primary-color);
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   padding: 20px;
 
   @media screen and (max-width: 650px) {
     flex-direction: column;
+    gap: 0;
   }
 
   .campaign-progress {
@@ -453,9 +454,15 @@ nav a:hover {
     font-family: var(--font-family-sans-serif);
     transition: all 0.3s;
     cursor: pointer;
+    position: relative;
 
     a {
       text-decoration: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
 
     &:hover {
@@ -547,7 +554,7 @@ nav a:hover {
 
 /* Campaign div */
 .campaign {
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 .campaign-header {
@@ -566,7 +573,7 @@ nav a:hover {
 
 .campaign-header h2 {
   color: var(--primary-color);
-  font-family: "Libre Baskerville", serif;
+  font-family: var(--secondary-font) !important;
 }
 
 .campaign-grid {
@@ -754,7 +761,7 @@ nav a:hover {
 .timeline-header h2 {
   color: var(--primary-color);
   margin: 2rem;
-  font-family: "Libre Baskerville", serif;
+  font-family: var(--secondary-font) !important;
 }
 
 .timeline-header p {
@@ -1170,7 +1177,7 @@ nav a:hover {
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   text-align: center;
-  font-family: "Libre Baskerville", serif;
+  font-family: var(--secondary-font) !important;
 }
 
 .campaign-logo {
@@ -1189,7 +1196,7 @@ nav a:hover {
 }
 
 .header-font {
-  font-family: "Libre Baskerville", serif !important;
+  font-family: var(--secondary-font) !important;
   font-size: 48px !important;
   text-align: center;
   line-height: 1.5;
@@ -1306,7 +1313,7 @@ nav a:hover {
 
 .contact-form h2 {
   color: var(--primary-color);
-  font-family: "Libre Baskerville", serif;
+  font-family: var(--secondary-font);
   text-align: center;
   font-size: 4.2rem;
   margin-bottom: 3rem;
@@ -1404,10 +1411,11 @@ nav a:hover {
 }
 
 .dedication-item {
-  flex-basis: 45%;
+  flex-basis: 48%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 8px 0;
 }
 
 @media (max-width: 768px) {
@@ -1451,6 +1459,20 @@ a.dedicate-link {
 }
 .price-btn-container .price {
   color: #ab785a !important;
+}
+
+.more-options {
+  #donate-now {
+    position: relative;
+
+    a {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
 }
 
 #amount-buttons {

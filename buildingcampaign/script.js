@@ -51,31 +51,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Scrape dedications from another page
-  async function scrapeEvents() {
+  async function styleDedicationTable() {
     try {
-      const res = await fetch("/6968386");
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
+      const table = document.getElementById("dedications");
+      table.style.display = "none";
 
-      /** ------------ Dedications Table ------------ **/
-      const table = doc.getElementById("dedications");
       const container = document.getElementById("dedication-list");
       const rows = table?.querySelectorAll("tr") || [];
       const categories = {};
 
       for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].querySelectorAll("td");
-        if (cells.length < 5) continue;
+        if (cells.length < 4) continue;
 
         const name = cells[0].textContent.trim();
         const price = cells[1].textContent.trim();
         const checkbox = cells[2].textContent.trim().toLowerCase();
         const reserved = checkbox === "yes" || false;
         const category = cells[3].textContent.trim();
-        const options = cells[4].textContent.trim();
         if (!name || !category) continue;
 
-        const item = { name, price, reserved, options };
+        const item = { name, price, reserved };
         if (!categories[category]) categories[category] = [];
         categories[category].push(item);
       }
@@ -106,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const priceEl = document.createElement("div");
           priceEl.className = "price";
-          priceEl.textContent = `$${item.price}`;
+          priceEl.textContent = item.price;
 
           priceAndBtn.appendChild(priceEl);
 
@@ -118,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             actionEl = document.createElement("a");
             actionEl.href = `/templates/articlecco_cdo/aid/6970745/jewish/Donations.htm?${new URLSearchParams(
-              { options: item.options }
+              { name: item.name }
             )}`;
             actionEl.textContent = "Dedicate";
             actionEl.className = "dedicate-link";
@@ -128,44 +124,41 @@ document.addEventListener("DOMContentLoaded", function () {
           itemDiv.appendChild(priceAndBtn);
           categoryContainer.appendChild(itemDiv);
         });
-
         container.appendChild(section);
       }
 
       /** ------------ Progress Table ------------ **/
-      const progressTable = doc.getElementById("progress-table");
-      if (progressTable) {
-        const progressRows = progressTable.querySelectorAll("tr");
-
+      const progressHeader = document.querySelectorAll(".campaign-progress h4");
+      if (progressHeader) {
+        const raisedElement = document.querySelectorAll(
+          ".campaign-progress h4"
+        )[0];
+        const goalElement = document.querySelectorAll(
+          ".campaign-progress h4"
+        )[1];
         let goal = 0;
         let raised = 0;
 
-        for (let row of progressRows) {
-          const cells = row.querySelectorAll("td");
-          if (cells.length >= 2) {
-            const label = cells[0].textContent.trim().toLowerCase();
-            const value = parseFloat(
-              cells[1].textContent.replace(/[^0-9.]/g, "")
-            );
-            if (label.includes("goal")) goal = value;
-            if (label.includes("raised")) raised = value;
-          }
-        }
+        const raisedValue = parseFloat(
+          raisedElement.textContent.split(" ")[0].replace(/[^0-9.]/g, "")
+        );
+        const goalValue = parseFloat(
+          goalElement.textContent.split(" ")[1].replace(/[^0-9.]/g, "")
+        );
+        goal = goalValue;
+        raised = raisedValue;
 
         if (goal && raised) {
           const percent = Math.min((raised / goal) * 100, 100);
 
           // Update DOM
-          const bar = document.querySelector(".progress-bar");
-          const label = document.querySelector(".campaign-progress h4");
+          const bar = document.querySelectorAll(".progress-bar");
 
-          if (bar) {
-            bar.style.width = `${percent}%`;
-            bar.setAttribute("aria-valuenow", percent.toFixed(0));
-          }
-
-          if (label) {
-            label.textContent = `$${raised.toLocaleString()} OF $${goal.toLocaleString()} RAISED`;
+          if (bar.length > 0) {
+            bar.forEach(function (el) {
+              el.style.width = `${percent}%`;
+              el.setAttribute("aria-valuenow", percent.toFixed(0));
+            });
           }
         }
       }
@@ -174,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  scrapeEvents();
+  styleDedicationTable();
 
   // Handle checkbox changes
   function handleCheckboxChange(event) {
