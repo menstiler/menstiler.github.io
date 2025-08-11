@@ -69,8 +69,16 @@ body {
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
+
   img {
     width: 500px;
+
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
   }
 }
 
@@ -230,6 +238,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    display: block;
+  }
 }
 
 nav ul {
@@ -249,7 +262,7 @@ nav ul {
 nav a {
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -259,6 +272,7 @@ nav a {
 nav a.active,
 nav a:hover {
   color: #f37c31;
+  text-decoration: none;
 }
 
 /* Mobile Navigation */
@@ -343,6 +357,10 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 650px) {
+    width: 100%;
+  }
 }
 
 .red-bg {
@@ -375,6 +393,10 @@ nav a:hover {
   top: 0;
   bottom: 0;
   width: 50%;
+
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 }
 
 .hero-campaign-info {
@@ -382,13 +404,23 @@ nav a:hover {
   background-color: var(--primary-color);
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  padding: 20px;
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
 
   .campaign-progress {
     border-radius: 0.5rem;
     padding: 1.5rem;
-    width: 760px;
+    width: 700px;
     margin: 0;
     color: #bdb78f;
+
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
 
     .campaing-info {
       display: flex;
@@ -421,6 +453,10 @@ nav a:hover {
     font-family: var(--font-family-sans-serif);
     transition: all 0.3s;
     cursor: pointer;
+
+    a {
+      text-decoration: none;
+    }
 
     &:hover {
       background: transparent;
@@ -1194,6 +1230,7 @@ nav a:hover {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   color: var(--primary-color);
+  font-weight: 600;
 }
 
 .progress-bar-container {
@@ -1241,6 +1278,7 @@ nav a:hover {
   display: flex;
   width: 100%;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -1259,6 +1297,10 @@ nav a:hover {
   form {
     max-width: 50%;
     margin: 0 auto;
+
+    @media screen and (max-width: 650px) {
+      max-width: 100%;
+    }
   }
 }
 
@@ -1463,10 +1505,10 @@ a.dedicate-link {
   text-transform: uppercase;
   transition: all 0.3s;
   cursor: pointer;
+  border: 2px solid var(--primary-color);
 
   &:hover {
     background: transparent;
-    border: 2px solid var(--primary-color);
     color: var(--primary-color);
   }
 }
@@ -1542,5 +1584,27 @@ h1.article-header__title.js-article-title.js-page-title {
 
   tfoot th {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .page-tools .fa.fa-print,
+  .page-tools__tool .fa-whatsapp,
+  .page-tools__tool .fa-facebook,
+  .page-tools__tool .fa-twitter,
+  .page-tools__tool .fa-envelope {
+    color: var(--primary-color);
+  }
+
+  .page-tools__tool {
+    padding: 0.3em 0;
+  }
+
+  .page-tools .fa {
+    font-size: 1em;
+  }
+
+  aside.page-tools-sidebar.js-page-tools-sidebar.hide_for_print {
+    width: 3em;
   }
 }
