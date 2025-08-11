@@ -230,8 +230,15 @@ body.cco_body #tabContentMain .co_menu_item.multi_level .co_submenu_container {
   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
 }
 
+.co_menu_item .co_submenu_container .child_item.heading,
+.co_menu_item .co_submenu_container .menu_child a span {
+  font-family: var(--primary-font);
+  font-size: 12px;
+  color: var(--primary-color);
+}
+
 .co_menu_item.multi_level .co_submenu_container a.item span {
-  padding: 4px 0;
+  font-size: 12px;
 }
 
 body.cco_body
