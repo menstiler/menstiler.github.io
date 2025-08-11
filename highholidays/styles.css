@@ -7,7 +7,7 @@
   --primary-color: #e274ad;
   --primary-color-hover: #d6609d;
   --submit-color: #b6427c;
-  --appeal-bg-color: #d5862f;
+  --appeal-bg-color: #e274ad;
   --appeal-button-bg: #d0df8c;
   --appeal-button-hover: #ece3c7;
   --appeal-button-text: #000;
@@ -162,6 +162,10 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  @media screen and (max-width: 650px) {
+    min-height: 400px;
+  }
 }
 
 .appeal-button-container a {
