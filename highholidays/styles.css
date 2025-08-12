@@ -401,6 +401,10 @@ div#chabad_head .chabad_navigator_bar ul li .sub_menu .item {
   }
 }
 
+div#chabad_head #navigation li.parent a.parent:hover + .sub_menu_toggle {
+  background-color: var(--primary-color-hover);
+}
+
 div#chabad_head .chabad_navigator_bar ul li .sub_menu .item a {
   color: white;
 }
