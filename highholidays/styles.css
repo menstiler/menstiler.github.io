@@ -50,6 +50,12 @@ div#chabad_head .chabad_navigator_bar {
   background-color: var(--primary-color);
 }
 
+body.mobile #navigation.chabad_navigator_bar #menu li .sub_menu_toggle {
+  top: 0;
+  right: 0;
+  height: 45px;
+}
+
 #navigation li.parent a.parent {
   background-color: inherit;
   color: #fff;
