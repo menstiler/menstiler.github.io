@@ -80,7 +80,11 @@ body.cco_body #tabContentMain .co_menu_item:nth-of-type(1n + 16) {
 #header_branding,
 body .site_title,
 body.cco_body .site_title {
-  margin-left: 0;
+  margin-left: 0 !important;
+}
+
+#header_branding .float_left {
+  display: none;
 }
 
 .home #header:before {
@@ -656,7 +660,7 @@ div#SubscribeFormContainer {
 }
 .home.mobile #footer .subscribe-form div.co_form_container div#CoButton_wrapper,
 .home div#HeaderSubscribeContainer div.co_form_container div#CoButton_wrapper,
-.home .mobile_wrapper_container form.bottom_subscribe_box div#CoButton_wrapper,
+.home .mobile_wrapper_container form.bottom_subscribe_box div#CoButton_s,
 .home form.bottom_subscribe_box div#CoButton_wrapper {
   width: 50%;
   padding-left: 0;
