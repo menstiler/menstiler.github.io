@@ -4,6 +4,7 @@
 :root {
   --header-bg: url("https://w2.chabad.org/media/images/1329/jEpV13291460.png");
   --appeal-bg: url("https://w2.chabad.org/media/images/1329/uPFI13291498.png");
+  --primary-font: "Montserrat", Arial, sans-serif;
   --primary-color: #e274ad;
   --primary-color-hover: #d6609d;
   --submit-color: #b6427c;
@@ -98,9 +99,13 @@ div#chabad_head .chabad_navigator_bar ul li a {
 
 .text-container {
   text-align: center;
-  font-family: "Montserrat";
+  font-family: var(--primary-font);
   font-size: 22px;
   line-height: 38px;
+
+  p {
+    font-family: var(--primary-font);
+  }
 }
 
 .actions-container {
@@ -118,13 +123,17 @@ div#chabad_head .chabad_navigator_bar ul li a {
   align-items: center;
   margin: 20px 28px;
   width: 250px;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--primary-font);
   text-decoration: none;
   text-align: center;
   font-weight: 500;
   position: relative;
   font-size: 17px;
   text-transform: uppercase;
+
+  div {
+    font-family: var(--primary-font);
+  }
 
   a {
     position: absolute;
@@ -162,7 +171,7 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
   background-position: center;
   background-size: cover;
   color: white;
-  font-family: "Montserrat";
+  font-family: var(--primary-font);
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -182,6 +191,7 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
   padding: 15px 20px;
   font-size: 16px;
   text-decoration: none;
+  font-family: var(--primary-font);
 
   &:hover {
     background: var(--appeal-button-hover);
@@ -194,12 +204,14 @@ body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
   font-weight: 600;
   padding: 0px 10px;
   text-align: center;
+  font-family: var(--primary-font);
 }
 
 .appeal-text {
   max-width: 950px;
   text-align: center;
   padding: 0px 10px;
+  font-family: var(--primary-font);
 }
 
 div#content_page {
@@ -351,7 +363,7 @@ img.form-image {
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-family: "Montserrat";
+  font-family: var(--primary-font);
 }
 
 .donor-inner .donor {
@@ -365,7 +377,7 @@ img.form-image {
 }
 
 .dedication-text {
-  font-family: "Montserrat";
+  font-family: var(--primary-font);
 }
 
 .donors-title {
@@ -376,7 +388,7 @@ img.form-image {
   display: flex;
   justify-self: center;
   align-self: center;
-  font-family: "Montserrat";
+  font-family: var(--primary-font);
   font-weight: 600;
 }
 

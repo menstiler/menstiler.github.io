@@ -1,6 +1,7 @@
-.pink-theme {
+:root {
   --header-bg: url("https://w2.chabad.org/media/images/1329/jEpV13291460.png");
   --appeal-bg: url("https://w2.chabad.org/media/images/1329/uPFI13291498.png");
+  --primary-font: "Montserrat", Arial, sans-serif;
   --primary-color: #e274ad;
   --primary-color-hover: #d6609d;
   --submit-color: #b6427c;
@@ -13,6 +14,7 @@
 .red-theme {
   --header-bg: url("https://w2.chabad.org/media/images/1329/ZEEQ13298007.jpeg");
   --appeal-bg: url("");
+  --primary-font: "Montserrat", Arial, sans-serif;
   --primary-color: #a22922;
   --primary-color-hover: #c05c57;
   --submit-color: #a22922;
