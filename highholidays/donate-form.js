@@ -29,7 +29,10 @@ function getFromSheet() {
           if (index !== donors.length - 1) {
             const li = document.createElement("li");
             li.className = "donor-item";
-            li.innerHTML = `<div class="name">${name}</div><div class="amount"> $${amount.toLocaleString()}</div>${
+            li.innerHTML = `<div class="name">${name}</div><div class="amount"> $${parseInt(
+              amount,
+              10
+            ).toLocaleString()}</div>${
               dedication ? `<div class="dedication">${dedication}</div>` : ""
             }`;
             tickerTrack.appendChild(li);
