@@ -12,7 +12,6 @@ function getFromSheet() {
         const bar = document.querySelector(".progress-bar");
         const label = document.querySelector(".campaign-progress h4");
         const percentEl = document.querySelector(".campaign-progress .percent");
-
         const donors = data.values.reverse();
         const tickerTrack = document.querySelector(".ticker-track");
         tickerTrack.style.display = "none";
@@ -38,11 +37,11 @@ function getFromSheet() {
             if (current && goal) {
               const amountNumber = parseInt(current, 10);
               const goalNumber = parseInt(goal, 10);
-              const percent = Math.min((amountNumber / goalNumber) * 100, 100);
+              const percent = (amountNumber / goalNumber) * 100;
 
               if (bar) {
-                bar.style.width = `min(calc(${percent}% + 20px), 100%)`;
-                bar.setAttribute("aria-valuenow", percent.toFixed(0));
+                bar.style.width = `min(calc(${percent}% + 45px), 100%)`;
+                bar.setAttribute("aria-valuenow", percent);
               }
 
               if (label) {
@@ -50,7 +49,7 @@ function getFromSheet() {
               }
 
               if (percentEl) {
-                percentEl.textContent = `${percent.toFixed(0)}%`;
+                percentEl.textContent = `${percent}%`;
               }
             }
           }
