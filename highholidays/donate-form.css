@@ -187,7 +187,6 @@ body.mobile div#chabad_body_content {
 
   .tickercontainer {
     height: 50px !important;
-    display: flex;
     vertical-align: middle;
     position: relative;
   }
