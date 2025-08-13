@@ -1,39 +1,19 @@
 const url =
-  "https://script.google.com/macros/s/AKfycbxuCoaAYacI0hFWUCGFEnOg4uy9zVrJkARU1JikbjiuEVZKMnYC-bNt9XBiJ8ip9LEg/exec";
+  "https://bihxghuhlw6ffmdbkkrt2ofxd40pqdon.lambda-url.us-east-2.on.aws/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
 
-async function getFromSheet() {
+function getFromSheet() {
   try {
-    await fetch(url)
+    fetch(url)
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
       })
       .then((data) => {
-        if (data.goal && data.total) {
-          const percent = Math.min((data.total / data.goal) * 100, 100);
+        const bar = document.querySelector(".progress-bar");
+        const label = document.querySelector(".campaign-progress h4");
+        const percentEl = document.querySelector(".campaign-progress .percent");
 
-          // Update DOM
-          const bar = document.querySelector(".progress-bar");
-          const label = document.querySelector(".campaign-progress h4");
-          const percentEl = document.querySelector(
-            ".campaign-progress .percent"
-          );
-
-          if (bar) {
-            bar.style.width = `min(calc(${percent}% + 20px), 100%)`;
-            bar.setAttribute("aria-valuenow", percent.toFixed(0));
-          }
-
-          if (label) {
-            label.textContent = `$${data.total.toLocaleString()} OF $${data.goal.toLocaleString()} RAISED`;
-          }
-
-          if (percentEl) {
-            percentEl.textContent = `${percent.toFixed(0)}%`;
-          }
-        }
-
-        const donors = data.rows.reverse();
+        const donors = data.values.reverse();
         const tickerTrack = document.querySelector(".ticker-track");
         tickerTrack.style.display = "none";
         tickerTrack.innerHTML = "";
@@ -46,17 +26,34 @@ async function getFromSheet() {
           $latestDonors[0].parentNode.insertBefore(newEl, $latestDonors[0]);
         }
 
-        donors.forEach((donor) => {
-          const li = document.createElement("li");
-          li.className = "donor-item";
-          li.innerHTML = `<div class="name">${
-            donor.displayName
-          }</div><div class="amount"> $${donor.amount.toLocaleString()}</div>${
-            donor.dedication
-              ? `<div class="dedication">${donor.dedication}</div>`
-              : ""
-          }`;
-          tickerTrack.appendChild(li);
+        donors.forEach(([name, amount, dedication, current, goal], index) => {
+          if (index !== donors.length - 1) {
+            const li = document.createElement("li");
+            li.className = "donor-item";
+            li.innerHTML = `<div class="name">${name}</div><div class="amount"> $${amount.toLocaleString()}</div>${
+              dedication ? `<div class="dedication">${dedication}</div>` : ""
+            }`;
+            tickerTrack.appendChild(li);
+
+            if (current && goal) {
+              const amountNumber = parseInt(current, 10);
+              const goalNumber = parseInt(goal, 10);
+              const percent = Math.min((amountNumber / goalNumber) * 100, 100);
+
+              if (bar) {
+                bar.style.width = `min(calc(${percent}% + 20px), 100%)`;
+                bar.setAttribute("aria-valuenow", percent.toFixed(0));
+              }
+
+              if (label) {
+                label.textContent = `$${amountNumber.toLocaleString()} OF $${goalNumber.toLocaleString()} RAISED`;
+              }
+
+              if (percentEl) {
+                percentEl.textContent = `${percent.toFixed(0)}%`;
+              }
+            }
+          }
         });
 
         function loadScript(src, callback) {
@@ -80,7 +77,7 @@ async function getFromSheet() {
                     speed: 50,
                     direction: "left",
                     startEmpty: true,
-                    duplicate: true,
+                    duplicate: false,
                     hoverpause: true,
                   });
                 });
@@ -176,7 +173,7 @@ function pageSetup() {
     });
 }
 
-async function headerSetup() {
+function headerSetup() {
   const articleHeader = jQuery(".master-content-wrapper");
 
   articleHeader.append(
@@ -197,10 +194,10 @@ async function headerSetup() {
             `);
 }
 
-async function init() {
+function init() {
   pageSetup();
-  await headerSetup();
-  await getFromSheet();
+  headerSetup();
+  getFromSheet();
 }
 
 if (document.readyState !== "loading") {
