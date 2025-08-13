@@ -49,7 +49,9 @@ function getFromSheet() {
               }
 
               if (percentEl) {
-                percentEl.textContent = `${percent}%`;
+                const percentDisplay =
+                  percent >= 1 ? percent.toFixed(0) : percent;
+                percentEl.textContent = `${percentDisplay}%`;
               }
             }
           }

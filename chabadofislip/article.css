@@ -1,4 +1,4 @@
-body:not(.cco_templateless_page) div#co_body_container {
+body:not(.cco_templateless_page) div#co_body_container:not(:has(.syndicated))  {
   padding: 50px 0;
 }
 

@@ -178,6 +178,15 @@ header {
 .logo {
   flex: 1;
   text-align: center;
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 @media (min-width: 769px) {
@@ -296,6 +305,7 @@ nav a:hover {
     gap: 0;
     padding: 0 1rem;
     justify-content: flex-start;
+    width: 100%;
   }
 
   nav li {
@@ -441,6 +451,10 @@ nav a:hover {
 
     h4 {
       color: #bdb78f;
+
+      &:last-child {
+        text-align: right;
+      }
     }
   }
 
@@ -1285,7 +1299,6 @@ nav a:hover {
   display: flex;
   width: 100%;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -1391,6 +1404,7 @@ nav a:hover {
 }
 
 .dedication-category {
+  text-align: center;
   padding-bottom: 1rem;
 }
 
@@ -1425,6 +1439,7 @@ nav a:hover {
   .dedication-item {
     flex-basis: 100%;
     margin: 1rem auto;
+    gap: 1rem;
   }
 }
 .dedication-item .title {
@@ -1462,6 +1477,8 @@ a.dedicate-link {
 }
 
 .more-options {
+  text-align: center;
+
   #donate-now {
     position: relative;
 
@@ -1503,7 +1520,12 @@ a.dedicate-link {
   color: white;
 }
 
+.donate-now-container {
+  text-align: center;
+}
+
 #other-input input {
+  text-align: center;
   padding: 5px 10px;
   border: 1px solid var(--primary-color);
   font-weight: 300;
@@ -1528,6 +1550,7 @@ a.dedicate-link {
   transition: all 0.3s;
   cursor: pointer;
   border: 2px solid var(--primary-color);
+  border-radius: 0;
 
   &:hover {
     background: transparent;
