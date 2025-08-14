@@ -1,6 +1,3 @@
-const url =
-  "https://bihxghuhlw6ffmdbkkrt2ofxd40pqdon.lambda-url.us-east-2.on.aws/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
-
 function getFromSheet() {
   try {
     fetch(url)
