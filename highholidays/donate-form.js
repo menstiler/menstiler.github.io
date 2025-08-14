@@ -1,5 +1,5 @@
 const url =
-  "https://winter-forest-264d.menstiler.workers.dev/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
+  "https://bihxghuhlw6ffmdbkkrt2ofxd40pqdon.lambda-url.us-east-2.on.aws/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
 
 function getFromSheet() {
   try {
