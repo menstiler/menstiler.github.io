@@ -150,6 +150,12 @@ function init() {
 
   const parentElement = document.getElementById("content");
 
+  const syndicated = document.querySelector(".co_content_container.syndicated");
+
+  if (syndicated) {
+    document.body.classList.remove("home");
+  }
+
   if (window.location.pathname === "/") {
     // text and actions
     parentElement.insertAdjacentHTML("beforeBegin", textWidgetHtml);

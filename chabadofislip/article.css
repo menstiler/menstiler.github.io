@@ -1,12 +1,14 @@
-body:not(.cco_templateless_page) div#co_body_container:not(:has(.syndicated))  {
+body:not(.cco_templateless_page)
+  #BodyContainer:not(:has(.syndicated))
+  div#co_body_container {
   padding: 50px 0;
 }
 
 body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
-  width: 1110px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  /* justify-content: flex-end; */
 }
 
 @media screen and (max-width: 650px) {
@@ -50,6 +52,7 @@ body:not(.home) > #content > .wrapper {
   width: 100%;
 }
 
+.article-header__teaser,
 .co_body h3,
 .co_body h3 a,
 .breadcrumbs__crumb,
@@ -73,6 +76,9 @@ body:not(.home).mobile div#header {
   font-family: var(--secondary-font);
 }
 
+.black_alt_11,
+.black_alt_11 a,
+.co_body h2,
 .co_body .content .grey a,
 .grey,
 .grey a,
@@ -204,4 +210,29 @@ ul.small_links li,
 
 body:not(.home) #co_ads_container form.subscribe_box {
   display: none;
+}
+
+.co_section_branding,
+div.co_section_branding {
+  display: none;
+}
+
+body:not(.home) #content #BodyContainer .body_wrapper.clearfix {
+  justify-content: center;
+}
+
+#header .wrapper #co_menu_container_wrapper {
+  background: none;
+}
+
+#co_menu_container_wrapper .co_menu_item span.parent a {
+  padding: 0;
+}
+
+#tabContentMain .co_menu_item {
+  height: auto;
+}
+
+#content #BodyContainer #co_body_container:has(.app-torah-texts) {
+  width: 100%;
 }

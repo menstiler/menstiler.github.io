@@ -660,7 +660,7 @@ div#SubscribeFormContainer {
 }
 .home.mobile #footer .subscribe-form div.co_form_container div#CoButton_wrapper,
 .home div#HeaderSubscribeContainer div.co_form_container div#CoButton_wrapper,
-.home .mobile_wrapper_container form.bottom_subscribe_box div#CoButton_s,
+.home .mobile_wrapper_container form.bottom_subscribe_box div#CoButton_wrapper,
 .home form.bottom_subscribe_box div#CoButton_wrapper {
   width: 50%;
   padding-left: 0;
@@ -766,7 +766,7 @@ div#SubscribeFormContainer {
   background: #ececec;
 }
 
-.home #content #BodyContainer {
+.home #content #BodyContainer:not(:has(.syndicated)) {
   padding: 50px 0;
 }
 
@@ -776,7 +776,7 @@ div#SubscribeFormContainer {
   }
 }
 
-.home #content #BodyContainer .body_wrapper {
+.home:not(:has(.syndicated)) #content #BodyContainer .body_wrapper {
   text-align: center;
 }
 
@@ -810,6 +810,7 @@ div#SubscribeFormContainer {
   z-index: 2;
   text-transform: uppercase;
   font-family: var(--primary-font) !important;
+  /* margin: 0 auto; */
 }
 .home #content #BodyContainer .body_wrapper > .g960:after {
   position: absolute;
@@ -868,6 +869,11 @@ a.cycle-nextNav {
   text-indent: 0 !important;
 }
 
+.home .promo_slider .cycle-caption {
+  right: 15px;
+  top: 13px;
+}
+
 .mobile .promo_slider .circles div.selected,
 .promo_slider .cycle-controlNav a.active {
   background: var(--primary-color);
@@ -893,7 +899,7 @@ a.cycle-nextNav {
   border: 0;
 }
 
-.widget-1.promo_slider.custom.v380.feed.no_caption {
+.widget-1.promo_slider.custom.v380.feed {
   background: none;
   border: 0;
 }
