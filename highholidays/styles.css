@@ -15,8 +15,14 @@
 }
 
 .cco_templateless_template {
-  overflow: hidden;
   margin-top: -30px;
+}
+
+.cco_templateless_template a {
+  position: absolute;
+  top: 31px;
+  background: transparent;
+  color: black;
 }
 
 .chabad_header {
