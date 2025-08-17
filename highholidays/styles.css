@@ -86,7 +86,7 @@ div#chabad_head .chabad_navigator_bar ul li {
 
 div#chabad_head .chabad_navigator_bar ul li a {
   color: white;
-  padding: 0px 24px;
+  padding: 0px 20px;
   text-transform: uppercase;
   font-size: 15px;
   letter-spacing: 2px;
@@ -168,6 +168,18 @@ body.mobile #chabad_head > .chabad_header {
 
 body.cco_templateless_page.mobile #navigation.chabad_navigator_bar #menu {
   margin-top: inherit;
+}
+
+body:not(.mobile) #navigation.chabad_navigator_bar #menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+body:not(.mobile) div#chabad_head .chabad_navigator_bar {
+  height: auto;
 }
 
 .appeal-container {
