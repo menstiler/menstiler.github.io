@@ -18,6 +18,56 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function updateTotal() {
+    const otherAmountCheckbox = document.querySelector(".form-checkbox-other"),
+      otherAmountInput = document.querySelector(".form-checkbox-other-input");
+    otherAmountCheckbox.checked = true;
+    if (
+      (otherAmountCheckbox && otherAmountCheckbox.checked, otherAmountInput)
+    ) {
+      let overallTotal = 0;
+      document
+        .querySelectorAll("#donation-table-body tr .qty-input")
+        .forEach((cell) => {
+          const qty = parseInt(cell.value),
+            priceCell = cell.closest("tr").querySelector(".price"),
+            price = Number(priceCell.textContent.replace(/[$,]/g, "")),
+            name = cell.parentElement.previousElementSibling
+              .querySelector("div:nth-child(2)")
+              .textContent.trim()
+              .toLowerCase();
+          if ("general donation" === name) {
+            overallTotal += price;
+            return;
+          }
+          const item = Array.from(
+              document.querySelectorAll(".form-checkbox")
+            ).find(
+              (e) =>
+                e.value
+                  .substring(0, e.value.lastIndexOf("-"))
+                  .trim()
+                  .toLowerCase() === name
+            ),
+            itemValue = parseFloat(item.value.replace(/[^0-9.]/g, ""));
+          if (isNaN(qty) || isNaN(price)) {
+            return;
+          } else {
+            overallTotal += price;
+            if (item && item.checked) {
+              overallTotal -= itemValue;
+            }
+          }
+        }),
+        (otherAmountInput.value = overallTotal),
+        otherAmountInput.dispatchEvent(
+          new Event("change", {
+            bubbles: !0,
+          })
+        );
+    }
+  }
+
   // Timeline Click Handler
   document.querySelectorAll(".year-item").forEach((yearItem) => {
     yearItem.addEventListener("click", function () {
@@ -40,9 +90,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll("#cid_1 label span");
   items.forEach(function (el) {
     if (el.innerHTML.includes("-")) {
-      el.innerHTML.split("-");
-      el.innerHTML =
-        "<div>" + el.innerHTML.replace("-", "</div><div>") + "</div>";
+      const str = el.innerHTML;
+      const lastIndex = str.lastIndexOf("-");
+
+      if (lastIndex !== -1) {
+        const before = str.slice(0, lastIndex);
+        const after = str.slice(lastIndex + 1);
+
+        el.innerHTML = `<div>${before}</div><div>${after}</div>`;
+      }
     }
     var spanText = el.innerText.toLowerCase();
     if (spanText.includes("reserved") || spanText.includes("dedicated")) {
@@ -59,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const container = document.getElementById("dedication-list");
       const rows = table?.querySelectorAll("tr") || [];
       const categories = {};
+      const sessionItems = [];
 
       for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].querySelectorAll("td");
@@ -66,15 +123,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const name = cells[0].textContent.trim();
         const price = cells[1].textContent.trim();
-        const checkbox = cells[2].textContent.trim().toLowerCase();
+        const qty = cells[2].textContent.trim();
+        const checkbox = cells[3].textContent.trim().toLowerCase();
         const reserved = checkbox === "yes" || false;
-        const category = cells[3].textContent.trim();
+        const category = cells[4].textContent.trim();
         if (!name || !category) continue;
 
-        const item = { name, price, reserved };
+        const item = { name, price, reserved, qty };
+        sessionItems.push(item);
         if (!categories[category]) categories[category] = [];
         categories[category].push(item);
       }
+
+      sessionStorage.setItem("dedications", JSON.stringify(sessionItems));
 
       for (const [category, items] of Object.entries(categories)) {
         const section = document.createElement("div");
@@ -116,7 +177,11 @@ document.addEventListener("DOMContentLoaded", function () {
             actionEl.href = `/templates/articlecco_cdo/aid/6970745/jewish/Donations.htm?${new URLSearchParams(
               { name: item.name }
             )}`;
-            actionEl.textContent = "Dedicate";
+            if (parseFloat(item.qty) > 1) {
+              actionEl.textContent = `${item.qty} Dedications`;
+            } else {
+              actionEl.textContent = "Dedicate";
+            }
             actionEl.className = "dedicate-link";
           }
 
@@ -172,62 +237,66 @@ document.addEventListener("DOMContentLoaded", function () {
   // Handle checkbox changes
   function handleCheckboxChange(event) {
     const checkbox = event.target;
-    const name = checkbox.value.split("-")[0].trim();
-    const price = checkbox.value.split("-")[1].trim();
+    const name = (
+      checkbox.value.slice(0, checkbox.value.lastIndexOf("-")) || checkbox.value
+    ).trim();
+    const price = checkbox.value.split("-").pop().trim();
     const tableBody = document.getElementById("donation-table-body");
     const rowId = `row-${name.replace(/\s+/g, "-")}`;
+
+    const sessionDedication = JSON.parse(
+      sessionStorage.getItem("dedications")
+    ).find((item) => item.name === name);
+    const qty = sessionDedication.qty ? sessionDedication.qty : 1;
 
     if (checkbox.checked) {
       const row = document.createElement("tr");
       row.id = rowId;
       row.innerHTML = `
           <td>
+            <div>            
             <button class="remove-btn" title="Remove donation" aria-label="Remove ${name}">&#x2715;</button>
+            </div>
+            <div>
+            ${name}
+            </div>
           </td>
-          <td>${name}</td>
-          <td class="price" data-price="${price}">$${price.toLocaleString()}</td>
+          <td>
+          <input class="qty-input" id='qty-input' min="0" max=${qty} step="1" type="number" value="1"  />
+          </td>
+          <td class="price" data-price="${price}">${price.toLocaleString()}</td>
         `;
       tableBody.appendChild(row);
 
-      row.querySelector(".remove-btn").addEventListener("click", () => {
+      function deleteRow() {
         row.remove();
         checkbox.checked = false;
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+
+      row.querySelector(".qty-input").addEventListener("change", (e) => {
+        const value = parseInt(e.target.value);
+        if (value === 0) {
+          deleteRow();
+          return;
+        }
+        const total = parseFloat(value) * Number(price.replace(/[$,]/g, ""));
+        row.querySelector(".price").textContent = `$${total.toLocaleString()}`;
         updateTotal();
+        row.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+
+      row.querySelector(".remove-btn").addEventListener("click", () => {
+        deleteRow();
       });
     } else {
       const existingRow = document.getElementById(rowId);
       if (existingRow) existingRow.remove();
     }
-
-    updateTotal();
-  }
-
-  function getPriceFromCheckbox(checkbox) {
-    const itemDiv = checkbox.closest(".item");
-    const priceSpan = itemDiv?.querySelector(".price");
-    return priceSpan
-      ? parseFloat(priceSpan.textContent.replace(/[^0-9.]/g, ""))
-      : null;
-  }
-
-  function updateTotal() {
-    const prices = document.querySelectorAll("#donation-table-body .price");
-    let total = 0;
-    prices.forEach((p) => (total += parseFloat(p.dataset.price)));
-    document.getElementById(
-      "donation-total"
-    ).value = `$${total.toLocaleString()}`;
-    document.getElementById("total_amount").value = total;
-    document.getElementById(
-      "total_amount"
-    ).textContent = `$${total.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    })}`;
   }
 
   // Checkboxes initialized
-  document.querySelectorAll('input[name="product"]').forEach((checkbox) => {
+  document.querySelectorAll('input[name="q1_input1[]"]').forEach((checkbox) => {
     checkbox.addEventListener("change", handleCheckboxChange);
   });
 
@@ -246,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Get options from pathname
     let optionsRaw = "";
-    const optionsIndex = pathParts.indexOf("options");
+    const optionsIndex = pathParts.indexOf("name");
     if (optionsIndex !== -1 && pathParts[optionsIndex + 1]) {
       optionsRaw = decodeURIComponent(pathParts[optionsIndex + 1]).replace(
         /\+/g,
@@ -255,23 +324,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (optionsRaw) {
-      const options = optionsRaw
-        .split(",")
-        .map((opt) => opt.trim().toLowerCase());
-      options.forEach((option) => {
-        const checkboxInput = Array.from(
-          document.querySelectorAll("input[type='checkbox']")
-        ).find(
-          (lbl) => lbl.value.split("-")[0].trim().toLowerCase() === option
-        );
+      const option = optionsRaw.toLowerCase();
+      const checkboxInput = Array.from(
+        document.querySelectorAll("input[type='checkbox']")
+      ).find(
+        (lbl) =>
+          (lbl.value.slice(0, lbl.value.lastIndexOf("-")) || lbl.value)
+            .trim()
+            .toLowerCase() === option
+      );
 
-        if (checkboxInput && checkboxInput.type === "checkbox") {
-          checkboxInput.checked = true;
-          handleCheckboxChange({ target: checkboxInput });
-        }
-      });
+      if (checkboxInput && checkboxInput.type === "checkbox") {
+        checkboxInput.checked = true;
+        handleCheckboxChange({ target: checkboxInput });
+      }
 
-      removePathSegment("options");
+      removePathSegment("name");
     }
 
     // Get amount from pathname
@@ -286,30 +354,101 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (amount && !isNaN(amount)) {
+      const otherAmountCheckbox = document.querySelector(
+        ".form-checkbox-other"
+      );
+      const otherAmountInput = document.querySelector(
+        ".form-checkbox-other-input"
+      );
+      otherAmountCheckbox.checked = true;
+      otherAmountInput.value = amount;
       const tableBody = document.getElementById("donation-table-body");
       const rowId = `row-amount`;
       const row = document.createElement("tr");
       row.id = rowId;
       row.innerHTML = `
       <td>
+        <div>
         <button class="remove-btn" title="Remove donation" aria-label="Remove ${amount}">&#x2715;</button>
+        </div>
+        <div>
+          General Donation
+        </div>
+      </td>   
+      <td>
+      <input class="qty-input" min="0" step="1" type="number" value="1"/>
       </td>
-      <td>General Donation</td>
       <td class="price" data-price="${amount}">$${amount.toLocaleString()}</td>
     `;
       tableBody.appendChild(row);
 
-      row.querySelector(".remove-btn").addEventListener("click", () => {
+      function deleteRow() {
         row.remove();
+        otherAmountCheckbox.checked = false;
+        otherAmountCheckbox.dispatchEvent(
+          new Event("change", { bubbles: true })
+        );
+      }
+
+      row.querySelector(".qty-input").addEventListener("change", (e) => {
+        const value = parseInt(e.target.value);
+        if (value === 0) {
+          deleteRow();
+          return;
+        }
+        const otherAmountCheckbox = document.querySelector(
+          ".form-checkbox-other"
+        );
+        const otherAmountInput = document.querySelector(
+          ".form-checkbox-other-input"
+        );
+        otherAmountCheckbox.checked = true;
+        const total = parseFloat(value) * amount;
+        row.querySelector(".price").textContent = `$${total.toLocaleString()}`;
+        otherAmountInput.value = total;
         updateTotal();
+        otherAmountCheckbox.dispatchEvent(
+          new Event("change", { bubbles: true })
+        );
       });
 
-      updateTotal();
+      row.querySelector(".remove-btn").addEventListener("click", () => {
+        deleteRow();
+      });
+
       removePathSegment("amount");
     }
   }
 
   checkOptionsFromParams();
+
+  const totalTargetNode = document.querySelector("#total_amount");
+
+  if (totalTargetNode) {
+    // Create an observer instance
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (
+          mutation.type === "childList" ||
+          mutation.type === "characterData"
+        ) {
+          document.getElementById("donation-total").textContent = parseFloat(
+            totalTargetNode.textContent.replace("$", "")
+          ).toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          });
+        }
+      }
+    });
+
+    // Start observing
+    observer.observe(totalTargetNode, {
+      childList: true, // detect if child nodes are added/removed
+      characterData: true, // detect text node changes
+      subtree: true, // include nested elements
+    });
+  }
 
   let selectedAmount = null;
 
@@ -358,7 +497,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Mobile menu functionality
   const burgerMenu = document.getElementById("burger-menu");
-  const navMenu = document.getElementById("nav-menu");
+  const navMenu = document.getElementById("navigation");
 
   function toggleMobileMenu() {
     burgerMenu.classList.toggle("active");
@@ -385,6 +524,69 @@ document.addEventListener("DOMContentLoaded", function () {
       closeMobileMenu();
     }
   });
+
+  document.addEventListener(
+    "click",
+    function onDocClick(e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      const hash = link.getAttribute("href");
+      if (!hash || hash === "#") return; // ignore plain "#" anchors
+
+      const target = document.querySelector(hash);
+      if (!target) return; // no on-page target
+
+      // prevent default jump and stop other listeners
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      e.stopPropagation();
+
+      // compute header height dynamically (change selector to match your header)
+      const header =
+        document.querySelector(".sticky-top") ||
+        document.querySelector("header");
+      const headerOffset = header ? header.offsetHeight : 0;
+
+      // compute absolute position of target and subtract header height
+      const targetY =
+        target.getBoundingClientRect().top + window.scrollY - headerOffset - 8; // extra 8px padding
+
+      // smooth scroll
+      window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+
+      // accessibility: focus target without causing extra scroll
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+
+      // update the URL hash without triggering jump
+      if (history.pushState) {
+        history.pushState(null, "", hash);
+      } else {
+        location.hash = hash;
+      }
+    },
+    true
+  );
+
+  if (document.body.classList.contains("section_root")) {
+    const addLinks = `
+            <li class="item parent"><a href="#campaign" class="parent">Campaign</a></li>
+            <li class="item parent"><a href="#timeline" class="parent">Timeline</a></li>
+            <li class="item parent"><a href="#donations" class="parent">Dedications</a></li>
+            <li class="item parent"><a href="#contact" class="parent">Contact</a></li>
+            `;
+
+    if (jQuery("#navigation #menu .item a").first().text().trim() === "Menu") {
+      jQuery("#navigation #menu .item").first().remove();
+    }
+
+    if (jQuery("#navigation #menu .item a").first().text().trim() === "Home") {
+      jQuery("#navigation #menu .item").first().after(addLinks);
+    } else {
+      jQuery("#navigation #menu").prepend(addLinks);
+    }
+  }
 });
 
 function setUpTestimonials() {
