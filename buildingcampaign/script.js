@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function styleDedicationTable() {
     try {
       const table = document.getElementById("dedications");
+      if (!table) return;
       table.style.display = "none";
 
       const container = document.getElementById("dedication-list");
@@ -476,24 +477,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Donate button
-  document.getElementById("donate-now").addEventListener("click", () => {
-    if (
-      document.querySelector(".amount-btn.selected")?.dataset.amount === "other"
-    ) {
-      selectedAmount = parseInt(document.getElementById("other-amount").value);
-    }
+  const donateNowBtn = document.getElementById("donate-now");
+  donateNowBtn &&
+    donateNowBtn.addEventListener("click", () => {
+      if (
+        document.querySelector(".amount-btn.selected")?.dataset.amount ===
+        "other"
+      ) {
+        selectedAmount = parseInt(
+          document.getElementById("other-amount").value
+        );
+      }
 
-    if (!selectedAmount || isNaN(selectedAmount)) {
-      alert("Please select or enter a valid amount");
-      return;
-    }
+      if (!selectedAmount || isNaN(selectedAmount)) {
+        alert("Please select or enter a valid amount");
+        return;
+      }
 
-    // Redirect with amount in query params
-    const url = `/templates/articlecco_cdo/aid/6970745/jewish/Donations.htm?amount=${encodeURIComponent(
-      selectedAmount
-    )}`;
-    window.location.href = url;
-  });
+      // Redirect with amount in query params
+      const url = `/templates/articlecco_cdo/aid/6970745/jewish/Donations.htm?amount=${encodeURIComponent(
+        selectedAmount
+      )}`;
+      window.location.href = url;
+    });
 
   // Mobile menu functionality
   const burgerMenu = document.getElementById("burger-menu");
