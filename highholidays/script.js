@@ -1,5 +1,5 @@
 const url =
-  "https://bihxghuhlw6ffmdbkkrt2ofxd40pqdon.lambda-url.us-east-2.on.aws/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
+  "https://nrdt34mn5c.execute-api.us-east-2.amazonaws.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
 
 const PAGE_SCRIPTS = [
   {

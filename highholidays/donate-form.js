@@ -50,7 +50,7 @@ function getFromSheet() {
 
               if (percentEl) {
                 const percentDisplay =
-                  percent >= 1 ? percent.toFixed(0) : percent;
+                  percent >= 1 ? percent.toFixed(0) : percent.toFixed(2);
                 percentEl.textContent = `${percentDisplay}%`;
               }
             }

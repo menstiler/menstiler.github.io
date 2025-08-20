@@ -249,6 +249,11 @@ body.mobile div#chabad_body_content {
     }
   }
 
+  #cid_21.form-input {
+    display: flex;
+    width: 100%;
+  }
+
   #id_19 {
     display: flex;
     justify-content: center;
@@ -360,7 +365,10 @@ body.mobile div#chabad_body_content {
       width: 100%;
 
       @media (max-width: 650px) {
-        grid-template-columns: repeat(2, 1fr); /* width: 100px; */
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
       }
     }
 
